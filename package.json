@@ -1,0 +1,46 @@
+{
+  "name": "sl-payment-form",
+  "version": "1.0.5",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postversion": "node scripts/sync-version.js",
+    "build": "wp-scripts build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "start": "wp-scripts start",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js",
+    "dev-css": "npx @tailwindcss/cli -i ./src/css/sl-style.css -o ./src/output.css --watch",
+    "build-css": "npx @tailwindcss/cli -i ./src/css/sl-style.css -o ./src/output.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "@lottiefiles/dotlottie-web": "^0.56.0",
+    "@tailwindcss/cli": "^4.1.2",
+    "@tailwindcss/postcss": "^4.1.2",
+    "@types/express": "^4.17.21",
+    "axios": "^1.9.0",
+    "date-fns": "^4.1.0",
+    "postcss": "^8.5.3",
+    "react": "^18.3.1",
+    "react-datepicker": "^8.3.0",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.5.1",
+    "tailwindcss": "^4.1.2"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.14.1",
+    "daisyui": "^5.0.43"
+  }
+}
