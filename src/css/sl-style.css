@@ -71,7 +71,28 @@
   --color-sl-gray-1000: #000000;
 }
 
-#mi-plugin-root {
+/* --- SCOPED PREFLIGHT / RESET LOCAL --- */
+/* Esto restaura los estilos base de Tailwind SOLO dentro de tu plugin */
+#sl-payment-form-root-odoo {
+  /* Asegura el modelo de caja correcto */
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb; /* gray-200 por defecto */
+}
+
+#sl-payment-form-root-odoo *,
+#sl-payment-form-root-odoo *::before,
+#sl-payment-form-root-odoo *::after {
+  box-sizing: inherit;
+  border-width: 0;
+  border-style: solid;
+  border-color: inherit;
+}
+
+/* --- FIN SCOPED PREFLIGHT --- */
+
+#sl-payment-form-root-odoo {
   /* background-color: red; */
   width    : 100%;
   max-width: 1200px;
@@ -80,6 +101,14 @@
   font-size: 13px;
 
   font-family: "Open Sans", sans-serif;
+  
+  /* Reset de imágenes para que no se desborden */
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+  }
 
   h1 {
     font-size: 3em;
@@ -160,7 +189,7 @@
   /* background-color: black */
 }
 
-#sl-payment-form-wrapper {
+#sl-payment-form-wrapper-odoo {
   display: flex;
 
   .sl-tab-select {
@@ -243,7 +272,7 @@
     }
   }
 
-  button {
+  button.base {
     @apply bg-sl-pink-500 text-sl-gray-50;
     width    : 100%;
     font-size: 1.25em;
@@ -279,9 +308,6 @@
 
 }
 
-.base:hover {
-  background-color: #B21259;
-}
 .base:disabled {
   background-color: #d1d5db; 
   cursor: not-allowed;

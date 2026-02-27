@@ -27,3 +27,5 @@ export const TOKEN = {"TOKEN_SECRET" : "1a8fc9f7-99de-4cbb-a6ba-b88082d5fc68"}
 
 // export const wispro ="https://sl-wispro-services-448255069594.us-east1.run.app/invoices/national-identifier"
 export const wispro ="https://slmultiple.quantumlinkservicesapi.site/wispro-services/invoices/national-identifier"
+
+export const DUMMY_MODE = false; 

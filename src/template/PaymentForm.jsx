@@ -1,684 +1,560 @@
-import React, { useEffect, useMemo, useState, useCallback } from "react";
-import PaymentMethodTab from "../componet/PaymentMethodTab";
-import "react-datepicker/dist/react-datepicker.css";
-import BanckTranferForms from "./BanckTranferForms"; 
-import MobilePaymentForm from "./MobilePaymentForm";
-import R4PaymentForm from "./R4PaymentForm";
-import ZellePayment from "./ZellePayment";
-import PaypalForm from "./PaypalForm";
-import ArrorLeft from "../icons/ArrorLeft";
-import axios from 'axios';
-import { apiPaymentHeader, apiurl, apiWP, TOKEN } from '../util/proyect-config';
-import Client from "../icons/Client"; 
-import Factura from "../icons/Factura";
-import { format } from "date-fns";
-import MobilePaymentP2P from "./MobilePaymentP2P";
-import Logo7Link from "../icons/Logo7Link";
-import doc from "../icons/Frame.svg"
-import doc2 from "../icons/doc2.svg"
-import DataForm from "./DataForm";
-import CedulaLookupForm from "./wisproDataform";
-import { wispro } from "../util/proyect-config";
-import InvoiceDetailsModal from "../componet/InvoiceDetailsModal";
-import { roundTo } from "../util/math-helpers";
-import VersionMismatchDetector from "../componet/VersionMismatchDetector";
-import LoadingScreen from "../componet/LoadingScreen";
+import React, { useState } from "react";
+import MobileTranfer from "../icons/MobileTranfer";
+import Input from "../componet/Input";
+import { bancos_venezuela } from "../utils/bancos-venezuela";
+import mobile from "../icons/mobile.svg";
+import { apiPaymentHeader, DUMMY_MODE } from "../util/proyect-config";
+import { API_ENDPOINTS } from "../util/api-endpoints";
+import axios from "axios";
+import MobileTransferFlaticon from "../icons/MobileTransferFlaticon";
+import DateInput from "../componet/DateInput";
+import MobileTraferFlaticoBlack from "../icons/MobileTraferFlaticoBlack";
+import TrasactionProgress from "./TrasanctionProsess";
+import SuccessComponent from "../componet/SuccessComponent";
+import { getJsonPaymentPayload } from "../utils/payment-payload-helper";
+import PaymentReminderModal from "../componet/PaymentReminderModal";
+import WhatsappIcon from "../icons/WhatsappIcon";
 
-export default function PaymentForm() {
-  const [renderControl, setRenderControl] = useState(0);
-  const [totalRef, setTotalRef] = useState(0);
-  const [includeMessage, setIncludeMessage] = useState("");
-  const [tasaActual, setTasaActual] = useState(null);
-  const [initialSearchParams, setInitialSearchParams] = useState(null); // Nuevo estado para parámetros de búsqueda inicial
-  const [money, setMoney] = useState("");
-  const [isDataLoading, setIsDataLoading] = useState(false); // Estado para la carga de datos de facturas
-  const [montoItf, setMontoItf] = useState("");  
-  const [paymentData, setPaymentData] = useState({});
-  const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(new Date());
+export default function MobilePaymentForm({
+  hData,
+  tasaActual,
+  total,
+  disableSubmit,
+  methodConfig = {},
+}) {
+  // Log para verificar las props iniciales
+  // console.log("MobilePaymentForm props:", { hData, tasaActual, total });
 
-  const isMontoInvalido = Number(totalRef) <= 0;
-  const getInvoice = async () => {
-    // console.log("factura solicitada");
+  const isBdv = methodConfig.bank === "bdv";
+  const bankName = isBdv ? "Banco de Venezuela 219040" : "Banco R4";
+  const paymentMethodName = `Pago Movil c2p ${isBdv ? "BDV" : "R4"}`;
+
+  // console.log(`[MobilePaymentForm - C2P] Configured for: ${isBdv ? 'BDV' : 'R4'}`);
+
+  const [isReminderOpen, setIsReminderOpen] = useState(true);
+  const initialState = {
+    TelefonoDestino: "",
+    Cedula: "",
+    Banco: "",
+    Otp: "",
+    tipoDocumento: "",
+    isOwnerAcc: true,
+    ownerAcc: "",
   };
 
-  const years = Array.from(
-    { length: 2040 - 2025 + 1 },
-    (_, index) => 2025 + index
+  const [formData, setFormData] = useState(initialState);
+  const [errosState, setErrosState] = useState({});
+  const [openSendingModal, setOpenSendingModal] = useState(false);
+  const [step, setStep] = useState(0);
+  const [requestErrorMessege, setRequestErrorMessege] = useState(
+    "Error al Procesar el Pago",
   );
+  const [startDate, setStartDate] = useState(new Date());
+  const [paymentReferecce, setPaymentReferecce] = useState("Desconocida");
 
-  const triggerCustomEvent = () => {
-    const customEvent = new CustomEvent("actulizar-url", {
-      detail: { mensaje: "Este es un evento personalizado en React" },
-
-    });
-    window.dispatchEvent(customEvent); // Dispara el evento en el objeto window
+  const changeStep = (step) => {
+    setStep(step);
   };
 
-  // los paymentMethod son
-  // zelle
-  // paypay
-  // tranferenciadirecta
-  // c2p
-  // r4
-  // Tarjetadecredito
+  const formatConcepto = (concepto) => {
+    const maxLength = 30;
+    if (concepto.length > maxLength) {
+      return concepto.substring(0, 25) + "...";
+    }
+    return concepto;
+  };
 
-  function updateQueryParams(data) {
-    const currentUrl = window.location.href;
-    const url = new URL(currentUrl);
+  const checkout = async (e) => {
+    e.preventDefault();
 
-    // Si `data.paymentMethod` tiene un valor, agrégalo
-    if (data.paymentMethod) {
-      url.searchParams.set("paymentMethod", data.paymentMethod);
+    const erros = {};
+
+    // creamos el validador de Teléfonode destino ejemplo 04143787747 (mi numero personal).
+    // donde 0414 puede ser un 0414 | 0412 | 0424  | 0416 | 0426
+
+    const telefonoDestinoRegex = /^(0414|0424|0416|0426|0412|0422)\d{7}$/;
+    const otpRegEx = /^[0-9]{8}$/;
+    const idRegEx = /^\d{6,8}$/;
+
+    if (!formData.Banco) erros.Banco = "Nombre del Banco Requerido.";
+    if (!formData.TelefonoDestino)
+      erros.TelefonoDestino = "Teléfono Requerido.";
+    if (!telefonoDestinoRegex.test(formData.TelefonoDestino))
+      erros.TelefonoDestino = "Numero teléfonico inválido.";
+
+    if (!formData.Cedula) erros.Cedula = "Cédula Requerida.";
+    if (!formData.Otp) erros.Otp = "OTP Requerido.";
+    if (!otpRegEx.test(formData.Otp)) erros.Otp = "OTP Inválido.";
+    if (!formData.tipoDocumento)
+      erros.tipoDocumento =
+        "Indica Tipo de Documento (V o E).";
+    if (!formData.ownerAcc && !formData.isOwnerAcc)
+      erros.ownerAcc = "Nombre del Titular del Documento";
+
+    if (Object.keys(erros).length > 0) {
+      setErrosState(erros);
+      return;
     } else {
-      // Si no tiene valor, elimina el parámetro
-      url.searchParams.delete("paymentMethod");
-    }
-    
-    // Actualiza el URL sin recargar la página
-    // window.history.replaceState(null, "", url.toString());
-     window.location.href = url.toString();
-  }
+      // console.log(formData);
+      // console.log(hData);
+      // console.log(tasaActual);
 
-  // console.log(paymentData);
-  const { 
-    moneda, 
-    cliente, 
-    ac = "", // Asignar un valor por defecto si 'ac' no está en la URL
-    monto, 
-    suscriptor, 
-    date, 
-    sub, 
-    paymentMethod, 
-    tag,
-    firstime, // Destructure firstime
-    documento,
-    fullInvoiceData, // Destructure fullInvoiceData
-     } =
-    paymentData;
+      const { Banco, Cedula, TelefonoDestino, Otp, tipoDocumento } = formData;
+      const {
+        moneda,
+        cliente,
+        ac,
+        monto,
+        suscriptor,
+        date,
+        sub,
+        paymentMethod,
+        client_id,
+        invoice_id,
+        firstime,
+        fullInvoiceData,
+      } = hData;
 
-    //console.log("Valor de la variable 'tag' extraída:", tag);
+      const subscriberId = sub || suscriptor || "";
 
-    
-const TAG_CONFIGS = {
-    "Proyecto Fenix": {
-      allowedMethods: [
-        "zelle", 
-        "paypal",
-        "pago-movil", 
-        "r4", 
-        "c2p"
-      ],
-      methodDetails: {
-        zelle: { account: "bofa" },
-        tranferenciadirecta: { bank: "r4" },
-        "pago-movil": { bank: "r4" },
-        c2p: { bank: "r4" }
-      },
-    },
-    "Quantum Link": {
-      allowedMethods: [
-        "zelle", 
-        "paypal",
-        "tranferenciadirecta",
-        "pago-movil",
-        "c2p" 
-      ],
-      methodDetails: {
-        zelle: { account: "chase" },
-        tranferenciadirecta: { bank: "bdv" },
-        "pago-movil": { bank: "bdv" },
-        c2p: { bank: "bdv" }
-      },
-    },
-    "Santa Cruz": {
-      allowedMethods: [
-        "zelle", 
-        "paypal",
-        "tranferenciadirecta", 
-      ],
-      methodDetails: {
-        zelle: { account: "chase" },
-        tranferenciadirecta: { bank: "bnc" },
-      },
-    },
-  };
+      const commonPayload = getJsonPaymentPayload(hData, {
+        total,
+        amountPaid: total,
+        tasaActual,
+        paymentMethodName,
+        banco: bankName,
+        moneda: "Bolivares",
+        ownerName: formData.isOwnerAcc ? hData.cliente : formData.ownerAcc,
+        subscriberId,
+        date: startDate,
+      });
 
-  // Configuración por defecto cuando no se especifica una tag.
-  const DEFAULT_CONFIG = {
-    allowedMethods: [],
-    methodDetails: {
-      // Define un comportamiento por defecto para evitar mostrar todas las cuentas.
-      zelle: {},
-      tranferenciadirecta: {},
-    },
-  };
+      const conceptoParaDataToSend = `pago ${hData.ac || 'servicios'}`;
 
-  const currentPhaseConfig = useMemo(() => {
-    // Si no hay 'tag' en la URL, usamos la configuración por defecto.
-    if (!tag) {
-      return DEFAULT_CONFIG;
-    }
+      const url = isBdv
+        ? API_ENDPOINTS.MOBILE_PAYMENT.C2P_BDV
+        : API_ENDPOINTS.MOBILE_PAYMENT.C2P_MB;
+      const dataToSend = {
+        TelefonoDestino: TelefonoDestino,
+        Cedula: `${tipoDocumento}${Cedula}`,
+        Banco: Banco,
+        Concepto: formatConcepto(conceptoParaDataToSend), // Usar el concepto determinado dinámicamente
+        Monto: total, // Usar el monto total calculado (en Bs)
+        Otp: Otp,
+        payload: commonPayload,
+        fecha: startDate,
+        customerDocumentId: `${tipoDocumento}${Cedula}`,
+        customerNumberInstrument: TelefonoDestino,
+        concept: formatConcepto(conceptoParaDataToSend),
+        amount: total,
+        customerBankCode: Banco,
+        otp: Otp,
+        coinType: "VES",
+        operationType: "CELE",
+      };
 
-    const lowerCaseTagFromUrl = tag.toLowerCase();
+      // // Log para depurar los datos que se envían
+      // console.log("MobilePaymentForm - Datos a enviar:", dataToSend);
+      // if (hData.firstime === 'true') {
+      //     console.log("MobilePaymentForm - Payload para first-time:", dataToSend.payload);
+      // }
 
-    // Buscamos una clave en TAG_CONFIGS que coincida con el tag de la URL, ignorando mayúsculas/minúsculas.
-    const matchingKey = Object.keys(TAG_CONFIGS).find(
-      (key) => key.toLowerCase() === lowerCaseTagFromUrl
-    );
-    
-    // console.log("TAG en URL:", tag);
-    // Si encontramos una clave, usamos su configuración. Si no, la por defecto.
-    return matchingKey ? TAG_CONFIGS[matchingKey] : DEFAULT_CONFIG;
-  }, [tag]);
+      window.scrollTo({ top: 0, behavior: "smooth" });
 
-  const allowedMethods = currentPhaseConfig.allowedMethods;
+      changeStep(1);
 
-  const methodConfig = useMemo(() => {
-    return currentPhaseConfig.methodDetails[paymentMethod] || {};
-  }, [paymentMethod, currentPhaseConfig]);
+      // --- DUMMY MODE ---
+      // if (DUMMY_MODE) {
+      //   console.group("🔌 [DUMMY MODE] MobilePaymentForm (C2P): Cobro Directo");
+      //   console.log("📥 Datos del Formulario:", formData);
+      //   console.log("📤 Datos a Enviar (Payload simulado):", {
+      //     TelefonoDestino: TelefonoDestino,
+      //     Cedula: `${tipoDocumento}${Cedula}`,
+      //     Banco: Banco,
+      //     Monto: total,
+      //     Otp: Otp,
+      //   });
 
+      //   setTimeout(() => {
+      //     console.log("✅ Respuesta Simulada:", {
+      //       isSuccess: true,
+      //       code: "00",
+      //       reference: "DUMMY-REF-123456",
+      //       message: "Aprobado",
+      //     });
+      //     console.groupEnd();
+      //     setPaymentReferecce("DUMMY-REF-123456");
+      //     window.scrollTo({ top: 0, behavior: "smooth" });
+      //     changeStep(3);
+      //   }, 2000);
+      //   return;
+      // }
+      // ------------------
 
-  const calcTotalUsd = async (monto, comision) => {
-    return monto;
-  };
+      try {
+        const res = await axios.post(url, dataToSend, {
+          headers: apiPaymentHeader,
+        });
 
-  const calcTotal = async () => {
-    if (!paymentMethod && !monto) return;
+        if (isBdv) {
+          const { isSuccess, data, message } = res.data;
 
-    // 1. Siempre intentamos obtener la tasa de cambio del BCV.
-    let fetchedTasa = null;
-    try {
-      const date = format(selectedDate, "yyyy-MM-dd");
-      const res = await axios.post(
-        apiurl + "/mb/bcv",
-        { Moneda: "USD", Fechavalor: date },
-        { headers: apiPaymentHeader }
-      );
-      fetchedTasa = Number(res.data.tipocambio).toFixed(2);
-    } catch (error) {
-      console.error("Error al obtener la tasa de cambio en PaymentForm:", error);
-      // Si hay un error, la tasa permanecerá como null y se mostrará un mensaje en la UI.
-    }
-    setTasaActual(fetchedTasa); // Guardamos la tasa en el estado para mostrarla en la UI.
+          // Validación estricta para BDV: debe ser exitoso y tener código 1000 (texto o número)
+          if (isSuccess && (data?.code === "1000" || data?.code === 1000)) {
+            // Extraemos la referencia de la estructura anidada de BDV
+            const referencia = data?.data?.referencia;
+            if (referencia) setPaymentReferecce(referencia);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            changeStep(3);
+            return;
+          } else {
+            let errorMsg = data?.message;
+            if (!errorMsg) {
+              if (message && typeof message === "object") {
+                errorMsg = message.message;
+                if (message.data && typeof message.data === "object") {
+                  const details = Object.values(message.data).join(", ");
+                  if (details) errorMsg += `: ${details}`;
+                }
+              } else if (typeof message === "string") {
+                errorMsg = message;
+              }
+            }
+            setRequestErrorMessege(
+              errorMsg || "El banco rechazó la operación.",
+            );
+            changeStep(2);
+            return;
+          }
+        }
 
-    // 2. Preparamos las variables para los cálculos.
-    const nMonto = monto ? monto.replace(",", ".") : "0";
-    let calculatedTotal = -1;
-    let calculatedMoney = "";
-    let calculatedMontoItf = "";
-    let calculatedIncludeMessage = "";
+        const { code, message, reference } = res.data;
 
-    if (
-      paymentMethod === "tranferenciadirecta" ||
-      paymentMethod === "c2p" ||
-      paymentMethod === "r4" ||
-      paymentMethod === "pago-movil"
-    ) {
-      // 3a. Si el método es en Bolívares, usamos la tasa obtenida para calcular el total.
-      if (fetchedTasa) {
-        const totalEnBs = roundTo(Number(nMonto) * Number(fetchedTasa));
-        calculatedTotal = totalEnBs.toFixed(2);
-        calculatedMoney = "BS.";
-        calculatedIncludeMessage = "16% del IVA";
-      } else {
-        // Si no se pudo obtener la tasa, mostramos un mensaje de error.
-        calculatedTotal = Number(nMonto).toFixed(2);
-        calculatedMoney = "USD (Tasa no disponible)";
-        calculatedIncludeMessage = "16% del IVA (Tasa no disponible)";
-      }
-    } else if (paymentMethod === "paypal") {
-      // 3b. Cálculo para PayPal en USD.
-      // Se calcula el IGTF (3%) sobre el monto base.
-      const montoConIgtf = roundTo(Number(nMonto) * 1.03);
-      calculatedMontoItf = montoConIgtf.toFixed(2);
-      calculatedIncludeMessage = "16% del IVA + 3% del IGTF + comisión PayPal";
-      // Se calcula el monto final a pagar incluyendo la comisión de PayPal para que el destinatario reciba 'btotal'.
-      // Fórmula: (MontoNeto + TarifaFija) / (1 - PorcentajeComision)
-      const totalConComision = (montoConIgtf + 0.3) / (1 - 0.054);
-      calculatedTotal = roundTo(totalConComision).toFixed(2);
-      calculatedMoney = "USD";
-    } else if (paymentMethod === "zelle") {
-      // 3c. Cálculo para Zelle en USD.
-      // Se calcula el IGTF (3%) sobre el monto base.
-      const totalConIgtf = roundTo(Number(nMonto) * 1.03);
-      calculatedTotal = totalConIgtf.toFixed(2);
-      calculatedMoney = "USD";
-      calculatedMontoItf = totalConIgtf.toFixed(2);
-      calculatedIncludeMessage = "16% del IVA + 3% del IGTF";
-    } else if (paymentMethod === "creditCard") {
-      // 3d. Cálculo para Tarjeta de Crédito (si se implementa).
-      calculatedTotal = Number(nMonto).toFixed(2);
-      calculatedMoney = "USD";
-    }
-
-    // 4. Actualizamos todos los estados al final.
-    setTotalRef(calculatedTotal);
-    setMoney(calculatedMoney);
-    setMontoItf(calculatedMontoItf);
-    setIncludeMessage(calculatedIncludeMessage);
-  };
-
-  useEffect(() => {
-    // Se recalcula el total cada vez que cambia el método de pago, el monto o la fecha seleccionada.
-    calcTotal(); 
-  }, [paymentMethod, monto, selectedDate]);
-
-  // Efecto para cargar datos de Wispro si es first-time y no hay datos en sessionStorage
-  useEffect(() => {
-    const loadWisproData = async () => {
-      // Solo se ejecuta si es first-time y tenemos una cédula en la URL
-      if (paymentData.firstime === 'true' && paymentData.documento) {
-        const storedInvoices = sessionStorage.getItem('allFirstTimeInvoices');
-        if (storedInvoices) {
-          // Si ya tenemos datos, los usamos y salimos
-          const currentInvoice = JSON.parse(sessionStorage.getItem('currentInvoiceData'));
-          setPaymentData({ 
-            ...paymentData, 
-            documento: currentInvoice?.client_national_identification_number, // <-- CORRECCIÓN: Extraer la cédula
-            fullInvoiceData: currentInvoice });
-          // console.log("PaymentForm (first-time): Usando datos de sessionStorage.", { allInvoices: JSON.parse(storedInvoices), currentInvoice: JSON.parse(sessionStorage.getItem('currentInvoiceData')) });
+        // Aunque el status sea 200, el 'code' interno puede indicar un error.
+        if (code !== "00") {
+          // Construimos el mensaje incluyendo el código si está disponible.
+          let specificErrorMessage =
+            "El banco rechazó la operación. Verifique sus datos.";
+          if (code && message) {
+            specificErrorMessage = `Error ${code}: ${message}`;
+          } else if (code) {
+            specificErrorMessage = `Error ${code}: Operación rechazada.`;
+          } else if (message) {
+            // Si solo hay mensaje (sin código de error), lo mostramos.
+            specificErrorMessage = message;
+          }
+          setRequestErrorMessege(specificErrorMessage);
+          changeStep(2);
           return;
         }
 
-        // Si no, buscamos en Wispro
-        setIsDataLoading(true);
-        try {
-          const tokenKey = Object.keys(TOKEN)[0];
-          const tokenValue = TOKEN[tokenKey];
-          const headers = { [tokenKey]: tokenValue };
-          const response = await axios.get(`${wispro}/${paymentData.documento}`, { headers });
-
-          if (response.data?.isSuccess && response.data?.data?.data?.length > 0) {
-            const wisproInvoices = response.data.data.data;
-            const representativeInvoice = wisproInvoices[0];
-
-            // Guardamos los datos en sessionStorage para que otros componentes los usen
-            sessionStorage.setItem('allFirstTimeInvoices', JSON.stringify(wisproInvoices));
-            sessionStorage.setItem('currentInvoiceData', JSON.stringify(representativeInvoice));
-
-            // Actualizamos el estado con los datos completos
-            setPaymentData({ 
-              ...paymentData, 
-              documento: representativeInvoice?.client_national_identification_number, // <-- CORRECCIÓN: Extraer la cédula
-              fullInvoiceData: representativeInvoice 
-            });
-          } else {
-            setPaymentData(paymentData); // Continuar con los datos de la URL como fallback
-          }
-        } catch (error) {
-          console.error("Error al buscar datos en Wispro:", error);
-          setPaymentData(paymentData); // En caso de error, usar datos de la URL
-        } finally {
-          setIsDataLoading(false);
+        // Si el código es '00' pero no hay datos, es un error inesperado.
+        if (!res.data) {
+          setRequestErrorMessege(
+            "Respuesta inesperada del servidor. Faltan datos.",
+          );
+          changeStep(2);
+          return;
         }
-      } else {
-        // If it's not first-time, we might not need to do anything here,
-        // as paymentData is already set from the URL.
-      }
-    };
+        setPaymentReferecce(reference);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        changeStep(3);
+      } catch (error) {
+        let specificErrorMessage =
+          "Ocurrió un error desconocido al procesar el pago. Por favor, intente de nuevo.";
 
-    // El objeto 'data' ya no existe, usamos paymentData que se popula desde la URL
-    if (Object.keys(paymentData).length > 0) {
-      loadWisproData();
-    }
-  }, [paymentData]); // Se ejecuta cuando los datos de la URL cambian
-  
-  // La lógica para reconstruir la URL y redirigir ahora se maneja en DataForm.jsx
-
-  // Efecto para cargar datos de facturas si se accede directamente a la URL de pago
-  useEffect(() => {
-    const loadInvoiceDataIfNeeded = async () => {
-      // Solo se ejecuta si estamos en la vista de pago y no en un flujo de 'first-time'
-      if (cliente && monto && date && firstime !== 'true') {
-        const storedInvoices = sessionStorage.getItem('invoices');
-        const storedUserData = sessionStorage.getItem('userData');
-
-        // console.log("PaymentForm (URL directa): Verificando datos en sessionStorage.", { storedInvoices, storedUserData });
-        // Si no hay datos en sessionStorage, los buscamos
-        if (!storedInvoices || !storedUserData) {
-          // --- INICIO DE LA CORRECCIÓN ---
-          // Lógica de fallback para encontrar al cliente.
-          let searchType = null;
-          let searchValue = null;
-
-          // Use paymentData which is already in scope from the component's state
-          if (paymentData.sub || paymentData.suscriptor) {
-            searchType = 'clid';
-            searchValue = paymentData.sub || paymentData.suscriptor;
-          } else if (paymentData.email) {
-            searchType = 'email';
-            searchValue = paymentData.email;
-          } else if (paymentData.documento) {
-            searchType = 'document';
-            searchValue = paymentData.documento;
+        if (
+          axios.isAxiosError(error) &&
+          error.response &&
+          error.response.data
+        ) {
+          const { code, message } = error.response.data;
+          if (code && message) {
+            specificErrorMessage = `Error ${code}: ${message}`;
+          } else if (code) {
+            // Si solo hay código, pero no mensaje, podemos usar un mensaje genérico con el código.
+            // Esto es un fallback, ya que el backend suele enviar un mensaje con el código.
+            specificErrorMessage = `Error ${code}: El banco rechazó la operación.`;
+          } else if (error.response.data.message) {
+            specificErrorMessage = error.response.data.message;
+          } else if (message) {
+            specificErrorMessage = message;
           }
-
-          if (!searchValue) {
-            console.warn("No se puede cargar datos de facturas: falta un identificador (client_id, sub, suscriptor, email o cedula) en la URL.");
-            return;
-          }
-          // --- FIN DE LA CORRECCIÓN ---
-
-          setIsDataLoading(true);
-          try {
-            const tokenKey = Object.keys(TOKEN)[0];
-            const tokenValue = TOKEN[tokenKey];
-            const response = await axios.post(
-              `${apiWP}/zoho/contact`,
-              { type: searchType, value: searchValue }, // Usamos el tipo y valor encontrados
-              { headers: { [tokenKey]: tokenValue } }
-            );
-
-            if (response.data.exists) {
-              // Guardamos los datos en sessionStorage para que los componentes de pago los usen
-              sessionStorage.setItem('invoices', JSON.stringify(response.data.invoices));
-              sessionStorage.setItem('userData', JSON.stringify(response.data.userData));
-              // console.log("PaymentForm (URL directa): Datos de facturas cargados desde Zoho y guardados en sessionStorage.");
-            }
-          } catch (err) {
-            console.error("Error al cargar datos de facturas directamente:", err);
-          } finally {
-            setIsDataLoading(false);
-          }
+        } else if (error.message) {
+          specificErrorMessage = error.message;
         }
+        setRequestErrorMessege(specificErrorMessage); // Usamos el mensaje de error extraído.
+        changeStep(2);
       }
-    };
-    // Este useEffect solo debe ejecutarse si paymentData ya está completo para el pago, no para la reconstrucción.
-    loadInvoiceDataIfNeeded();
-  }, [cliente, monto, date, firstime, paymentData]); // Dependencias clave para este efecto
-
-  // EFECTO PRINCIPAL PARA LEER LA URL Y ACTUALIZAR EL ESTADO
-  // Este efecto reemplaza al `useMemo` problemático.
-  useEffect(() => {
-    const queryParams = new URLSearchParams(window.location.search);
-    const params = Object.fromEntries(queryParams.entries());
-    setPaymentData(params);
-
-    // --- Lógica para detectar parámetros de búsqueda inicial (email, cedula, clid) ---
-    // Solo procesar si no se ha establecido ya para evitar bucles o re-procesamientos innecesarios
-    if (!initialSearchParams) {
-      if (params.email) {
-        setInitialSearchParams({ type: 'email', value: params.email });
-      } else if (params.documento) {
-        setInitialSearchParams({ type: 'document', value: params.documento });
-      } else if (params.clid) {
-        setInitialSearchParams({ type: 'clid', value: params.clid });
-      }
-      // Si tenemos un identificador pero faltan detalles de pago completos, y no es un flujo de primera vez,
-      // debemos activar DataForm para que maneje la búsqueda y la posible redirección.
-      const hasIdentifier = params.clid || params.sub || params.suscriptor || params.client_id || params.id_de_usuario || params.email || params.documento;
-      const isDataMissing = !params.cliente || !params.monto || !params.date || !params.id_de_usuario || !params.sub || !params.suscriptor;
-      if (hasIdentifier && isDataMissing && params.firstime !== 'true' && !initialSearchParams) { // Solo establecer si no está ya establecido
-        setInitialSearchParams({ type: 'auto', value: 'true', ...params }); // Usar 'auto' para indicar búsqueda automática
-      }
+      setErrosState({});
     }
-  }, [renderControl]); // Se re-ejecuta cuando `renderControl` cambia.
-
-
-  useEffect(() => {
-    const handleCustomEvent = (event) => {
-      setRenderControl((prev) => prev + 1);
-    };
-
-    window.addEventListener("actulizar-url", handleCustomEvent);
-
-    // Limpia el listener al desmontar el componente
-    return () => {
-      window.removeEventListener("actulizar-url", handleCustomEvent);
-    };
-  }, []);
-
-  const handleOptionClick = (isFirstTime) => {
-    const url = new URL(window.location.href);
-    url.searchParams.set('firstime', isFirstTime);
-    // Limpiamos otros parámetros para asegurar un estado limpio
-    url.searchParams.delete('cliente');
-    url.searchParams.delete('monto');
-    url.searchParams.delete('date');
-    window.location.href = url.toString();
   };
 
-  // --- INICIO DE LA CORRECCIÓN: Evitar parpadeo en URL directa ---
-  // Si la URL tiene parámetros de búsqueda pero no los datos completos de pago,
-  // mostramos un loader para evitar que se vea la selección de `firstime` o `DataForm`.
-  const hasSearchParams = initialSearchParams || (paymentData.clid || paymentData.documento || paymentData.email);
-  const hasFullPaymentData = paymentData.cliente && paymentData.monto && paymentData.date;
-
-  if (hasSearchParams && !hasFullPaymentData) {
-    // Renderiza DataForm directamente, que a su vez mostrará su propio LoadingScreen o el de redirección.
-    return <DataForm initialSearchParams={initialSearchParams || { type: 'auto', ...paymentData }} setInitialSearchParams={setInitialSearchParams} setRenderControl={setRenderControl} />;
-  }
-
-  // Renderizado principal
-  if (cliente && monto && date) {
-    // Si está cargando los datos de la factura, muestra un loader
-    if (isDataLoading) {
-      return (
-        <LoadingScreen message="Cargando detalles de facturación..." theme="light" />
-      );
-    }
-
-    return (
-      <VersionMismatchDetector>
-        <div id="sl-payment-form-wrapper" className="p-4 w-full">
-          {paymentMethod ? (
-            <div className="w-full rounded-[16px] flex justify-center overflow-hidden ">
-              <div className="w-full h-full flex bg-gradient-to-b flex-col relative min-h-[800px]  max-w-[600px] rounded-[16px] overflow-hidden items-start md:items-stretch">
-                <div className="w-full h-full bottom-[0px] md:relative !bg-[#B21259] p-[16px] rounded-[16px] flex flex-col">
-                  <div className="sl-invoice-box">
-                    <div className="flex justify-between items-center mb-[24px]">
-                      <h4 className="text-center flex-grow">Detalles del Aviso de cobro</h4>
-                    </div>
-                    <div className="w-full flex justify-between gap-4">
-                      <div className="sl-invocie-item">
-                        <p className="flex gap-2">
-                          <span className="sl-invoice-icon"><Client /></span>
-                          <span>Cliente:</span>
-                        </p>
-                        <p>
-                          <h4>{cliente}</h4>
-                          {suscriptor && (
-                            <span>{'ID Suscriptor'}: {suscriptor}</span>
-                          )}
-                        </p>
-                      </div>
-                      {ac && (
-                        <div className="sl-invocie-item">
-                          <p className="flex gap-2">
-                            <span className="sl-invoice-icon">
-                              <Factura />
-                            </span>
-                            <span>Aviso de cobro:</span>
-                          </p>
-                          <h4>{ac}</h4>
-                        </div>
-                      )}
-                    </div>
-                    <div className="sl-invocie-item">
-                      <div className="flex justify-between items-center w-full">
-                        <p>Monto a Pagar:</p>
-                        <button onClick={() => setIsDetailsModalOpen(true)} className="btn text-sl-pink-500 btn-xs p-0 no-underline h-auto min-h-0 !w-auto border-sl-pink-50">Ver Detalles</button>
-                      </div>
-                      <div>
-                        <h3 className="price">
-                          {totalRef} {money}
-                        </h3>
-                        {includeMessage && <p className="font-semibold">Incluye: {includeMessage}</p>}
-                        {tasaActual &&
-                          paymentMethod !== "zelle" &&
-                          paymentMethod !== "paypal" && 
-                            <p>Tasa de BCV {tasaActual}</p>
-                          }
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="w-full  bg-sl-gray-75">
-                  <button
-                    className="p-4 regresar-btn !flex items-center gap-2 !border-none"
-                    onClick={() => updateQueryParams("")}
-                  >
-                    <div className="mini w-[16px] h-[16px]">
-                      <ArrorLeft />
-                    </div>
-                    <span>Cambiar Método de Pago</span>
-                  </button>
-
-
-                  {paymentMethod === "tranferenciadirecta" && (
-                    <BanckTranferForms
-                      hData={paymentData}
-                      tasaActual={tasaActual}
-                      total={totalRef}
-                      disableSubmit={isMontoInvalido}
-                      methodConfig={methodConfig}
-                      setSelectedDate={setSelectedDate}
-                    />
-                  )}
-                  {paymentMethod === "c2p" && (
-                    <MobilePaymentForm
-                      hData={paymentData}
-                      tasaActual={tasaActual}
-                      total={totalRef}
-                      disableSubmit={isMontoInvalido}
-                      methodConfig={methodConfig}
-
-                    />
-                  )}
-                  {paymentMethod === "pago-movil" && (
-                    <MobilePaymentP2P
-                      hData={paymentData}
-                      tasaActual={tasaActual}
-                      total={totalRef}
-                      disableSubmit={isMontoInvalido}
-                      setSelectedDate={setSelectedDate}
-                      methodConfig={methodConfig}
-                    />
-                  )}
-                  {paymentMethod === "r4" && (
-                    <R4PaymentForm
-                      hData={paymentData}
-                      tasaActual={tasaActual}
-                      total={totalRef}
-                      disableSubmit={isMontoInvalido}
-                      methodConfig={methodConfig}
-                    />
-                  )}
-                  {paymentMethod === "zelle" && (
-                    <ZellePayment
-                      hData={paymentData}
-                      tasaActual={tasaActual}
-                      total={totalRef}
-                      disableSubmit={isMontoInvalido}
-                      itf={montoItf}
-                      methodConfig={methodConfig}
-                      setSelectedDate={setSelectedDate}
-                    />
-                  )}
-                  {paymentMethod === "paypal" && (
-                    <PaypalForm
-                      hData={paymentData}
-                      tasaActual={tasaActual}
-                      total={totalRef}
-                      montoItf={montoItf}
-                      disableSubmit={isMontoInvalido}
-                      methodConfig={methodConfig}
-                      setSelectedDate={setSelectedDate}
-                    />
-                  )}
-
-                </div>
-                {/* <div className="w-full md:w-1/2"> formulario xd</div> */}
-
-
-              </div>
-            </div>
-          ) : (
-            <>
-              <PaymentMethodTab
-                currentTab={paymentMethod}
-                updateTab={updateQueryParams}
-                allowedMethods={allowedMethods}
-                cliente={cliente}
-                documento={documento}
-              />
-            </>
-          )}
-          <InvoiceDetailsModal 
-            isOpen={isDetailsModalOpen}
-            onClose={() => setIsDetailsModalOpen(false)}
-            data={paymentData}
-          />
-        </div>
-      </VersionMismatchDetector>
-    );
-  }
-
-  // Si se detectaron parámetros de búsqueda inicial, renderizar DataForm directamente con ellos
-  if (initialSearchParams) {
-    return (
-      <VersionMismatchDetector>
-        <div className="w-full min-h-screen flex items-center justify-center p-4">
-          <DataForm initialSearchParams={initialSearchParams} setInitialSearchParams={setInitialSearchParams} setRenderControl={setRenderControl} />
-        </div>
-      </VersionMismatchDetector>
-    );
-  }
-
-  if (firstime === 'true') {
-    // --- VISTA PARA NUEVOS CLIENTES (búsqueda por cédula) ---
-    return (
-      <VersionMismatchDetector>
-        <div className="w-full min-h-screen flex items-center justify-center p-4">
-          <CedulaLookupForm />
-        </div>
-      </VersionMismatchDetector>
-    );
-  }
-
-  if (firstime === 'false') {
-    // --- VISTA PARA CLIENTES EXISTENTES (búsqueda por email/clid) ---
-    return (
-      <VersionMismatchDetector>
-        <DataForm setInitialSearchParams={setInitialSearchParams} setRenderControl={setRenderControl} />
-      </VersionMismatchDetector>
-    );
-  }
-
-  // --- VISTA INICIAL DE SELECCIÓN ---
   return (
-    <VersionMismatchDetector>
-      <>
-        <div
-          id="sl-selection-wrapper"
-          className="w-full max-w-md mx-auto h-full flex flex-col items-center justify-center p-8 min-h-[300px] rounded-box bg-sl-blue-950"
-        >
-          {/* Logo7Link y Centro de Pagos se manejan dentro de LookupFormContainer o ClientSummary */}
-          <h1 className="text-2xl font-bold mt-4 !text-white">Centro de Pagos</h1>
-          <p className="mt-2 mb-8 text-white">¿Qué servicio desea cancelar?</p>
-          <div className="flex flex-col gap-4 w-full max-w-sm items-center">
-            <div
-              className="flex flex-1 flex-col items-center justify-center p-6 rounded-lg cursor-pointer bg-transparent hover:bg-sl-blue-700 transition-colors border-2 border-sl-blue-700"
-              onClick={() => handleOptionClick(true)}
-            >
-              <p className="font-semibold text-white text-center">Contrato de Suscripción</p>
-              <p className="font-semibold text-white text-center mb-4">(Nuevos Clientes)</p>
-              <img src={doc} alt="doc" className="!h-[64px]" />
+    <>
+      <PaymentReminderModal isOpen={isReminderOpen} onClose={() => setIsReminderOpen(false)} />
+      {step === 0 && (
+        <form className="w-full mt-4" onSubmit={checkout}>
+          <p className="mb-[16px]">Método de Pago:</p>
+          <div className="w-full flex justify-start items-center gap-[8px] form-title mb-[32px]">
+            <div className="relative main-svg">
+              <p className="p-[4px] bg-sl-pink-700 absolute top-[-10px] right-[-15px] text-[10px] rounded-lg">
+                P2C
+              </p>
+              <MobileTraferFlaticoBlack className="w-full h-full" />
             </div>
-            <div className="divider divider-default text-white">o</div>
-            <div
-              className="flex flex-1 flex-col items-center justify-center p-6 rounded-lg cursor-pointer bg-transparent hover:bg-sl-blue-700 transition-colors border-2 border-sl-blue-700"
-              onClick={() => handleOptionClick(false)}
-            >
-              <p className="font-semibold text-white text-center mb-4">Pago del servicio mensual</p>
-              <img src={doc2} alt="doc2" className="!h-[64px]" />
-            </div>
+            <h3 className="pl-5">Pago Móvil P2C {isBdv ? "BDV" : ""}</h3>
           </div>
-        </div>
-        <a href="https://7linknetwork.com/" className="!text-sl-pink-700 !no-underline hover:!text-sl-pink-700 block w-full text-center mt-4">Volver a la página de Inicio</a>
-      </>
-    </VersionMismatchDetector>
+          <h5>Paso 1: Coloque sus Datos Personales de Pago Móvil.</h5>
+          <div className="flex flex-col">
+            <Input
+              isNumber={true}
+              labelText={"Número de Teléfono*"}
+              name={"TelefonoDestino"}
+              description={null}
+              value={formData.TelefonoDestino}
+              onChange={(e) =>
+                setFormData({ ...formData, TelefonoDestino: e.target.value })
+              }
+              error={errosState.TelefonoDestino}
+            />
+          </div>
+          <div className="input-box mt-4">
+            <p className="font-semibold">Cedula*</p>
+            <div className="flex gap-2 w-full">
+              <select
+                id="tipoDocumento"
+                className="p-2 !w-[140px] cedula"
+                name="tipoDocumento"
+                value={formData.tipoDocumento}
+                onChange={(e) =>
+                  setFormData({ ...formData, tipoDocumento: e.target.value })
+                }
+              >
+                <option value="">Seleccione</option>
+                <option value="V">V</option>
+                <option value="E">E</option>
+              </select>
+              <input
+                type="number"
+                className="w-full"
+                id="Cedula"
+                name="Cedula"
+                onWheel={(e) => e.target.blur()}
+                value={formData.Cedula}
+                onChange={(e) =>
+                  setFormData({ ...formData, Cedula: e.target.value })
+                }
+              />
+            </div>
+            {errosState.tipoDocumento && (
+              <p className="!text-red-600 text-sm mt-1">
+                {errosState.tipoDocumento}{" "}
+              </p>
+            )}
+            {errosState.Cedula && (
+              <p className="!text-red-600 text-sm mt-1">{errosState.Cedula}</p>
+            )}
+          </div>
+
+          <div className="input-box mt-4">
+            <span className="font-semibold">Banco*</span>
+            <select
+              name="Banco"
+              id="Banco"
+              className="w-full p-2"
+              value={formData.Banco}
+              onChange={(e) =>
+                setFormData({ ...formData, Banco: e.target.value })
+              }
+            >
+              <option value="">Seleccione su Banco</option>
+              {bancos_venezuela.map((banco) => {
+                return <option value={banco.codigo}>({banco.codigo}) {banco.nombre}</option>;
+              })}
+            </select>
+            {errosState.Banco && (
+              <p className="!text-red-600 text-sm mt-1">{errosState.Banco}</p>
+            )}
+          </div>
+
+          <div className="my-4">
+            <DateInput
+              labelText="Fecha de Depósito*"
+              value={startDate}
+              onChange={setStartDate}
+              error={errosState.date}
+            />
+          </div>
+          {/* <div className="w-full mt-4">
+        <Input
+          isNumber={true}
+          labelText={"Monto*"}
+          name={"Monto"}
+          description={null}
+          value={formData.Monto}
+          onChange={(e) => setFormData({ ...formData, Monto: e.target.value })}
+        />
+      </div> */}
+
+          {/* <label className="w-full mt-4 flex justify-between items-center hover:cursor-pointer">
+            <p>Soy el Titular de la Cuenta a Pagar</p>
+            <input type="checkbox" className="w-4 h-4 accent-razzle-dazzle-rose-600" checked={formData.isOwnerAcc}
+              onChange={(e) => setFormData({ ...formData, isOwnerAcc: !formData.isOwnerAcc })} />
+          </label> */}
+
+          {!formData.isOwnerAcc && (
+            <Input
+              labelText={"Titular de la Cuenta"}
+              description={
+                "Coloque Este Dato si no es el Titular de la Cuenta a Debitar"
+              }
+              name={"ownerAcc"}
+              value={formData.ownerAcc}
+              onChange={(e) =>
+                setFormData({ ...formData, ownerAcc: e.target.value })
+              }
+              error={errosState.ownerAcc}
+            />
+          )}
+
+          <h5 className="my-[24px]">
+            Paso 2: Solicite su clave de aprobación de 8 dígitos o token de
+            acceso.
+          </h5>
+          <p>Su banco de confianza le entregará su clave token de acceso.</p>
+          <div className="w-full mt-4">
+            <Input
+              isNumber={true}
+              name={"Otp"}
+              labelText={
+                <div className="flex gap-2 items-center">
+                  <img className="w-4 h-4" src={mobile} alt="" />
+                  <span className="font-semibold">OTP*</span>
+                </div>
+              }
+              className="!bg-slate-400 text-center tracking-[12px] w-full"
+              value={formData.Otp}
+              onChange={(e) => {
+                if (e.target.value.length <= 8) {
+                  setFormData({ ...formData, Otp: e.target.value });
+                } else {
+                  setFormData({ ...formData });
+                }
+              }}
+            />
+            <p className="text-sm text-gray-500 mt-1">
+              Introduzca su clave de 8 dígitos
+            </p>
+            {errosState.Otp && (
+              <p className="text-red-500 text-sm mt-1">{errosState.Otp}</p>
+            )}
+          </div>
+
+          <div className="my-[32px] !border-none">
+            <button
+              type="submit"
+              className="my-2 base !border-none"
+              disabled={disableSubmit}
+            >
+              Pagar Servicio
+            </button>
+          </div>
+        </form>
+      )}
+
+      <TrasactionProgress
+        step={step}
+        chageStep={changeStep}
+        failMessage={
+          <div className="w-full flex flex-col items-center text-white">
+            <div className="w-full relative bg-sl-gray-900 border border-sl-gray-700 text-white px-4 py-3 rounded-lg mt-4 text-center">
+              <strong className="font-bold block text-amber-500">
+                Mensaje del Sistema
+              </strong>
+              <span className="block sm:inline mt-1 text-yellow-600 font-semibold">
+                {requestErrorMessege}
+              </span>
+              <p className="text-sm mt-2 text-gray-300">
+              Por favor, verifique los datos e intente de nuevo. Si el problema
+              persiste, contacte a soporte.
+              </p>
+            </div>
+            <a href="https://wa.me/584126389082" className="flex gap-2 items-center py-4 " target="_blank" rel="noopener noreferrer">
+                <span className="w-5 h-5">
+                  <WhatsappIcon />
+                </span>
+                <span className="font-medium text-sm !text-slate-500">Contactar a Soporte</span>
+            </a>
+          </div>
+        }
+        meesageProcess={
+          <p className="max-w-[300px]  text-center">
+            Se está procesando el pago
+          </p>
+        }
+        messageSucces={
+          <SuccessComponent
+            message="Los datos fueron recibidos correctamente."
+            transactionInfo={
+              <>
+                <h4 className="text-center border-b-sl-gray-800 border-b !text-sl-blue-600">
+                  Información de la Transacción
+                </h4>
+                <div className="sl-invocie-item !p-0">
+                  <p>Aviso de cobro:</p>
+                  <p>
+                    {hData.firstime === "true"
+                      ? (() => {
+                          try {
+                            const allFirstTimeInvoices = JSON.parse(
+                              sessionStorage.getItem("allFirstTimeInvoices") ||
+                                "[]",
+                            );
+                            return (
+                              allFirstTimeInvoices
+                                .map((inv) => inv.invoice_number)
+                                .join(", ") ||
+                              hData.fullInvoiceData?.invoice_number
+                            );
+                          } catch (e) {
+                            return hData.fullInvoiceData?.invoice_number || "";
+                          }
+                        })()
+                      : (hData.ac ? "ac" : "customer_balance") ===
+                        "customer_balance"
+                      ? (() => {
+                          try {
+                            return JSON.parse(sessionStorage.getItem("invoices") || "[]")
+                              .filter((inv) => inv.balance > 0)
+                              .map((inv) => inv.invoice_number)
+                              .join(", ") || "Varios";
+                          } catch (e) { return "Varios"; }
+                        })()
+                      : hData.ac}
+                  </p>
+                </div>
+                <div className="sl-invocie-item !p-0">
+                  <p>Forma de Pago:</p>
+                  <p>Pago Móvil P2C</p>
+                </div>
+                <div className="sl-invocie-item !p-0">
+                  <p>Referencia:</p>
+                  <p>{paymentReferecce}</p>
+                </div>
+                <div className="sl-invocie-item !border-b-sl-gray-800 !p-0">
+                  <p>Fecha de depósito:</p>
+                  <p>{startDate ? startDate.toLocaleDateString() : "N/A"}</p>
+                </div>
+                <div className="sl-invocie-item !p-0">
+                  <p>Monto pagado</p>
+                  <p>{total}Bs.</p>
+                </div>
+              </>
+            }
+          />
+        }
+      />
+    </>
   );
 }

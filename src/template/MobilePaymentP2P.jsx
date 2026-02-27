@@ -7,7 +7,8 @@ import FIleInput from "../componet/FIleInput";
 import Copy2 from "../icons/Copy2";
 import TrasactionModal from "../componet/TrasactionModal";
 import axios from "axios";
-import { apiPaymentHeader, apiurl } from "../util/proyect-config";
+import { apiPaymentHeader, DUMMY_MODE } from "../util/proyect-config";
+import { API_ENDPOINTS } from "../util/api-endpoints";
 import R4IconWhite from "../icons/R4IconWhite";
 import MobileTransferFlaticon from "../icons/MobileTransferFlaticon";
 import MobileTraferFlaticoBlack from "../icons/MobileTraferFlaticoBlack";
@@ -16,8 +17,9 @@ import Copy from "../icons/Copy";
 import DateInput from "../componet/DateInput";
 import SuccessComponent from "../componet/SuccessComponent";
 import { format } from "date-fns";
-import { getCommonPaymentPayload } from "../utils/payment-payload-helper";
+import { getJsonPaymentPayload } from "../utils/payment-payload-helper";
 import PaymentReminderModal from "../componet/PaymentReminderModal";
+import WhatsappIcon from "../icons/WhatsappIcon";
 
 const MobilePaymentP2P = ({
   hData,
@@ -34,6 +36,7 @@ const MobilePaymentP2P = ({
 
   // console.log(`[MobilePaymentP2P] Configured for: ${isBdv ? 'BDV' : 'R4'}`);
 
+  const [isReminderOpen, setIsReminderOpen] = useState(true);
   const [errosState, setErrosState] = useState({});
   const [formData, setFormData] = useState({
     Banco: "",
@@ -103,7 +106,7 @@ const MobilePaymentP2P = ({
 
     // validamos los campos requeridos
     let errors = {};
-    const numeroTelefonoRegEx = /^(0412|0414|0416|0424|0426)\d{7}$/;
+    const numeroTelefonoRegEx = /^(0412|0414|0416|0424|0426|0422)\d{7}$/;
 
     if (!formData.Banco) {
       errors.Banco = "Seleccione un banco";
@@ -141,6 +144,9 @@ const MobilePaymentP2P = ({
 
     setErrosState({});
 
+    const amountToUse =
+      amountOverride !== undefined ? amountOverride : parseFloat(total);
+
     const {
       moneda,
       cliente,
@@ -158,30 +164,26 @@ const MobilePaymentP2P = ({
 
     const subscriberId = sub || suscriptor || "";
 
-    const amountToUse =
-      amountOverride !== undefined ? amountOverride : parseFloat(total);
-
-    const commonPayload = getCommonPaymentPayload(hData, {
+    const commonPayload = getJsonPaymentPayload(hData, {
       total,
       amountPaid: amountToUse,
       tasaActual,
       paymentMethodName: `Pago Movil p2p ${isBdv ? "BDV" : "R4"}`,
-      paymentMethodCode: "pago-movil",
       banco: bankName,
       moneda: "Bolivares",
       ownerName: hData.cliente,
       subscriberId,
       date: startDate,
+      reference: formData.Referencia,
     });
 
     const conceptoParaDataToSend = commonPayload.concepto;
 
     // console.log("datos a enviar XC");
     // console.log(dataToSend);
-    const endpoint = isBdv
-      ? "/bdv/get-movement-v2"
-      : "/confirmation-services/p2p";
-    const url = apiurl + endpoint;
+    const url = isBdv
+      ? API_ENDPOINTS.MOBILE_PAYMENT.P2P_BDV
+      : API_ENDPOINTS.MOBILE_PAYMENT.P2P_CONFIRMATION;
 
     let finalReference = formData.Referencia;
     if (finalReference.length > 6) {
@@ -220,6 +222,32 @@ const MobilePaymentP2P = ({
     // }
 
     changeStep(1);
+
+    // --- DUMMY MODE ---
+    // if (DUMMY_MODE) {
+    //   console.group("🔌 [DUMMY MODE] MobilePaymentP2P: Reporte de Pago");
+    //   console.log("📥 Datos del Formulario:", formData);
+    //   console.log("📤 Datos a Enviar (Payload simulado):", {
+    //     ...formData,
+    //     Referencia: finalReference,
+    //     fecha: fechaParaEnviar,
+    //     montoPagado: total,
+    //   });
+
+    //   setTimeout(() => {
+    //     console.log("✅ Respuesta Simulada:", {
+    //       isSuccess: true,
+    //       montoPagado: total,
+    //       message: "Pago verificado",
+    //     });
+    //     console.groupEnd();
+    //     setActualBankReceivedAmount(total);
+    //     changeStep(3);
+    //     window.scrollTo({ top: 0, behavior: "smooth" });
+    //   }, 2000);
+    //   return;
+    // }
+    // ------------------
 
     try {
       const res = await axios.post(url, dataToSend, {
@@ -274,6 +302,7 @@ const MobilePaymentP2P = ({
             return;
           }
 
+          // Si no es un caso especial, se trata como un error normal.
           setRequestErrorMessege(errorMsg);
         }
       } else {
@@ -355,12 +384,16 @@ const MobilePaymentP2P = ({
 
     // Si 'ac' está vacío o no está definido, usamos 'acs'
     if (!conceptoBase) {
-      const pendingInvoices = JSON.parse(
-        sessionStorage.getItem("invoices") || "[]",
-      )
-        .filter((inv) => inv.balance > 0)
-        .map((inv) => inv.invoice_number);
-      conceptoBase = pendingInvoices.join("_");
+      try {
+        const pendingInvoices = JSON.parse(
+          sessionStorage.getItem("invoices") || "[]",
+        )
+          .filter((inv) => inv.balance > 0)
+          .map((inv) => inv.invoice_number);
+        conceptoBase = pendingInvoices.join("_");
+      } catch (e) {
+        conceptoBase = "";
+      }
     }
 
     const conceptoFiltrado = filtrarTexto(conceptoBase);
@@ -410,7 +443,7 @@ const MobilePaymentP2P = ({
                 <img
                   src={BancoDeVenezuelaLogo}
                   alt="Banco de Venezuela"
-                  className="!h-[40px] w-auto"
+                  className="!h-[30px] md:!h-[40px] w-auto max-w-[150px] object-contain"
                 />
               ) : (
                 <div className="main-svg">
@@ -496,7 +529,11 @@ const MobilePaymentP2P = ({
             >
               <option value="">Seleccione su Banco</option>
               {bancos_venezuela.map((banco) => {
-                return <option value={banco.codigo}>{banco.nombre}</option>;
+                return (
+                  <option value={banco.codigo}>
+                    ({banco.codigo}) {banco.nombre}
+                  </option>
+                );
               })}
             </select>
             {errosState.Banco && (
@@ -576,7 +613,7 @@ const MobilePaymentP2P = ({
             </div>
           )}
 
-          <div className="flex flex-col sm:flex-row justify-center gap-2 md:justify-between items-end mt-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-2 md:justify-between items-end">
             <div className=" w-full sm:w-1/2">
               {" "}
               <DateInput
@@ -624,7 +661,7 @@ const MobilePaymentP2P = ({
 
           <button
             type="submit"
-            className="my-[32px] base !border-none"
+            className="my-2 base !border-none"
             disabled={disableSubmit}
           >
             Reportar Pago
@@ -635,66 +672,61 @@ const MobilePaymentP2P = ({
         step={step}
         chageStep={changeStep}
         failMessage={
-          <div className="w-full flex flex-col items-center">
-            <div className="w-full relative bg-sl-gray-900 flex flex-col items-center py-[24px] p-[16px] mb-[16px] rounded-[8px]">
-              <div className="bg-amber-700 absolute top-[-15px] left-[20px] p-[4px] rounded-[8px]">
-                <p className="text-center text-white">Mensaje de error</p>
-              </div>
-              <p className="!text-yellow-600">{requestErrorMessege}</p>
-
-              {requestErrorMessege ===
-                "No se encontró la referencia o el pago." && (
-                <>
-                  ¡Verifique cuidadosamente el número de referencia!<br></br>Si
-                  persiste el inconveniente contacte via whatsapp a nuestro
-                  canal unico <span className="font-bold">0412-638-90-82.</span>
-                </>
-              )}
-              {requestErrorMessege === "Los datos no coinciden." && (
-                <>
-                  <div className="w-full flex flex-col items-center text-white">
-                    <p className="mb-[16px]">
-                      Los siguientes datos no coinciden
+          <div className="w-full flex flex-col items-center text-white">
+            <div className="w-full relative bg-sl-gray-900 border border-sl-gray-700 text-white px-4 py-3 rounded-lg mt-4 text-center">
+              <strong className="font-bold block text-amber-500">
+                Mensaje del Sistema
+              </strong>
+              <span className="block sm:inline mt-1 text-yellow-600 font-semibold">
+                {requestErrorMessege}
+              </span>
+              <div className="text-sm mt-2 text-gray-300 space-y-2">
+                {requestErrorMessege ===
+                  "No se encontró la referencia o el pago." && (
+                  <p>
+                    ¡Verifique cuidadosamente el número de referencia! Si
+                    persiste el inconveniente, contacte a soporte.
+                  </p>
+                )}
+                {requestErrorMessege === "Los datos no coinciden." && (
+                  <div className="text-left max-w-xs mx-auto">
+                    <p className="mb-2 text-center">
+                      Los siguientes datos no coinciden:
                     </p>
-                    {mismatchedDataState.map((data, index) => {
-                      return (
-                        <div
-                          key={index}
-                          className="w-full flex flex-col mb-[8px]"
-                        >
-                          <p className="text-sl-gray-500">{data.key}</p>
-                          <p>{data.value}</p>
-                        </div>
-                      );
-                    })}
-                    <p className="mb-[16px] ">
+                    {mismatchedDataState.map((data, index) => (
+                      <div key={index} className="grid grid-cols-2 gap-1">
+                        <p className="text-amber-400 capitalize text-right">
+                          {data.key}:
+                        </p>
+                        <p className="pl-2">{data.value}</p>
+                      </div>
+                    ))}
+                    <p className="mt-2 text-center">
                       Por favor, verifique los datos y envíe nuevamente.
                     </p>
-                    <p>
-                      Si persiste el inconveniente contacte via whatsapp a
-                      nuestro canal unico{" "}
-                      <span className="font-bold ">0412-638-90-82.</span>
-                    </p>
                   </div>
-                </>
-              )}
-              {requestErrorMessege === "La referencia ya fue usada." && (
-                <>
-                  <div className="w-full flex flex-col items-center text-white">
-                    <p className="mb-[16px]">
-                      Esta referencia ya ha sido utilizada para procesar otro
-                      pago. Por favor, verifique el número de referencia o
-                      contacte a soporte si cree que es un error.
-                    </p>
-                    <p>
-                      Si persiste el inconveniente, contacte vía WhatsApp a
-                      nuestro canal único{" "}
-                      <span className="font-bold">0412-638-90-82.</span>
-                    </p>
-                  </div>
-                </>
-              )}
+                )}
+                {requestErrorMessege === "La referencia ya fue usada." && (
+                  <p>
+                    Esta referencia ya ha sido utilizada. Por favor, verifique
+                    el número o contacte a soporte si cree que es un error.
+                  </p>
+                )}
+              </div>
             </div>
+            <a
+              href="https://wa.me/584126389082"
+              className="flex gap-2 items-center py-4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="w-5 h-5">
+                <WhatsappIcon />
+              </span>
+              <span className="!text-slate-500 font-medium text-sm ">
+                Contactar soporte
+              </span>
+            </a>
           </div>
         }
         meesageProcess={
@@ -708,10 +740,10 @@ const MobilePaymentP2P = ({
               isPartialPayment
                 ? "Los datos fueron recibidos correctamente pero no ha pagado el monto completo"
                 : actualBankReceivedAmount &&
-                    total &&
-                    parseFloat(actualBankReceivedAmount) > parseFloat(total)
-                  ? "Gracias por su pago."
-                  : "El pago se realizó con éxito."
+                  total &&
+                  parseFloat(actualBankReceivedAmount) > parseFloat(total)
+                ? "Gracias por su pago."
+                : "El pago se realizó con éxito."
             }
             isPartialPayment={isPartialPayment}
             transactionInfo={
@@ -724,24 +756,38 @@ const MobilePaymentP2P = ({
                   <p>
                     {hData.firstime === "true"
                       ? (() => {
-                          const allFirstTimeInvoices = JSON.parse(
-                            sessionStorage.getItem("allFirstTimeInvoices") ||
-                              "[]",
-                          );
-                          return (
-                            allFirstTimeInvoices
-                              .map((inv) => inv.invoice_number)
-                              .join(", ") ||
-                            hData.fullInvoiceData?.invoice_number
-                          );
+                          try {
+                            const allFirstTimeInvoices = JSON.parse(
+                              sessionStorage.getItem("allFirstTimeInvoices") ||
+                                "[]",
+                            );
+                            return (
+                              allFirstTimeInvoices
+                                .map((inv) => inv.invoice_number)
+                                .join(", ") ||
+                              hData.fullInvoiceData?.invoice_number
+                            );
+                          } catch (e) {
+                            return hData.fullInvoiceData?.invoice_number || "";
+                          }
                         })()
                       : (hData.ac ? "ac" : "customer_balance") ===
-                          "customer_balance"
-                        ? JSON.parse(sessionStorage.getItem("invoices") || "[]")
-                            .filter((inv) => inv.balance > 0)
-                            .map((inv) => inv.invoice_number)
-                            .join(", ") || "Varios"
-                        : hData.ac}
+                        "customer_balance"
+                      ? (() => {
+                          try {
+                            return (
+                              JSON.parse(
+                                sessionStorage.getItem("invoices") || "[]",
+                              )
+                                .filter((inv) => inv.balance > 0)
+                                .map((inv) => inv.invoice_number)
+                                .join(", ") || "Varios"
+                            );
+                          } catch (e) {
+                            return "Varios";
+                          }
+                        })()
+                      : hData.ac}
                   </p>
                 </div>
                 <div className="sl-invocie-item !p-0">
