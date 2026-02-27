@@ -1,44 +1,45 @@
 import React, { useState } from "react";
+import BancoDeVenezuelaLogo from "../icons/Banco_de_Venezuela_logo.svg";
 import BancoR4Logo from "../icons/r4logo.svg";
 import Copy from "../icons/Copy";
 import Input from "../componet/Input";
 import FIleInput from "../componet/FIleInput";
-import { mediaApiUrl, DUMMY_MODE } from "../util/proyect-config";
+import { mediaApiUrl } from "../util/proyect-config";
 import FlaticonTansfres from "../icons/FlaticonTansfres";
 import FlaticonTransferBlack from "../icons/FlaticonTransferBlack";
-import FlaticonWarnigRed from "../icons/FlaticonWarnigRed";
-import TrasactionProgress from "./TrasanctionProsess";
+import FlaticonWarnigRed from "../icons/FlaticonWarnigRed"; 
+import TrasactionProgress from "./TrasanctionProsess"; 
 import BNCLogo from "../icons/Banco_Nacional_de_Credito.svg";
 import DateInput from "../componet/DateInput";
 import SuccessComponent from "../componet/SuccessComponent";
-import { getMultipartPaymentPayload } from "../utils/payment-payload-helper";
+import { getCommonPaymentPayload } from "../utils/payment-payload-helper";
 import PaymentReminderModal from "../componet/PaymentReminderModal";
-import BancoDeVenezuelaLogo from "../icons/Banco_de_Venezuela_logo.svg";
 
 export default function BanckTranferForms({ hData, tasaActual, total, disableSubmit, methodConfig = {}, setSelectedDate }) {
-  // --- ESTADOS ---
-  const [isReminderOpen, setIsReminderOpen] = useState(true);
+  // Log para verificar las props iniciales
+  // console.log("BanckTranferForms props:", { hData, tasaActual, total, methodConfig });
+
   const [startDate, setStartDate] = useState(new Date());
   const [tranferRef, setTranferRef] = useState("");
+  const [ownerAcc, setOwnerAcc] = useState("");
   const [file, setFile] = useState(null);
   const [montoPagado, setMontoPagado] = useState("");
   const [errorsState, setErrosState] = useState({});
+  const [isOwnerAcc, setIsOwnerAcc] = useState(true);
   const [step, setStep] = useState(0);
   const [failMessage, setFailMessage] = useState(null);
   const [notification, setNotification] = useState({ show: false, message: '' });
+
+  // console.log("Contenido del objeto hData:", hData);
   const [isPartialPayment, setIsPartialPayment] = useState(false);
 
-  // --- FUNCIONES AUXILIARES ---
-
-  // Muestra una notificación temporal en la pantalla.
   const showNotification = (message) => {
     setNotification({ show: true, message });
     setTimeout(() => {
       setNotification({ show: false, message: '' });
-    }, 2000);
+    }, 2000); // La notificación se oculta después de 2 segundos
   };
 
-  // Copia un texto al portapapeles y muestra una notificación.
   const copyToClipboard = async (data, name) => {
     try {
       await navigator.clipboard.writeText(String(data));
@@ -48,12 +49,10 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
     }
   };
 
-  // Cambia el paso actual del proceso de transacción (0: form, 1: loading, 2: error, 3: success).
   const changeStep = (step) => {
     setStep(step);
   };
 
-  // Procesa el número de referencia para tomar los últimos 6 dígitos y eliminar ceros a la izquierda.
   const procesarReferencia = (ref) => {
   if (ref.length > 6) {
     // Tomar los últimos 6 caracteres
@@ -68,17 +67,22 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
   return ref;
   };
 
-  // --- LÓGICA PRINCIPAL ---
-
-  // Valida y envía el reporte de la transferencia.
   const sendTranfer = async () => {
+    // console.log("Enviado");
+    // console.log(startDate);
+    // console.log(tranferRef);
+    // console.log(file);
+
     const erros = {};
 
-    if (!file) erros.file = "Archivo Requerido";
-    if (!tranferRef) erros.ref = "Numero de Referencia Requerido";
-    if (!startDate) erros.date = "Fecha Requerida";
-    if (!montoPagado) erros.montoPagado = "El Monto Pagado Obligatorio";
+    if (!file) erros.file = "El archivo es requerido";
+    if (!tranferRef) erros.ref = "El numero de referencia es requerido";
+    if (!startDate) erros.date = "La fecha es requerida";
+    if (!isOwnerAcc && !ownerAcc)
+      erros.ownerAcc = "El titular de la cuenta es requerido";
+    if (!montoPagado) erros.montoPagado = "El monto pagado es obligatorio";
 
+    // console.log(erros);
     if (Object.keys(erros).length > 0) {
       setErrosState(erros);
       return;
@@ -88,53 +92,52 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
 
     changeStep(1);
 
-    // --- DUMMY MODE ---
-    // if (DUMMY_MODE) {
-    //   console.group("🔌 [DUMMY MODE] BanckTranferForms: Reporte de Transferencia");
-    //   console.log("� Datos del Formulario:", { tranferRef, montoPagado });
-    //   console.log("� Datos a Enviar (Payload simulado):", {
-    //       depositDate: startDate,
-    //       ref: procesarReferencia(tranferRef),
-    //       montoPagado,
-    //       file: file ? file.name : "No file"
-    //   });
+    // 1. Determinar el modo de operación.
+    const mode = hData.firstime === 'true' && hData.fullInvoiceData
+      ? 'first-time'
+      : (hData.ac ? 'ac' : 'customer_balance');
 
-    //   setTimeout(() => {
-    //     console.log("✅ Respuesta Simulada:", { status: "success", message: "Transferencia reportada" });
-    //     console.groupEnd();
-    //     window.scrollTo({ top: 0, behavior: 'smooth' });
-    //     changeStep(3);
-    //   }, 2000);
-    //   return;
-    // }
-    // ------------------
+    // 2. Asignar el valor de paymentMethod condicionalmente.
+    const paymentMethodValue = mode === 'ac' ? 'tranferenciadirecta' : 'Transferencia bancaria';
 
     const fromData = new FormData();
-    fromData.append("file", file);
 
-    const bankMap = {
-      bnc: 'Banco Nacional de Crédito',
-      r4: 'Banco R4',
-      bdv: 'Banco de Venezuela 219040'
-    };
-    const banco = bankMap[methodConfig.bank] || 'Sin cuenta asociada';
+    // Always append these basic fields
+    fromData.append("depositDate", startDate);
+    fromData.append("ref", procesarReferencia(tranferRef));
+    if (file) fromData.append("file", file);
+    fromData.append("titularDelaCuenta", isOwnerAcc ? hData.cliente || '' : ownerAcc || '');
+    fromData.append("montoPagado", montoPagado);
+    let banco;
+    if (methodConfig.bank === 'bnc') {
+      banco = 'Banco Nacional de Crédito';
+    } else if (methodConfig.bank === 'r4') {
+      banco = 'Banco R4';
+    } else if (methodConfig.bank === 'bdv') {
+      banco = 'Banco de Venezuela 219040';
+    } else {
+      banco = 'Sin cuenta asociada';
+    }
 
     const subscriberId = hData.sub || hData.suscriptor || '';
 
-    const commonPayload = getMultipartPaymentPayload(hData, {
+    // Usamos el helper para obtener los datos comunes
+    const commonPayload = getCommonPaymentPayload(hData, {
       total,
-      amountPaid: total,
       tasaActual,
       paymentMethodName: "Transferencia bancaria",
+      paymentMethodCode: "tranferenciadirecta", // Valor fijo para el tipo
       banco,
       moneda: "Bolivares",
-      ownerName: hData.cliente,
+      ownerName: isOwnerAcc ? hData.cliente : ownerAcc,
       subscriberId,
-      date: startDate,
-      reference: procesarReferencia(tranferRef),
-      montoItf: 0, // Transferencias en Bs no suelen llevar IGTF en este contexto
+      date: startDate
     });
 
+    // Actualizamos paymentMethod en el payload común para usar el valor dinámico y evitar duplicados
+    commonPayload.paymentMethod = paymentMethodValue;
+
+    // Agregamos los datos comunes al FormData
     Object.keys(commonPayload).forEach(key => {
       let value = commonPayload[key];
       if (Array.isArray(value) || (typeof value === 'object' && value !== null && !(value instanceof Date))) {
@@ -143,12 +146,23 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
       fromData.append(key, value);
     });
     
+    // Sobrescribimos o añadimos campos específicos si es necesario
     fromData.append("zelleBanck", ""); // Campo vacío requerido por backend legacy
 
+    // Calculamos y añadimos el monto en dólares (monto zoho)
     if (total && tasaActual && tasaActual > 0) {
       const montoEnDolares = parseFloat(total) / parseFloat(tasaActual);
       fromData.append("monto_zoho", montoEnDolares.toFixed(2));
     }
+
+    // // Log para depurar los datos que se envían
+    // console.log("BanckTranferForms - Datos a enviar (modo first-time):", hData.firstime === 'true');
+    // console.log("BanckTranferForms - Contenido de FormData a enviar:");
+    // for (let pair of fromData.entries()) {
+    //   // Si el valor es un objeto File, mostramos su nombre para mayor claridad
+    //   const value = pair[1] instanceof File ? pair[1].name : pair[1];
+    //   console.log(pair[0] + ': ' + value);
+    // }
 
     const url = mediaApiUrl + "/boucher/traferencia";
 
@@ -159,8 +173,7 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
       });
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({ message: "Error en la solicitud" }));
-        throw new Error(errorData.message || "Error en la solicitud");
+        throw new Error("Error en la solicitud");
       }
 
       const data = await response.json();
@@ -170,10 +183,11 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
         changeStep(2);
         return;
       }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
       changeStep(3);
     } catch (error) {
+      // console.error("Error al enviar la tranferencia:", error);
       setFailMessage(error?.message || "Ocurrió un error al procesar el pago");
       changeStep(2);
       return;
@@ -182,7 +196,7 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
 
   return (
     <>
-      <PaymentReminderModal isOpen={isReminderOpen} onClose={() => setIsReminderOpen(false)} />
+    <PaymentReminderModal isOpen={isReminderOpen} onClose={() => setIsReminderOpen(false)} />
       {notification.show && (
         <div className="fixed top-16 left-1/2 -translate-x-1/2 bg-sl-blue-600 text-white py-2 px-4 rounded-lg shadow-lg z-50 transition-opacity duration-300 animate-fade-in-down">
           <p>{notification.message}</p>
@@ -196,14 +210,15 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
             sendTranfer();
           }}
         >
+          <p>Método de Pago:</p>
           <div className="w-full flex justify-start gap-[8px] items-center mb-2 form-title">
             <div className="main-svg ">
               <FlaticonTransferBlack className="w-full h-full" />
             </div>
             <h3>Transferencia</h3>
           </div>
-            <div className="py-3 w-full warnig-message !mt-1 flex flex-col items-center text-center">
-            <h4 className="flex justify-start gap-[0.5em] !mb-1">
+            <div className="py-[24px] w-full warnig-message !mt-[8px] flex flex-col items-center text-center">
+            <h4 className="flex justify-start gap-[0.5em] !mb-[12px]">
               <span className="svg-h4">
                 <FlaticonWarnigRed />
               </span>
@@ -212,19 +227,19 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
                 <FlaticonWarnigRed />
               </span>
             </h4>
-            <p className="text-sm rounded-2xl font-semibold">
+            <p className="text-base rounded-2xl font-semibold">
               La Verificación de la Transferencia Puede Tardar Entre 24 y 48 Horas.
             </p>
           </div>
 
-          <h4 className="!text-sl-gray-700 text-sm font-semibold py-2">
+          <h4 className="my-[2em] !text-sl-gray-700">
             Paso 1: Coloque los Datos de Nuestra Cuenta Bancaria.
           </h4>
-          <div className="p-3 bg-gradient-to-r from-sl-pink-200 to-sl-blue-200  border-sl-gray-850 mb-3 rounded-lg">            
+          <div className="p-[16px] bg-gradient-to-r from-sl-pink-200 to-sl-blue-200  border-sl-gray-850 mb-4">            
           {(methodConfig.bank === "bdv" || !methodConfig.bank) && (
             <>
-          <div className="w-full  flex justify-between items-center mb-2 border-b border-b-sl-gray-50 pb-2">
-              <h4 className="text-sm font-bold">Datos de Pago</h4>
+          <div className="w-full  flex justify-between items-center mb-[16px] border-b border-b-sl-gray-50 p-[16px]">
+              <h4>Datos de Pago</h4>
               <img
                 src={BancoDeVenezuelaLogo}
                 alt="logo del banco"
@@ -232,8 +247,8 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
               />
             </div>
             
-            <div className="w-full flex justify-between items-center text-sm">
-              <p className="sl-text-sm font-semibold">Cuenta Corriente:</p>{" "}
+            <div className="w-full flex justify-between items-center">
+              <p className="sl-text-sm">Cuenta Corriente:</p>{" "}
               <p
                 className="hover:cursor-pointer relative"
                 onClick={() => copyToClipboard("01020455140000219040", "Cuenta")}
@@ -244,8 +259,8 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
                 </span>
               </p>
             </div>
-            <div className="w-full flex justify-between items-center text-sm">
-              <p className="sl-text-sm font-semibold">Nombre:</p>{" "}
+            <div className="w-full flex justify-between items-center">
+              <p className="sl-text-sm">Nombre:</p>{" "}
               <p
                 className="relative hover:cursor-pointer"
                 onClick={() => copyToClipboard("Corporación Quantum Link C.A.", "Nombre")}
@@ -256,8 +271,8 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
                 </span>
               </p>
             </div>
-            <div className="w-full flex justify-between items-center text-sm">
-              <p className="sl-text-sm font-semibold">Rif:</p>{" "}
+            <div className="w-full flex justify-between items-center">
+              <p className="sl-text-sm">Rif:</p>{" "}
               <p
                 className="relative hover:cursor-pointer"
                 onClick={() => copyToClipboard("500004630", "RIF")}
@@ -268,9 +283,9 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
                 </span>
               </p>
             </div>
-            <div className="flex flex-col items-center mt-2">
-              <p className="font-semibold text-sm">Monto a Pagar</p>
-              <h3 className="mt-1 cursor-pointer relative text-lg"
+            <div className="flex flex-col items-center">
+              <p className="font-semibold">Monto a Pagar</p>
+              <h3 className="mt-[8px] cursor-pointer relative"
                   onClick={() => copyToClipboard(total, "Monto")}>
                 {total} Bs
                 <span className="absolute right-[-10px] top-[-8px]">
@@ -283,8 +298,8 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
 
           {(methodConfig.bank === "bnc" || !methodConfig.bank) && (
             <>
-          <div className="w-full  flex justify-between items-center mb-2 border-b border-b-sl-gray-50 pb-2 mt-2">
-              <h4 className="text-sm font-bold">Datos de Pago</h4>
+          <div className="w-full  flex justify-between items-center mb-[16px] border-b border-b-sl-gray-50 p-[16px] mt-4">
+              <h4>Datos de Pago</h4>
               <img
                 src={BNCLogo}
                 alt="logo del banco"
@@ -292,8 +307,8 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
               />
             </div>
             
-            <div className="w-full flex justify-between items-center text-sm">
-              <p className="sl-text-sm font-semibold">Cuenta Corriente:</p>{" "}
+            <div className="w-full flex justify-between items-center">
+              <p className="sl-text-sm">Cuenta Corriente:</p>{" "}
               <p
                 className="hover:cursor-pointer relative"
                 onClick={() => copyToClipboard("01910054502154034151", "Cuenta")}
@@ -304,8 +319,8 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
                 </span>
               </p>
             </div>
-            <div className="w-full flex justify-between items-center text-sm">
-              <p className="sl-text-sm font-semibold">Nombre:</p>{" "}
+            <div className="w-full flex justify-between items-center">
+              <p className="sl-text-sm">Nombre:</p>{" "}
               <p
                 className="relative hover:cursor-pointer"
                 onClick={() => copyToClipboard("Corporación Quantum Link C.A", "Nombre")}
@@ -316,8 +331,8 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
                 </span>
               </p>
             </div>
-            <div className="w-full flex justify-between items-center text-sm">
-              <p className="sl-text-sm font-semibold">Rif:</p>{" "}
+            <div className="w-full flex justify-between items-center">
+              <p className="sl-text-sm">Rif:</p>{" "}
               <p
                 className="relative hover:cursor-pointer"
                 onClick={() => copyToClipboard("500004630", "RIF")}
@@ -328,9 +343,9 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
                 </span>
               </p>
             </div>
-            <div className="flex flex-col items-center mt-2">
-              <p className="font-semibold text-sm">Monto a Pagar</p>
-              <h3 className="mt-1 cursor-pointer relative text-lg"
+            <div className="flex flex-col items-center">
+              <p className="font-semibold">Monto a Pagar</p>
+              <h3 className="mt-[8px] cursor-pointer relative"
                   onClick={() => copyToClipboard(total, "Monto")}>
                 {total} Bs
                 <span className="absolute right-[-10px] top-[-8px]">
@@ -343,8 +358,8 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
 
           {(methodConfig.bank === "r4" || !methodConfig.bank) && (
             <>
-          <div className="w-full  flex justify-between items-center mb-2 border-b border-b-sl-gray-50 pb-2 mt-2">
-              <h4 className="text-sm font-bold">Datos de Pago</h4>
+          <div className="w-full  flex justify-between items-center mb-[16px] border-b border-b-sl-gray-50 p-[16px] mt-4">
+              <h4>Datos de Pago</h4>
               <img
                 src={BancoR4Logo}
                 alt="logo del banco"
@@ -352,8 +367,8 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
               />
             </div>
 
-            <div className="w-full flex justify-between items-center text-sm">
-              <p className="sl-text-sm font-semibold">Cuenta Corriente:</p>{" "}
+            <div className="w-full flex justify-between items-center">
+              <p className="sl-text-sm">Cuenta Corriente:</p>{" "}
               <p
                 className="hover:cursor-pointer relative"
                 onClick={() => copyToClipboard("01690001011001578323", "Cuenta")}
@@ -364,8 +379,8 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
                 </span>
               </p>
             </div>
-            <div className="w-full flex justify-between items-center text-sm">
-              <p className="sl-text-sm font-semibold">Nombre:</p>{" "}
+            <div className="w-full flex justify-between items-center">
+              <p className="sl-text-sm">Nombre:</p>{" "}
               <p
                 className="relative hover:cursor-pointer"
                 onClick={() => copyToClipboard("Corporación Quantum Link C.A.", "Nombre")}
@@ -376,8 +391,8 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
                 </span>
               </p>
             </div>
-            <div className="w-full flex justify-between items-center text-sm">
-              <p className="sl-text-sm font-semibold">Rif:</p>{" "}
+            <div className="w-full flex justify-between items-center">
+              <p className="sl-text-sm">Rif:</p>{" "}
               <p
                 className="relative hover:cursor-pointer"
                 onClick={() => copyToClipboard("500004630", "RIF")}
@@ -388,9 +403,9 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
                 </span>
               </p>
             </div>
-            <div className="flex flex-col items-center mt-2">
-              <p className="font-semibold text-sm">Monto a Pagar</p>
-              <h3 className="mt-1 cursor-pointer relative text-lg"
+            <div className="flex flex-col items-center">
+              <p className="font-semibold">Monto a Pagar</p>
+              <h3 className="mt-[8px] cursor-pointer relative"
                   onClick={() => copyToClipboard(total, "Monto")}>
                 {total} Bs.
                 <span className="absolute right-[-10px] top-[-8px]">
@@ -402,11 +417,11 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
           )}
           </div> 
 
-          <h5 className="font-medium text-sm text-gray-500 mt-4 mb-2">
+          <h5 className="font-medium text-base  text-gray-500">
             Paso 2: Indique los Datos de la Cuenta desde la cual Realizó el Pago.
           </h5>
 
-          <div className="flex gap-2 justify-between items-end">
+          <div className="flex gap-2 justify-between !mt-[16px] items-end">
             <div className="w-1/2">
               <DateInput
                 labelText="Fecha de Depósito*"
@@ -434,7 +449,6 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
               />
             </div>
           </div>
-          <div className="">
           <Input
             className="text-sm font-semibold"
             labelText={"Monto Pagado*"}
@@ -448,14 +462,12 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
             }
             error={errorsState.montoPagado}
           />
-          </div>
-          <div className="w-full">
-            <p className="text-sm font-semibold !mb-1">Comprobante de Pago*</p>
+          <div className="w-full my-[16px]">
+            <p className="text-sm font-semibold !mb-[8px]">Comprobante de Pago*</p>
             <FIleInput onChange={setFile} erros={errorsState.file || ""} />
           </div>
-
-          <div className="flex justify-end">
-        <button className="base !border-none my-2" disabled={disableSubmit}>
+          <div className="flex justify-end my-[32px]">
+        <button className="base !border-none" disabled={disableSubmit}>
           Reportar Pago
         </button>          
         </div>
@@ -467,18 +479,11 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
         chageStep={changeStep}
         processTitle={"Reportando Pago"}
         failMessage={
-          <div className="w-full flex flex-col items-center text-white">
-            <div className="w-full relative bg-sl-gray-900 border border-sl-gray-700 text-white px-4 py-3 rounded-lg mt-4 text-center">
-              <strong className="font-bold block text-amber-500">
-                Mensaje del Sistema
-              </strong>
-              <span className="block sm:inline mt-1 text-yellow-600 font-semibold">
-                {failMessage || "No se pudo procesar el reporte."}
-              </span>
-              <p className="text-sm mt-2 text-gray-300">
-                Por favor, verifique los datos e intente de nuevo. Si el problema persiste, contacte a soporte.
-              </p>
-            </div>
+          <div className="w-full flex flex-col items-center">
+            <p className="font-bold mb-2">Ocurrió un Error al Procesar el Pago</p>
+            {failMessage && (
+              <p className="text-red-500 text-sm text-center">{failMessage}</p>
+            )}
           </div>
         }
         meesageProcess={
@@ -506,21 +511,13 @@ export default function BanckTranferForms({ hData, tasaActual, total, disableSub
                   <p>
                     {hData.firstime === 'true'
                       ? (() => {
-                          try {
-                            const allFirstTimeInvoices = JSON.parse(sessionStorage.getItem('allFirstTimeInvoices') || '[]');
-                            return allFirstTimeInvoices.map(inv => inv.invoice_number).join(', ') || hData.fullInvoiceData?.invoice_number;
-                          } catch (e) {
-                            return hData.fullInvoiceData?.invoice_number || "";
-                          }
+                          const allFirstTimeInvoices = JSON.parse(sessionStorage.getItem('allFirstTimeInvoices') || '[]');
+                          return allFirstTimeInvoices.map(inv => inv.invoice_number).join(', ') || hData.fullInvoiceData?.invoice_number;
                         })()
                       : (hData.ac ? "ac" : "customer_balance") === "customer_balance"
-                        ? (() => {
-                            try {
-                              return JSON.parse(sessionStorage.getItem('invoices') || '[]')
-                                .filter(inv => inv.balance > 0)
-                                .map(inv => inv.invoice_number).join(', ') || 'Varios';
-                            } catch (e) { return 'Varios'; }
-                          })()
+                        ? JSON.parse(sessionStorage.getItem('invoices') || '[]')
+                            .filter(inv => inv.balance > 0)
+                            .map(inv => inv.invoice_number).join(', ') || 'Varios'
                         : hData.ac}
                   </p>
                 </div>

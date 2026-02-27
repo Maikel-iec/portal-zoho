@@ -86,8 +86,7 @@ export default function MobilePaymentForm({
     if (!formData.Otp) erros.Otp = "OTP Requerido.";
     if (!otpRegEx.test(formData.Otp)) erros.Otp = "OTP Inválido.";
     if (!formData.tipoDocumento)
-      erros.tipoDocumento =
-        "Indica Tipo de Documento (V o E).";
+      erros.tipoDocumento = "Indica Tipo de Documento (V o E).";
     if (!formData.ownerAcc && !formData.isOwnerAcc)
       erros.ownerAcc = "Nombre del Titular del Documento";
 
@@ -129,7 +128,7 @@ export default function MobilePaymentForm({
         date: startDate,
       });
 
-      const conceptoParaDataToSend = `pago ${hData.ac || 'servicios'}`;
+      const conceptoParaDataToSend = `pago ${hData.ac || "servicios"}`;
 
       const url = isBdv
         ? API_ENDPOINTS.MOBILE_PAYMENT.C2P_BDV
@@ -292,7 +291,10 @@ export default function MobilePaymentForm({
 
   return (
     <>
-      <PaymentReminderModal isOpen={isReminderOpen} onClose={() => setIsReminderOpen(false)} />
+      <PaymentReminderModal
+        isOpen={isReminderOpen}
+        onClose={() => setIsReminderOpen(false)}
+      />
       {step === 0 && (
         <form className="w-full mt-4" onSubmit={checkout}>
           <p className="mb-[16px]">Método de Pago:</p>
@@ -370,7 +372,11 @@ export default function MobilePaymentForm({
             >
               <option value="">Seleccione su Banco</option>
               {bancos_venezuela.map((banco) => {
-                return <option value={banco.codigo}>({banco.codigo}) {banco.nombre}</option>;
+                return (
+                  <option value={banco.codigo}>
+                    ({banco.codigo}) {banco.nombre}
+                  </option>
+                );
               })}
             </select>
             {errosState.Banco && (
@@ -476,15 +482,22 @@ export default function MobilePaymentForm({
                 {requestErrorMessege}
               </span>
               <p className="text-sm mt-2 text-gray-300">
-              Por favor, verifique los datos e intente de nuevo. Si el problema
-              persiste, contacte a soporte.
+                Por favor, verifique los datos e intente de nuevo. Si el
+                problema persiste, contacte a soporte.
               </p>
             </div>
-            <a href="https://wa.me/584126389082" className="flex gap-2 items-center py-4 " target="_blank" rel="noopener noreferrer">
-                <span className="w-5 h-5">
-                  <WhatsappIcon />
-                </span>
-                <span className="font-medium text-sm !text-slate-500">Contactar a Soporte</span>
+            <a
+              href="https://wa.me/584126389082"
+              className="flex gap-2 items-center py-4 "
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="w-5 h-5">
+                <WhatsappIcon />
+              </span>
+              <span className="font-medium text-sm !text-slate-500">
+                Contactar a Soporte
+              </span>
             </a>
           </div>
         }
@@ -525,11 +538,17 @@ export default function MobilePaymentForm({
                         "customer_balance"
                       ? (() => {
                           try {
-                            return JSON.parse(sessionStorage.getItem("invoices") || "[]")
-                              .filter((inv) => inv.balance > 0)
-                              .map((inv) => inv.invoice_number)
-                              .join(", ") || "Varios";
-                          } catch (e) { return "Varios"; }
+                            return (
+                              JSON.parse(
+                                sessionStorage.getItem("invoices") || "[]",
+                              )
+                                .filter((inv) => inv.balance > 0)
+                                .map((inv) => inv.invoice_number)
+                                .join(", ") || "Varios"
+                            );
+                          } catch (e) {
+                            return "Varios";
+                          }
                         })()
                       : hData.ac}
                   </p>

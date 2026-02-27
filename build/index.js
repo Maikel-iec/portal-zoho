@@ -1,6 +1,36 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/icons/mobile.svg"
+/*!******************************!*\
+  !*** ./src/icons/mobile.svg ***!
+  \******************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgMobile),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+
+var SvgMobile = function SvgMobile(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 384 512"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M80 0C44.7 0 16 28.7 16 64v384c0 35.3 28.7 64 64 64h224c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64zm80 432h64c8.8 0 16 7.2 16 16s-7.2 16-16 16h-64c-8.8 0-16-7.2-16-16s7.2-16 16-16"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48IS0tIUZvbnQKICAgIEF3ZXNvbWUgRnJlZSA2LjcuMiBieSBAZm9udGF3ZXNvbWUgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbSBMaWNlbnNlIC0KICAgIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tL2xpY2Vuc2UvZnJlZSBDb3B5cmlnaHQgMjAyNSBGb250aWNvbnMsIEluYy4tLT4KICAgIDxwYXRoCiAgICAgICAgZD0iTTgwIDBDNDQuNyAwIDE2IDI4LjcgMTYgNjRsMCAzODRjMCAzNS4zIDI4LjcgNjQgNjQgNjRsMjI0IDBjMzUuMyAwIDY0LTI4LjcgNjQtNjRsMC0zODRjMC0zNS4zLTI4LjctNjQtNjQtNjRMODAgMHptODAgNDMybDY0IDBjOC44IDAgMTYgNy4yIDE2IDE2cy03LjIgMTYtMTYgMTZsLTY0IDBjLTguOCAwLTE2LTcuMi0xNi0xNnM3LjItMTYgMTYtMTZ6IiAvPgo8L3N2Zz4=");
+
+/***/ },
+
 /***/ "./src/App.jsx"
 /*!*********************!*\
   !*** ./src/App.jsx ***!
@@ -187,10 +217,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/media/Quantum_Junior.mp4'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/CloseIcon'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _icons_media_Quantum_Junior_mp4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../icons/media/Quantum_Junior.mp4 */ "./src/icons/media/Quantum_Junior.mp4");
+/* harmony import */ var _icons_media_Quantum_Junior_mp4__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_icons_media_Quantum_Junior_mp4__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _icons_CloseIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../icons/CloseIcon */ "./src/icons/CloseIcon.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
@@ -216,42 +247,42 @@ function PaymentReminderModal({
     }
   }, [isOpen]);
   if (!isOpen && !isAnimating) return null;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: `!fixed !inset-0 !z-[9999] !flex !items-center !justify-center !p-4 !transition-opacity !duration-300 !ease-out ${isAnimating ? '!opacity-100' : '!opacity-0'}`,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "!absolute !inset-0 !bg-black/60 !backdrop-blur-sm",
       onClick: onClose
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: `!bg-sl-blue-950 !border !border-sl-blue-800 !rounded-2xl !shadow-2xl !w-full !max-w-md !p-6 !relative !z-10 !transform !transition-all !duration-300 !ease-out ${isAnimating ? '!scale-100 !translate-y-0' : '!scale-95 !translate-y-4'}`,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
         onClick: onClose,
         className: "!absolute !top-4 !right-4 !text-white hover:!text-sl-pink-500 !transition-colors !w-5 !h-5 !cursor-pointer !opacity-70 !bg-transparent !border-none !p-0 !min-h-0 !min-w-0",
         "aria-label": "Cerrar",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "!w-5 !h-5",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/CloseIcon'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {})
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_icons_CloseIcon__WEBPACK_IMPORTED_MODULE_2__["default"], {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "!flex !flex-col !items-center !text-center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "!relative !w-60 !h-60 !mb-4 !flex !items-center !justify-center !rounded-full !overflow-hidden",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("video", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("video", {
             ref: videoRef,
-            src: Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/media/Quantum_Junior.mp4'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()),
+            src: (_icons_media_Quantum_Junior_mp4__WEBPACK_IMPORTED_MODULE_1___default()),
             autoPlay: true,
             loop: true,
             playsInline: true,
             className: "!w-full !h-full !object-cover"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "!space-y-4 !text-gray-300",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "!bg-sl-blue-900 !text-white !p-4 !rounded-xl !text-sm !font-medium",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
               children: "Valoramos tu confianza en nosotros. Recuerda reportar a tiempo. \xA1Y sigue disfrutando de 7Link, internet sin limites!"
             })
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
           onClick: onClose,
           className: "!mt-6 !w-full !bg-sl-pink-500 hover:!bg-sl-pink-600 !text-white !font-bold !py-3 !px-4 !rounded-xl !border-none",
           children: "Pagar y Reportar"
@@ -277,12 +308,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _lottiefiles_dotlottie_web__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @lottiefiles/dotlottie-web */ "./node_modules/@lottiefiles/dotlottie-web/dist/index.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/Banner_Club.png'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/SllogoClasic'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/lottie/Success.lottie'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/lottie/Warning.lottie'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _icons_Banner_Club_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../icons/Banner_Club.png */ "./src/icons/Banner_Club.png");
+/* harmony import */ var _icons_SllogoClasic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../icons/SllogoClasic */ "./src/icons/SllogoClasic.jsx");
+/* harmony import */ var _icons_lottie_Success_lottie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../icons/lottie/Success.lottie */ "./src/icons/lottie/Success.lottie");
+/* harmony import */ var _icons_lottie_Warning_lottie__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../icons/lottie/Warning.lottie */ "./src/icons/lottie/Warning.lottie");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
@@ -308,7 +339,7 @@ function SuccessComponent({
   react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(() => {
     if (dotLottieCanvasRef.current) {
       // --- 2. Seleccionar la animación importada ---
-      const animationSrc = isPartialPayment ? Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/lottie/Warning.lottie'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()) : Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/lottie/Success.lottie'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+      const animationSrc = isPartialPayment ? _icons_lottie_Warning_lottie__WEBPACK_IMPORTED_MODULE_5__ : _icons_lottie_Success_lottie__WEBPACK_IMPORTED_MODULE_4__;
       const dotLottie = new _lottiefiles_dotlottie_web__WEBPACK_IMPORTED_MODULE_1__.DotLottie({
         canvas: dotLottieCanvasRef.current,
         src: animationSrc,
@@ -320,33 +351,1181 @@ function SuccessComponent({
       return () => dotLottie.destroy();
     }
   }, [isPartialPayment]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     className: "w-full flex flex-col items-center max-w-[400px] text-center",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "sl-logo-process",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/SllogoClasic'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("canvas", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_icons_SllogoClasic__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("canvas", {
       ref: dotLottieCanvasRef,
       style: {
         width: '200px',
         height: '200px',
         margin: '0 auto'
       }
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
       className: "text-center font-w-bold text-xl",
       children: message
-    }), isPartialPayment && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+    }), isPartialPayment && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
       className: "text-center font-semibold my-1 text-amber-800",
       children: "Por interes Mutuo Cancele el Total Adeudado"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       children: transactionInfo
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-      src: Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/Banner_Club.png'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()),
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+      src: _icons_Banner_Club_png__WEBPACK_IMPORTED_MODULE_2__,
       alt: "Exito",
       className: "!h-[280px]"
     })]
   });
 }
+
+/***/ },
+
+/***/ "./src/icons/CloseIcon.jsx"
+/*!*********************************!*\
+  !*** ./src/icons/CloseIcon.jsx ***!
+  \*********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const CloseIcon = () => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    xmlSpace: "preserve",
+    width: "512",
+    height: "512",
+    viewBox: "0 0 24 24",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "currentColor",
+      d: "M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0m3.707 14.293a.999.999 0 1 1-1.414 1.414L12 13.414l-2.293 2.293a.997.997 0 0 1-1.414 0 1 1 0 0 1 0-1.414L10.586 12 8.293 9.707a.999.999 0 1 1 1.414-1.414L12 10.586l2.293-2.293a.999.999 0 1 1 1.414 1.414L13.414 12z",
+      "data-original": "#000000"
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CloseIcon);
+
+/***/ },
+
+/***/ "./src/icons/Conffetti.jsx"
+/*!*********************************!*\
+  !*** ./src/icons/Conffetti.jsx ***!
+  \*********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const Conffetti = () => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    xmlSpace: "preserve",
+    width: "512",
+    height: "512",
+    viewBox: "0 0 480.187 480.187",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("g", {
+      fill: "#4775c9",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M327.417 301.136a8 8 0 0 0-10.238-4.814 8 8 0 0 0-4.697 10.542c7.296 19.04 7.824 33.6 1.44 40-7.744 7.728-27.032 5.312-51.608-6.448a342.2 342.2 0 0 1-88.552-66.08c-62.664-62.672-88.52-124.168-72.528-140.16a21.86 21.86 0 0 1 18.096-4.224 8 8 0 0 0 1.552-15.92 36.84 36.84 0 0 0-30.96 8.8c-29.312 29.304 15.496 105.744 72.528 162.784a357.8 357.8 0 0 0 92.96 69.192 158 158 0 0 0 19.296 7.72l-56.84 21.552c-75.9-28.856-130.539-96.144-143.2-176.352a8.001 8.001 0 0 0-15.808 2.48c1.256 8 2.936 16 4.992 23.824a242.84 242.84 0 0 0 132.4 158.224l-93.552 35.4a7.9 7.9 0 0 0-1.6-1.904 111.47 111.47 0 0 1-41.28-77.464l-3.712-44.952a7.904 7.904 0 0 0-8.416-7.357q-.125.008-.248.021a8 8 0 0 0-7.336 8.664l3.776 44.936a127.44 127.44 0 0 0 42.328 84.28l-66.736 25.264 12-49.248a8.003 8.003 0 0 0-5.88-9.672 8.003 8.003 0 0 0-9.672 5.88l-15.608 64a7.999 7.999 0 0 0 10.608 9.384l296-112q.708-.346 1.328-.832a31.08 31.08 0 0 0 16.984-8.472c7.927-7.928 14.751-24.272 2.183-57.048",
+        "data-original": "#000000"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M402.913 280.504a263.45 263.45 0 0 0-135.544-13.16l-28.584 4.8a8 8 0 0 0 2.64 15.776l28.576-4.76a247.26 247.26 0 0 1 127.296 12.368 8.2 8.2 0 0 0 2.808.472 8 8 0 0 0 2.808-15.496m28.44-123.944a8 8 0 0 0-10.664-3.784l-168 80a8 8 0 0 0-3.784 10.664 8 8 0 0 0 10.662 3.785l.002-.001 168-80a8 8 0 0 0 3.784-10.664M194.377 54.296a8 8 0 1 0-15.616 3.472 223.8 223.8 0 0 1-11.944 135.272l-11.632 27.912a8 8 0 0 0 4.296 10.432 8 8 0 0 0 10.456-4.304l11.64-27.88a239.7 239.7 0 0 0 12.8-144.904M440.105 288c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24m0 32a8 8 0 1 1 0-16 8 8 0 0 1 0 16m-192-256c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24m0 32a8 8 0 1 1 0-16 8 8 0 0 1 0 16",
+        "data-original": "#000000"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+        cx: "176.105",
+        cy: "16",
+        r: "16",
+        "data-original": "#000000"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M400.105 40a8 8 0 0 0-8 8v8a8 8 0 0 0 16 0v-8a8 8 0 0 0-8-8m0-40a8 8 0 0 0-8 8v8a8 8 0 0 0 16 0V8a8 8 0 0 0-8-8m24 24h-8a8 8 0 0 0 0 16h8a8 8 0 0 0 0-16m-40 0h-8a8 8 0 0 0 0 16h8a8 8 0 0 0 0-16m-40 63.832h-40.168a8 8 0 0 0-8 8V136a8 8 0 0 0 8 8h40.168a8 8 0 0 0 8-8V95.832a8 8 0 0 0-8-8m-8 40.168h-24.168v-24.168h24.168zm-50.279 26.636a8 8 0 0 0-11.073-.58l-80 72a8 8 0 0 0-.592 11.296 8 8 0 0 0 11.296.592l80-72a8 8 0 0 0 .369-11.308M432.105 184a8 8 0 0 0-8 8v8a8 8 0 0 0 16 0v-8a8 8 0 0 0-8-8m33.944-1.376-5.656-5.656a8 8 0 0 0-11.312 11.312l5.656 5.656a8 8 0 0 0 11.312-.196 8 8 0 0 0 0-11.116M472.105 152h-8a8 8 0 0 0 0 16h8a8 8 0 0 0 0-16m-6.252-25.936a8 8 0 0 0-11.116 0l-5.656 5.656a8 8 0 0 0 5.656 13.656 8 8 0 0 0 5.656-2.344l5.656-5.656a8 8 0 0 0-.196-11.312M432.105 112a8 8 0 0 0-8 8v8a8 8 0 0 0 16 0v-8a8 8 0 0 0-8-8m-16.976 19.72-5.656-5.656a8 8 0 0 0-11.312 11.312l5.656 5.656a8 8 0 0 0 11.312-.196 8 8 0 0 0 0-11.116M95.713 34.592a8 8 0 0 0-6.456-5.44l-23.48-3.416L55.305 4.464a8.328 8.328 0 0 0-14.352 0l-10.52 21.272-23.48 3.416a8 8 0 0 0-4.448 13.64l16.984 16.56-4 23.384A8 8 0 0 0 27.105 91.2l21-11.072 21 11.04a8 8 0 0 0 11.608-8.432l-4-23.384 16.992-16.56a8 8 0 0 0 2.008-8.2m-33.208 16.24a8 8 0 0 0-2.304 7.072l1.984 11.56L51.825 64a8 8 0 0 0-7.44 0l-10.4 5.456 1.984-11.56a8 8 0 0 0-2.264-7.064l-8.408-8.184 11.608-1.688a8 8 0 0 0 6.024-4.376l5.176-10.504 5.184 10.504a8 8 0 0 0 6.016 4.376l11.6 1.688zM453.081 401h-.032l-3.296-4.944a120.72 120.72 0 0 0-80.328-51.944 8 8 0 0 0-2.64 15.776 104.67 104.67 0 0 1 61.048 34.032 47.2 47.2 0 0 0-32 21.976c-8.616 15.431-3.091 34.924 12.34 43.54s34.924 3.091 43.54-12.34a46.4 46.4 0 0 0 5.192-20.536 39.09 39.09 0 0 1 1.752 41.544 8 8 0 1 0 13.968 7.792c14.648-26.164 6.02-59.225-19.544-74.896m-15.32 38.288c-4.27 7.737-14.003 10.547-21.739 6.277s-10.547-14.003-6.277-21.739l.072-.13a29.98 29.98 0 0 1 21.664-14.096 8.14 8.14 0 0 1 4 .928c6.752 3.768 7.112 20.104 2.28 28.76",
+        "data-original": "#000000"
+      })]
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Conffetti);
+
+/***/ },
+
+/***/ "./src/icons/InvalidWanrnigRed.jsx"
+/*!*****************************************!*\
+  !*** ./src/icons/InvalidWanrnigRed.jsx ***!
+  \*****************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const InvalidWanrnigRed = () => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    xmlSpace: "preserve",
+    width: "512",
+    height: "512",
+    viewBox: "0 0 64 64",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("g", {
+      fill: "#ed1139",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M36 43h-8a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1m-1 8h-6v-6h6zm1-36a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1v26a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V20a1 1 0 0 0-2 0v17h-6V13h6v1a1 1 0 0 0 1 1",
+        "data-original": "#000000"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M13.104 12.714a27.003 27.003 0 0 1 42.04 33.2 1 1 0 1 0 1.712 1.033 29.002 29.002 0 0 0-45.152-35.661 1 1 0 0 0 1.4 1.428M32 61a28.84 28.84 0 0 0 20.296-8.286 1 1 0 0 0-1.4-1.428 27.003 27.003 0 0 1-42.04-33.2 1 1 0 0 0-1.712-1.033A29.006 29.006 0 0 0 32 61",
+        "data-original": "#000000"
+      })]
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InvalidWanrnigRed);
+
+/***/ },
+
+/***/ "./src/icons/MobileTraferFlaticoBlack.jsx"
+/*!************************************************!*\
+  !*** ./src/icons/MobileTraferFlaticoBlack.jsx ***!
+  \************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const MobileTraferFlaticoBlack = () => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    xmlSpace: "preserve",
+    width: "100%",
+    height: "100%",
+    viewBox: "0 0 24 24",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000000",
+      d: "m23.454 5.598-2.247-2.305a.999.999 0 1 0-1.414 1.414L21.027 6h-2.752c-1.057-1.144-1.038-2.98.104-4.121q.14-.136.291-.251A4.95 4.95 0 0 0 15 0H9a5 5 0 0 0-5 5v2.056a2.93 2.93 0 0 1 1.621.823A2.996 2.996 0 0 1 5.72 12H2.973l1.234-1.293a1 1 0 0 0-1.414-1.414L.546 11.598a1.88 1.88 0 0 0 0 2.649l2.247 2.459a1 1 0 1 0 1.414-1.414l-1.08-1.293H5.73a2.97 2.97 0 0 1 .77 2A2.98 2.98 0 0 1 4 18.95v.049a5 5 0 0 0 5 5h6a5 5 0 0 0 5-5v-6.055a2.93 2.93 0 0 1-1.621-.824 3 3 0 0 1-.109-4.121h2.603l-1.08 1.293a.999.999 0 1 0 1.414 1.414l2.247-2.459a1.88 1.88 0 0 0 0-2.649M13 21h-2a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2m1.799-6.987a2.17 2.17 0 0 1-1.673.787H12.8v.7a.8.8 0 0 1-1.6 0v-.7h-.278a2.3 2.3 0 0 1-1.727-.783.76.76 0 0 1-.122-.84.8.8 0 0 1 .732-.477c.119 0 .41.021.552.213a.7.7 0 0 0 .564.287h2.204a.575.575 0 0 0 .112-1.137l-2.688-.538c-.925-.185-1.652-.882-1.812-1.735A2.19 2.19 0 0 1 9.2 7.986a2.17 2.17 0 0 1 1.672-.786h.327v-.7a.8.8 0 0 1 1.6 0v.7h.277c.66 0 1.29.285 1.728.782a.765.765 0 0 1 .121.841.8.8 0 0 1-.732.476c-.119 0-.41-.021-.552-.213a.7.7 0 0 0-.564-.287h-2.204a.574.574 0 0 0-.112 1.136l2.688.539c.924.185 1.652.882 1.812 1.735a2.19 2.19 0 0 1-.463 1.803Z",
+      "data-original": "#000000"
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MobileTraferFlaticoBlack);
+
+/***/ },
+
+/***/ "./src/icons/MobileTranfer.jsx"
+/*!*************************************!*\
+  !*** ./src/icons/MobileTranfer.jsx ***!
+  \*************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ MobileTranfer)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function MobileTranfer() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    xmlSpace: "preserve",
+    width: "512",
+    height: "512",
+    viewBox: "0 0 60 60",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+      width: "26",
+      height: "44",
+      x: "1",
+      y: "8",
+      fill: "#86155b",
+      "data-original": "#3b7ac8",
+      rx: "2"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#fdf2fa",
+      d: "M20 8v3a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2V8z",
+      "data-original": "#c0dadc"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+      width: "26",
+      height: "44",
+      x: "33",
+      y: "8",
+      fill: "#86155b",
+      "data-original": "#3b7ac8",
+      rx: "2"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#fdf2fa",
+      d: "M52 8v3a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2V8z",
+      "data-original": "#c0dadc"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+      cx: "30",
+      cy: "31",
+      r: "16",
+      fill: "#f044bf",
+      "data-original": "#efc43c"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#fff",
+      d: "M35 25v2a1 1 0 0 1-1 1h-9v1.05a1.086 1.086 0 0 1-1.88.61l-2.87-3.06a.88.88 0 0 1 0-1.2l2.87-3.06a1.086 1.086 0 0 1 1.88.61V24h9a1 1 0 0 1 1 1M25 35v2a1 1 0 0 0 1 1h9v1.05a1.086 1.086 0 0 0 1.88.61l2.87-3.06a.88.88 0 0 0 0-1.2l-2.87-3.06a1.086 1.086 0 0 0-1.88.61V34h-9a1 1 0 0 0-1 1",
+      "data-original": "#ffffff"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#fba6e7",
+      d: "M19 49H9a1 1 0 0 1 0-2h10a1 1 0 0 1 0 2",
+      "data-original": "#244766"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#fba6e7",
+      d: "M5 14a1 1 0 0 1-1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1-1 1m18 0a1 1 0 0 1-1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1-1 1",
+      "data-original": "#30649d"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#fba6e7",
+      d: "M51 49H41a1 1 0 0 1 0-2h10a1 1 0 0 1 0 2",
+      "data-original": "#244766"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#fba6e7",
+      d: "M37 14a1 1 0 0 1-1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1-1 1m18 0a1 1 0 0 1-1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1-1 1",
+      "data-original": "#30649d"
+    })]
+  });
+}
+
+/***/ },
+
+/***/ "./src/icons/MobileTransferFlaticon.jsx"
+/*!**********************************************!*\
+  !*** ./src/icons/MobileTransferFlaticon.jsx ***!
+  \**********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const MobileTransferFlaticon = () => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    xmlSpace: "preserve",
+    width: "512",
+    height: "512",
+    viewBox: "0 0 24 24",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#ffffff",
+      d: "m23.454 5.598-2.247-2.305a.999.999 0 1 0-1.414 1.414L21.027 6h-2.752c-1.057-1.144-1.038-2.98.104-4.121q.14-.136.291-.251A4.95 4.95 0 0 0 15 0H9a5 5 0 0 0-5 5v2.056a2.93 2.93 0 0 1 1.621.823A2.996 2.996 0 0 1 5.72 12H2.973l1.234-1.293a1 1 0 0 0-1.414-1.414L.546 11.598a1.88 1.88 0 0 0 0 2.649l2.247 2.459a1 1 0 1 0 1.414-1.414l-1.08-1.293H5.73a2.97 2.97 0 0 1 .77 2A2.98 2.98 0 0 1 4 18.95v.049a5 5 0 0 0 5 5h6a5 5 0 0 0 5-5v-6.055a2.93 2.93 0 0 1-1.621-.824 3 3 0 0 1-.109-4.121h2.603l-1.08 1.293a.999.999 0 1 0 1.414 1.414l2.247-2.459a1.88 1.88 0 0 0 0-2.649M13 21h-2a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2m1.799-6.987a2.17 2.17 0 0 1-1.673.787H12.8v.7a.8.8 0 0 1-1.6 0v-.7h-.278a2.3 2.3 0 0 1-1.727-.783.76.76 0 0 1-.122-.84.8.8 0 0 1 .732-.477c.119 0 .41.021.552.213a.7.7 0 0 0 .564.287h2.204a.575.575 0 0 0 .112-1.137l-2.688-.538c-.925-.185-1.652-.882-1.812-1.735A2.19 2.19 0 0 1 9.2 7.986a2.17 2.17 0 0 1 1.672-.786h.327v-.7a.8.8 0 0 1 1.6 0v.7h.277c.66 0 1.29.285 1.728.782a.765.765 0 0 1 .121.841.8.8 0 0 1-.732.476c-.119 0-.41-.021-.552-.213a.7.7 0 0 0-.564-.287h-2.204a.574.574 0 0 0-.112 1.136l2.688.539c.924.185 1.652.882 1.812 1.735a2.19 2.19 0 0 1-.463 1.803Z",
+      "data-original": "#000000"
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MobileTransferFlaticon);
+
+/***/ },
+
+/***/ "./src/icons/SlLogoBlack.jsx"
+/*!***********************************!*\
+  !*** ./src/icons/SlLogoBlack.jsx ***!
+  \***********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const SlLogoBlack = () => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "1211",
+    height: "595",
+    fill: "none",
+    viewBox: "0 0 1211 595",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M103.013 0a1666 1666 0 0 0 78 56.5q2.248 1.257 1 2.5-45.528-.988-90 2 4.43 6.464 9 14.5-1.701 1.524 1 2-1.552 2.26.5 4.5 1-2 2 0a42.3 42.3 0 0 1 3.5 8q-2 .5 0 1a323 323 0 0 0 9 13.5l-2 1q7.725 7.447 10 18 4.008 2.756 5 7.5a3203 3203 0 0 0-98-69q-6.486-12.939-16-25.5l1-1a38 38 0 0 1-2.5-6.5l-1 1q-4.635-6.273-6-14-4.71-3.155-6.5-10 .814-.09 1-1-2.175-2.025-2-5z",
+      clipRule: "evenodd",
+      opacity: "0.975"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M103.013 0h155a1666 1666 0 0 0 78 56.5q2.248 1.257 1 2.5-77.016-.993-153 2h-2v-2q1.248-1.243-1-2.5a1666 1666 0 0 1-78-56.5",
+      clipRule: "evenodd",
+      opacity: "0.984"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M258.013 0h155a4997 4997 0 0 0 117 84.5q1.129 1.006 1 2.5-1.234 4.277-4 8l1 2a222 222 0 0 0-4.5 11q-1 2-2 0-1.411 11.914-8.5 21.5-2.241 11.727-9 21.5a3.65 3.65 0 0 0 1 1.5q-1.373.417-2 1.5-2 .5 0 1-1.541 5.575-5.5 10-1.974 3.699-1.5 7 0-1-1-1a1060 1060 0 0 0-44-32q-.814-.09-1-1 2.294-6.219 6.5-11 1.55-9.084 6-18l1 2q1.214-12.863 9-23 1.665-2.845.5-5.5 4.566-.539 1-2a57.2 57.2 0 0 1 6.5-10.5q2.127-3.966 1.5-8-72.493-1.5-145-1v-2q1.248-1.243-1-2.5a1666 1666 0 0 1-78-56.5",
+      clipRule: "evenodd",
+      opacity: "0.975"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M413.013 0h154q.41 2.927-2 4.5l2 1a346 346 0 0 0-8 15.5q-1.257.512-1 2-2 .5 0 1-1.255 7.597-6.5 13-1.026 1.926.5 3.5-3.819 9.564-9 17l1 1a116.6 116.6 0 0 1-10 20.5q1.103 4.823-3 8 .129-1.494-1-2.5a4997 4997 0 0 1-117-84.5",
+      clipRule: "evenodd",
+      opacity: "0.969"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M1.013 6q-1-2 0 0M559.013 21q2 1 0 0M558.013 23q2 1 0 0M182.013 59v2h-90q44.472-2.988 90-2M337.013 59v2h-153q75.984-2.993 153-2",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M32.013 62a3203 3203 0 0 1 98 69q2.18 1.53 1 3.5 3.103.486 1 2.5.948 3.697 4.5 5a23.4 23.4 0 0 1 2.5 6q-2 .5 0 1 3.92 6.448 8 13a3.65 3.65 0 0 1-1 1.5q8.616 8.48 10.5 20.5l3 1a42.3 42.3 0 0 1 3.5 8q-2 .5 0 1 1.037 4.298 5 6.5l-1 1q2.461 1.693 3 4.5-.814.09-1 1a79 79 0 0 1 4 5.5q37.497.75 75 .5a11.1 11.1 0 0 0 3 4.5 686 686 0 0 0 27 18.5l-2.5 5q-1 2-2 0-1.094 11.674-8 21a71 71 0 0 0-2 9q-1 2-2 0a9.5 9.5 0 0 1-1.5 2.5q-42.997.75-86 .5a14.7 14.7 0 0 0-3-3.5 805 805 0 0 1-39-28q-2.576-2.338-6-2.5.356-1.937-1-3-5.575-5.616-9-13a3.65 3.65 0 0 1 1-1.5 51.8 51.8 0 0 1-9-14l1-1a87 87 0 0 1-3-5.5q-.5-2-1 0a81 81 0 0 1-2.5-3q-2.778-5.203-3.5-10-3.295-2.751-5-7a3.65 3.65 0 0 1 1-1.5q-9.35-12.805-16-26 3.566-1.461-1-2l1-1q-7.314-8.564-10-19.5a40.6 40.6 0 0 1-7-10 3.65 3.65 0 0 1 1-1.5 69.2 69.2 0 0 1-9-13 3.65 3.65 0 0 0 1-1.5 65.3 65.3 0 0 1-9-14.5q1.199-2.623-2-4l1-1a6.98 6.98 0 0 1-3.5-2.5 29 29 0 0 1-3-10q-6.173-4.866-6.5-12",
+      clipRule: "evenodd",
+      opacity: "0.978"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M108.013 90q2 1 0 0M194.013 105a8823 8823 0 0 1 230-.5q-115 .75-230 .5",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M194.013 105a842 842 0 0 0 58 1q-.129 1.494 1 2.5l75 53q1.776 1.718 0 3.5-68.507.5-137-1a19.9 19.9 0 0 1-5-6.5q1.552-2.26-.5-4.5-4.187-3.772-6.5-9a3.65 3.65 0 0 1 1-1.5 14168 14168 0 0 1-9-13l1-1a46.5 46.5 0 0 0-6.5-9.5q-2.273-6.165-4.5-12 .166-.925 1-1.5 15.992-.75 32-.5",
+      clipRule: "evenodd",
+      opacity: "0.968"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M252.013 106h155q-.128 1.494 1 2.5a161 161 0 0 0 13 8.5h1a120 120 0 0 0-5.5 15 42 42 0 0 0-6.5 12q-2 1 0 2-1.638 6.481-5.5 10-.738 8.458-5.5 16-.5-2-1 0a95 95 0 0 1-4 10.5l1 1q-3.882 7.849-8 14 1.936 1.938 0 3.5-.5-2-1 0-1.933 1.501-4-.5a44674 44674 0 0 1-41-29.5v-6h-13q1.776-1.782 0-3.5l-75-53q-1.129-1.006-1-2.5",
+      clipRule: "evenodd",
+      opacity: "0.987"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M407.013 106h19q.065 6.35-4 11-.5-2-1 0a161 161 0 0 1-13-8.5q-1.128-1.006-1-2.5",
+      clipRule: "evenodd",
+      opacity: "0.842"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M161.013 107q-1 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M451.013 139a1060 1060 0 0 1 44 32q1 0 1 1-1.632 7.84-6.5 12a15.3 15.3 0 0 1-1.5 4.5q.499 6.945-5.5 13.5-2.41 13.316-10.5 24 .186.91 1 1-3.345 8.534-7 15-1.257.513-1 2-2 1 0 2-.016 2.276-2 3.5l1 1q-1.174 3.177-4 4.5a495 495 0 0 1-42-29.5 4.93 4.93 0 0 0-3-.5h-1a48.7 48.7 0 0 0 5-11q2.823-1.082 1-3 2.755-8.718 8-16-1.325-2.97.5-6 1.824-4.899 4.5-7 2.12-4.712 2.5-10a372 372 0 0 1 15.5-33",
+      clipRule: "evenodd",
+      opacity: "0.974"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M411.013 143q2 1 0 0M410.013 144h1q.258 1.487-1 2zM139.013 148q2 1 0 0M503.013 154q2 1 0 0M398.013 172h1q-.278 1.005-1 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M341.013 171a44674 44674 0 0 0 41 29.5q2.067 2.001 4 .5h1a153 153 0 0 0-7 15q-2 .5 0 1-1.782 8.064-7.5 14-.29 8.388-5 16l-1-1q-.17 5.942-3 12a164 164 0 0 0-7.5 14 3.65 3.65 0 0 0 1 1.5 89 89 0 0 1-8 13.5 1389 1389 0 0 1-37-26.5q-4.179-3.09-9-4.5 2.988-8.814 8-14.5-.368-3.134 0-6a103 103 0 0 0 4.5-8.5l1 2q1.373-12.321 9-23 1.529-2.654.5-5l8-16q1.047-6.38 4.5-13 1.738 1.6 2.5-1",
+      clipRule: "evenodd",
+      opacity: "0.975"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M433.013 182q-1-2 0 0M334.013 185q-1-2 0 0M539.013 187q2 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M670.013 393q-.5-1.995-1 0c-1.333.33-1.333.67 0 1-.953 2.11-2.619 3.28-5 3.5q-63 1.005-126 0c-1.331-2-3.165-3.83-5.5-5.5a6601 6601 0 0 1 .5-199 21.6 21.6 0 0 1 4-5l47 2q3.365-1.324 5 2.5a5834 5834 0 0 0-1 152.5q39.362.492 78.5-1 2 3 5 5 1 21 0 42c-.278.92-.778 1.58-1.5 2",
+      clipRule: "evenodd",
+      opacity: "0.928"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M707.013 189a2.43 2.43 0 0 1-2-.5q1.405-1.038 2 .5M856.013 189a2.42 2.42 0 0 1-2-.5c.94-.692 1.6-.525 2 .5",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M883.013 323c-2.85-2.006-5.02-4.672-6.5-8-.62-.949-.45-1.782.5-2.5-1.33-1-2.67-2-4-3 .33-.333.67-.667 1-1a9.4 9.4 0 0 1-2.5-1.5c-1.53-2.755-2.7-5.755-3.5-9q-6.315-4.93-7.5-12c-3.99-2.645-6.32-6.312-7-11-.33 39.333-.67 78.667-1 118-1.19 1.06-1.69 2.4-1.5 4a370 370 0 0 1-46 .5 15.8 15.8 0 0 1-5.5-3.5q-.738-101.06-.5-201.5 2.75-.75 3.5-3.5 26.86.015 53.5 0c3.47.978 5.3 3.312 5.5 7a40.1 40.1 0 0 1 7 8c.62.949.45 1.782-.5 2.5a46 46 0 0 1 7.5 8.5q.99 5.542 6 10a15.8 15.8 0 0 0 3.5 5.5c-.95.718-1.12 1.551-.5 2.5q4.95 3.142 7.5 8.5-3.735 1.057 0 2.5a77 77 0 0 1 6.5 8c.62.949.45 1.782-.5 2.5a55 55 0 0 1 5 5.5 3.6 3.6 0 0 1-1 1.5c1.05 1.119 2.22 1.619 3.5 1.5a59.4 59.4 0 0 1 4 10c.33-.333.67-.667 1-1l3 4 3 8c.91-1.154 1.75-.987 2.5.5-.33.333-.67.667-1 1 2.26 1.753 3.93 3.919 5 6.5q-1.995.5 0 1c.66 1.987 1.83 3.654 3.5 5 .33-35 .67-70 1-105 2.37-1.616 4.21-3.283 5.5-5l44 2c.33-.667.67-1.333 1-2a39 39 0 0 1 5.5 5q1.005 99.5 0 199c-1.55 2.55-3.72 4.39-6.5 5.5-7.83.17-15.67.33-23.5.5q-12.9.21-25.5-1.5l-5-5 1-1c-4.46-3.95-7.46-8.79-9-14.5-4.64-3.39-7.14-7.72-7.5-13-3.28-2.31-5.78-5.313-7.5-9 .21-.586.54-1.086 1-1.5l-9-11c.67-.333 1.33-.667 2-1-5.59-4.732-9.26-10.565-11-17.5",
+      clipRule: "evenodd",
+      opacity: "0.936"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M1162.01 316q-1.995.5 0 1 2.355 4.704 7.5 9-.36 3.844 3 7c3.91 2.59 6.24 6.256 7 11 1.51.757 2.85 1.757 4 3 .35 2.348 1.51 4.181 3.5 5.5-.95.718-1.12 1.551-.5 2.5 4.47 3.23 7.3 7.23 8.5 12 5.19 3.91 8.19 8.74 9 14.5 1.05 1.12 2.22 1.62 3.5 1.5 3.15 4.54 3.65 9.21 1.5 14-9.46.65-18.96.99-28.5 1-10.24.13-20.4-.37-30.5-1.5-4.99-7.61-10.99-14.94-18-22l1-1c-1.45-3.12-3.62-5.62-6.5-7.5a57 57 0 0 1-3-8c-.33.333-.67.67-1 1-3.37-4.07-5.54-8.404-6.5-13q-2.835-1.386-4.5-4c.62-1.595.28-2.928-1-4-1.67.84-1.83.34-.5-1.5q-5.64-4.629-9-11c.33-.333.67-.667 1-1-2.17-2.167-4.33-4.333-6.5-6.5-2.37 5.702-6.2 10.202-11.5 13.5q1.14 2.046-1.5 3.5c-.33 18.667-.67 37.33-1 56a11.5 11.5 0 0 0-3.5 5l-3 1.5c-7.33.17-14.67.33-22 .5-8.41.12-16.74-.38-25-1.5a25.5 25.5 0 0 1-4-4.5 4913 4913 0 0 0 0-198c1.24-2.253 2.91-4.253 5-6 .33.667.67 1.333 1 2 16.35-1.27 32.52-1.27 48.5 0l3 5c.33 23 .67 46 1 69 3.22-1.223 4.89-3.556 5-7a22.8 22.8 0 0 0 4-5c.33.333.67.667 1 1 1.25-5.59 4.42-9.757 9.5-12.5-.33-.333-.67-.667-1-1 2.67-4 6-7.333 10-10a3.6 3.6 0 0 1-1-1.5c3.82-3.452 6.65-7.118 8.5-11a18.8 18.8 0 0 1 5.5-4.5c-.33-.333-.67-.667-1-1a42.5 42.5 0 0 0 4.5-6.5 27 27 0 0 0 6.5-5.5c-.95-.718-1.12-1.551-.5-2.5l7.5-7.5c10.68-.117 21.51-.283 32.5-.5 10.26-.144 20.43.356 30.5 1.5.46.414.79.914 1 1.5-2.82 3.182-4.65 6.516-5.5 10a25.8 25.8 0 0 0-6.5 5.5c.95.718 1.12 1.551.5 2.5a21.6 21.6 0 0 0-5 6c-.33-.333-.67-.667-1-1-.89 4.84-3.73 8.673-8.5 11.5.33.333.67.667 1 1a172.5 172.5 0 0 1-17 20c.78 1.073.61 2.24-.5 3.5a36.6 36.6 0 0 1-7.5 6.5q.3 6.055-6 8.5-2.46 7.654-9 12.5c.6 1.628.26 3.295-1 5q7.425 5.266 9 13a33.3 33.3 0 0 1 8 9.5 3.6 3.6 0 0 1-1 1.5c2.92 2.416 5.26 5.25 7 8.5",
+      clipRule: "evenodd",
+      opacity: "0.929"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M99.013 189q-1 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M707.013 189q22.974.069 45.5 0 4.638 2.135 6 7 1 97 0 194a82 82 0 0 0-5.5 6.5c-1 .33-2 .67-3 1q-21.5 1.005-43 0-4.044-1.035-6.5-4.5-1-100.5 0-201l3-3q1.938 1.937 3.5 0",
+      clipRule: "evenodd",
+      opacity: "0.895"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M163.013 193q2 1 0 0M589.013 194q2 1 0 0M1024.01 194c.17 65.334 0 130.668-.5 196-.83-65.501-.67-130.835.5-196",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M105.013 202h1q-.278 1.005-1 0",
+      clipRule: "evenodd",
+      opacity: "0.012"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M170.013 206q2 1 0 0M420.013 211q-1 1 0 0M419.013 214q-1-2 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M248.013 213a325 325 0 0 1 36 1q1.477 2.397.5 5a41 41 0 0 0-5.5 9.5l1 1a31.7 31.7 0 0 0-2 6.5 686 686 0 0 1-27-18.5 11.1 11.1 0 0 1-3-4.5",
+      clipRule: "evenodd",
+      opacity: "0.922"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M380.013 216q2 1 0 0M473.013 226q2 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M414.013 225q.5 2 1 0a4.93 4.93 0 0 1 3 .5 495 495 0 0 0 42 29.5v1q-2.858 2.323-1 5.5-2.701.476-1 2a35.3 35.3 0 0 1-3.5 8.5q-1.38.645-2.5 1a3.65 3.65 0 0 0 1 1.5q-2.767 4.277-3.5 9.5a220 220 0 0 0-8.5 17q-2 1 0 2a30.7 30.7 0 0 1-6.5 12q-.526 7.058-4 14-1 2-2 0a46 46 0 0 0-2 10q-.912 2.35-2.5 4-1.575-.607 0-2a812 812 0 0 0-44-31q.957-2.94 0-5.5 3.103-.486 1-2.5a230 230 0 0 0 9-16.5 3.65 3.65 0 0 1-1-1.5 56 56 0 0 1 8-15q-.025-6.212 3.5-12 1.524 1.701 2-1a15.3 15.3 0 0 1 1.5-4.5q-1.701-1.524 1-2-.931-6.07 4.5-11.5a43 43 0 0 0 2-9q.913-2.35 2.5-4",
+      clipRule: "evenodd",
+      opacity: "0.977"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M125.013 237q1.356 1.063 1 3 3.424.162 6 2.5a805 805 0 0 0 39 28 14.7 14.7 0 0 1 3 3.5q-14.508.25-29-.5-1.13-2.23-2.5-.5-2.755-5.277-5.5-10.5l1-1q-3.25-1.25-4.5-4.5a43.4 43.4 0 0 1-2-8q-6.843-4.431-6.5-12",
+      clipRule: "evenodd",
+      opacity: "0.922"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M466.013 242q2 1 0 0M892.013 243q1.995 1 0 0M465.013 244q2 1 0 2zM460.013 256q2 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M303.013 256q4.821 1.41 9 4.5a1389 1389 0 0 0 37 26.5 5.58 5.58 0 0 0 1 3 276 276 0 0 0-5.5 12l-1-1q-2.71 3.309-1.5 7a145 145 0 0 1-4.5 11q-1 2-2 0-.453 10.981-8 20a38 38 0 0 1-2.5 6.5q.686.621 1 1.5l-8 16c-.838.34-1.172 1.01-1 2-1.333.33-1.333.67 0 1a31.6 31.6 0 0 1-2 6 4.95 4.95 0 0 1-3-.5 645 645 0 0 0-44-30.5 32.3 32.3 0 0 0 5-9l-1-2q2.237-7.486 7.5-13 .073-7.26 4-14 1 2 2 0a19.95 19.95 0 0 1 2.5-8 3.65 3.65 0 0 0-1-1.5l9-17q-1.165-2.655.5-5.5a150 150 0 0 0 7.5-13 44 44 0 0 1-1-2",
+      clipRule: "evenodd",
+      opacity: "0.98"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M923.013 292q1.995 1 0 0M442.013 300q2 1 0 0M441.013 301h1q.258 1.488-1 2z",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M380.013 310a812 812 0 0 1 44 31q-1.575 1.393 0 2c-3.209 10.425-7.542 20.42-13 30-.322 3.04-1.322 6.2-3 9.5-3.201 2.55-4.534 5.71-4 9.5a90 90 0 0 1-5.5 12c-.333-.33-.667-.67-1-1-.345 3.26-1.512 6.1-3.5 8.5 1.017 1.05 1.184 2.22.5 3.5a71.4 71.4 0 0 1-5.5 10 602 602 0 0 1-43-29.5c-1.428-.58-2.762-.41-4 .5q2.656-7.32 7.5-15c.684-1.28.517-2.45-.5-3.5a235 235 0 0 1 10-18q-1.526-1.574-.5-3.5l7.5-13q-.186-.91-1-1 4.245-10.885 10-20.5l-2-1q2.605-5.994 7-10.5",
+      clipRule: "evenodd",
+      opacity: "0.983"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M435.013 316q2 1 0 0M1162.01 316q1.995 1 0 0M883.013 323q-1.005 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M268.013 341a645 645 0 0 1 44 30.5c.948.48 1.948.65 3 .5-.614 1.78-1.78 3.12-3.5 4q-1.098 9.3-6 18c-.333-.33-.667-.67-1-1-1.225 9.27-4.725 17.44-10.5 24.5.667.33 1.333.67 2 1-2.339 4.37-4.672 8.7-7 13 2 2.67 4 5.33 6 8-.667.33-1.333.67-2 1 5.31 5.33 8.977 11.66 11 19 2.934 2.69 5.267 5.86 7 9.5l4.5-9c.333.33.667.67 1 1 .345-3.26 1.512-6.1 3.5-8.5-.667-.33-1.333-.67-2-1a185 185 0 0 1 9-16c-1.017-1.05-1.184-2.22-.5-3.5q3.22-8.19 8.5-15c-.124-.61-.457-.94-1-1q1.614-6.945 6-12c1.409-2.64 2.076-5.3 2-8 1.238-.91 2.572-1.08 4-.5a602 602 0 0 0 43 29.5c-1.184 1.19-1.184 2.35 0 3.5a481 481 0 0 1-9 18.5c-.667 0-1 .33-1 1-1.333.67-1.333 1.33 0 2-.542 4.09-2.375 7.42-5.5 10q-1.098 9.3-6 18c-.333-.33-.667-.67-1-1l-3 12a671 671 0 0 0-6.5 12.5c.333.33.667.67 1 1a100 100 0 0 1-5 8.5c-39.928-28.31-79.928-56.64-120-85q2.148-9.345 8-18c-.333-.67-.667-1.33-1-2 2.204-5.74 4.871-11.08 8-16q1.248-7.455 5.5-15c.333.33.667.67 1 1 1.686-9 5.186-17.16 10.5-24.5l-2-1q3.606-.762 2-3.5.944-3.361 3-6",
+      clipRule: "evenodd",
+      opacity: "0.969"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M365.013 342q-1 1 0 0M590.013 344a915 915 0 0 1 74-.5q-36.996.75-74 .5M318.013 363q2 1.005 0 0M317.013 365q2 1.005 0 0M411.013 373q2 1.005 0 0M248.013 390q-1-1.995 0 0M669.013 393h1q-.278 1.005-1 0M340.013 404q-1-1.995 0 0M334.013 416q-1 1.005 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M233.013 426c40.072 28.36 80.072 56.69 120 85a44.4 44.4 0 0 0-5 11c-1.333.67-1.333 1.33 0 2-.827 4.48-2.66 7.81-5.5 10-1.11 1.9-1.276 3.73-.5 5.5a51.4 51.4 0 0 1-5 10.5q-.5-1.995-1 0c-.984 2.55-1.984 5.22-3 8q.314.885 1 1.5a3820 3820 0 0 0-17 35q-2.494.39-4.5-1.5c-1.427-2.21-1.927-4.37-1.5-6.5-4.258-4.38-6.925-9.21-8-14.5a29.3 29.3 0 0 0-5.5-8c-.45-4.9-2.617-9.24-6.5-13q2.032-1.77-.5-3c-.333.33-.667.67-1 1-1.138-4.6-3.471-8.93-7-13-2.095-3.26-3.095-6.59-3-10-3.486-2.96-5.986-6.63-7.5-11-.032-3.04-1.532-5.7-4.5-8q-2.052-2.235-.5-4.5c-.753-1.49-1.586-1.65-2.5-.5.053-3.9-1.614-7.23-5-10a40 40 0 0 1-5-13c-.333.33-.667.67-1 1-2.753-3.63-4.253-7.46-4.5-11.5-1.158-3.42-2.992-5.58-5.5-6.5-.36-1.92-1.194-3.59-2.5-5q.314-.885 1-1.5l-10-15q.686-.615 1-1.5a18.4 18.4 0 0 0-4-6c2.082-1.92 3.416-4.26 4-7",
+      clipRule: "evenodd",
+      opacity: "0.974"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#000",
+      fillRule: "evenodd",
+      d: "M380.013 447q2 1.005 0 0M379.013 448h1c.172.99-.162 1.66-1 2zM272.013 515q-1-1.995 0 0M349.013 521q2 1.005 0 0M348.013 522h1c.172.99-.162 1.66-1 2zM336.013 550h1q-.278 1.005-1 0M303.013 572q-1 1.005 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SlLogoBlack);
+
+/***/ },
+
+/***/ "./src/icons/SlLogoBlue.jsx"
+/*!**********************************!*\
+  !*** ./src/icons/SlLogoBlue.jsx ***!
+  \**********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const SlLogoBlue = () => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "1211",
+    height: "595",
+    fill: "none",
+    viewBox: "0 0 1211 595",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M103.013 0a1666 1666 0 0 0 78 56.5q2.248 1.257 1 2.5-45.528-.988-90 2 4.43 6.464 9 14.5-1.701 1.524 1 2-1.552 2.26.5 4.5 1-2 2 0a42.3 42.3 0 0 1 3.5 8q-2 .5 0 1a323 323 0 0 0 9 13.5l-2 1q7.725 7.447 10 18 4.008 2.756 5 7.5a3203 3203 0 0 0-98-69q-6.486-12.939-16-25.5l1-1a38 38 0 0 1-2.5-6.5l-1 1q-4.635-6.273-6-14-4.71-3.155-6.5-10 .814-.09 1-1-2.175-2.025-2-5z",
+      clipRule: "evenodd",
+      opacity: "0.975"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M103.013 0h155a1666 1666 0 0 0 78 56.5q2.248 1.257 1 2.5-77.016-.993-153 2h-2v-2q1.248-1.243-1-2.5a1666 1666 0 0 1-78-56.5",
+      clipRule: "evenodd",
+      opacity: "0.984"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M258.013 0h155a4997 4997 0 0 0 117 84.5q1.129 1.006 1 2.5-1.234 4.277-4 8l1 2a222 222 0 0 0-4.5 11q-1 2-2 0-1.411 11.914-8.5 21.5-2.241 11.727-9 21.5a3.65 3.65 0 0 0 1 1.5q-1.373.417-2 1.5-2 .5 0 1-1.541 5.575-5.5 10-1.974 3.699-1.5 7 0-1-1-1a1060 1060 0 0 0-44-32q-.814-.09-1-1 2.294-6.219 6.5-11 1.55-9.084 6-18l1 2q1.214-12.863 9-23 1.665-2.845.5-5.5 4.566-.539 1-2a57.2 57.2 0 0 1 6.5-10.5q2.127-3.966 1.5-8-72.493-1.5-145-1v-2q1.248-1.243-1-2.5a1666 1666 0 0 1-78-56.5",
+      clipRule: "evenodd",
+      opacity: "0.975"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M413.013 0h154q.41 2.927-2 4.5l2 1a346 346 0 0 0-8 15.5q-1.257.512-1 2-2 .5 0 1-1.255 7.597-6.5 13-1.026 1.926.5 3.5-3.819 9.564-9 17l1 1a116.6 116.6 0 0 1-10 20.5q1.103 4.823-3 8 .129-1.494-1-2.5a4997 4997 0 0 1-117-84.5",
+      clipRule: "evenodd",
+      opacity: "0.969"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M1.013 6q-1-2 0 0M559.013 21q2 1 0 0M558.013 23q2 1 0 0M182.013 59v2h-90q44.472-2.988 90-2M337.013 59v2h-153q75.984-2.993 153-2",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M32.013 62a3203 3203 0 0 1 98 69q2.18 1.53 1 3.5 3.103.486 1 2.5.948 3.697 4.5 5a23.4 23.4 0 0 1 2.5 6q-2 .5 0 1 3.92 6.448 8 13a3.65 3.65 0 0 1-1 1.5q8.616 8.48 10.5 20.5l3 1a42.3 42.3 0 0 1 3.5 8q-2 .5 0 1 1.037 4.298 5 6.5l-1 1q2.461 1.693 3 4.5-.814.09-1 1a79 79 0 0 1 4 5.5q37.497.75 75 .5a11.1 11.1 0 0 0 3 4.5 686 686 0 0 0 27 18.5l-2.5 5q-1 2-2 0-1.094 11.674-8 21a71 71 0 0 0-2 9q-1 2-2 0a9.5 9.5 0 0 1-1.5 2.5q-42.997.75-86 .5a14.7 14.7 0 0 0-3-3.5 805 805 0 0 1-39-28q-2.576-2.338-6-2.5.356-1.937-1-3-5.575-5.616-9-13a3.65 3.65 0 0 1 1-1.5 51.8 51.8 0 0 1-9-14l1-1a87 87 0 0 1-3-5.5q-.5-2-1 0a81 81 0 0 1-2.5-3q-2.778-5.203-3.5-10-3.295-2.751-5-7a3.65 3.65 0 0 1 1-1.5q-9.35-12.805-16-26 3.566-1.461-1-2l1-1q-7.314-8.564-10-19.5a40.6 40.6 0 0 1-7-10 3.65 3.65 0 0 1 1-1.5 69.2 69.2 0 0 1-9-13 3.65 3.65 0 0 0 1-1.5 65.3 65.3 0 0 1-9-14.5q1.199-2.623-2-4l1-1a6.98 6.98 0 0 1-3.5-2.5 29 29 0 0 1-3-10q-6.173-4.866-6.5-12",
+      clipRule: "evenodd",
+      opacity: "0.978"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M108.013 90q2 1 0 0M194.013 105a8823 8823 0 0 1 230-.5q-115 .75-230 .5",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M194.013 105a842 842 0 0 0 58 1q-.129 1.494 1 2.5l75 53q1.776 1.718 0 3.5-68.507.5-137-1a19.9 19.9 0 0 1-5-6.5q1.552-2.26-.5-4.5-4.187-3.772-6.5-9a3.65 3.65 0 0 1 1-1.5 14168 14168 0 0 1-9-13l1-1a46.5 46.5 0 0 0-6.5-9.5q-2.273-6.165-4.5-12 .166-.925 1-1.5 15.992-.75 32-.5",
+      clipRule: "evenodd",
+      opacity: "0.968"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M252.013 106h155q-.128 1.494 1 2.5a161 161 0 0 0 13 8.5h1a120 120 0 0 0-5.5 15 42 42 0 0 0-6.5 12q-2 1 0 2-1.638 6.481-5.5 10-.738 8.458-5.5 16-.5-2-1 0a95 95 0 0 1-4 10.5l1 1q-3.882 7.849-8 14 1.936 1.938 0 3.5-.5-2-1 0-1.933 1.501-4-.5a44674 44674 0 0 1-41-29.5v-6h-13q1.776-1.782 0-3.5l-75-53q-1.129-1.006-1-2.5",
+      clipRule: "evenodd",
+      opacity: "0.987"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M407.013 106h19q.065 6.35-4 11-.5-2-1 0a161 161 0 0 1-13-8.5q-1.128-1.006-1-2.5",
+      clipRule: "evenodd",
+      opacity: "0.842"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M161.013 107q-1 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M451.013 139a1060 1060 0 0 1 44 32q1 0 1 1-1.632 7.84-6.5 12a15.3 15.3 0 0 1-1.5 4.5q.499 6.945-5.5 13.5-2.41 13.316-10.5 24 .186.91 1 1-3.345 8.534-7 15-1.257.513-1 2-2 1 0 2-.016 2.276-2 3.5l1 1q-1.174 3.177-4 4.5a495 495 0 0 1-42-29.5 4.93 4.93 0 0 0-3-.5h-1a48.7 48.7 0 0 0 5-11q2.823-1.082 1-3 2.755-8.718 8-16-1.325-2.97.5-6 1.824-4.899 4.5-7 2.12-4.712 2.5-10a372 372 0 0 1 15.5-33",
+      clipRule: "evenodd",
+      opacity: "0.974"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M411.013 143q2 1 0 0M410.013 144h1q.258 1.487-1 2zM139.013 148q2 1 0 0M503.013 154q2 1 0 0M398.013 172h1q-.278 1.005-1 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M341.013 171a44674 44674 0 0 0 41 29.5q2.067 2.001 4 .5h1a153 153 0 0 0-7 15q-2 .5 0 1-1.782 8.064-7.5 14-.29 8.388-5 16l-1-1q-.17 5.942-3 12a164 164 0 0 0-7.5 14 3.65 3.65 0 0 0 1 1.5 89 89 0 0 1-8 13.5 1389 1389 0 0 1-37-26.5q-4.179-3.09-9-4.5 2.988-8.814 8-14.5-.368-3.134 0-6a103 103 0 0 0 4.5-8.5l1 2q1.373-12.321 9-23 1.529-2.654.5-5l8-16q1.047-6.38 4.5-13 1.738 1.6 2.5-1",
+      clipRule: "evenodd",
+      opacity: "0.975"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M433.013 182q-1-2 0 0M334.013 185q-1-2 0 0M539.013 187q2 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M670.013 393q-.5-1.995-1 0c-1.333.33-1.333.67 0 1-.953 2.11-2.619 3.28-5 3.5q-63 1.005-126 0c-1.331-2-3.165-3.83-5.5-5.5a6601 6601 0 0 1 .5-199 21.6 21.6 0 0 1 4-5l47 2q3.365-1.324 5 2.5a5834 5834 0 0 0-1 152.5q39.362.492 78.5-1 2 3 5 5 1 21 0 42c-.278.92-.778 1.58-1.5 2",
+      clipRule: "evenodd",
+      opacity: "0.928"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M707.013 189a2.43 2.43 0 0 1-2-.5q1.405-1.038 2 .5M856.013 189a2.42 2.42 0 0 1-2-.5c.94-.692 1.6-.525 2 .5",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M883.013 323c-2.85-2.006-5.02-4.672-6.5-8-.62-.949-.45-1.782.5-2.5-1.33-1-2.67-2-4-3 .33-.333.67-.667 1-1a9.4 9.4 0 0 1-2.5-1.5c-1.53-2.755-2.7-5.755-3.5-9q-6.315-4.93-7.5-12c-3.99-2.645-6.32-6.312-7-11-.33 39.333-.67 78.667-1 118-1.19 1.06-1.69 2.4-1.5 4a370 370 0 0 1-46 .5 15.8 15.8 0 0 1-5.5-3.5q-.738-101.06-.5-201.5 2.75-.75 3.5-3.5 26.86.015 53.5 0c3.47.978 5.3 3.312 5.5 7a40.1 40.1 0 0 1 7 8c.62.949.45 1.782-.5 2.5a46 46 0 0 1 7.5 8.5q.99 5.542 6 10a15.8 15.8 0 0 0 3.5 5.5c-.95.718-1.12 1.551-.5 2.5q4.95 3.142 7.5 8.5-3.735 1.057 0 2.5a77 77 0 0 1 6.5 8c.62.949.45 1.782-.5 2.5a55 55 0 0 1 5 5.5 3.6 3.6 0 0 1-1 1.5c1.05 1.119 2.22 1.619 3.5 1.5a59.4 59.4 0 0 1 4 10c.33-.333.67-.667 1-1l3 4 3 8c.91-1.154 1.75-.987 2.5.5-.33.333-.67.667-1 1 2.26 1.753 3.93 3.919 5 6.5q-1.995.5 0 1c.66 1.987 1.83 3.654 3.5 5 .33-35 .67-70 1-105 2.37-1.616 4.21-3.283 5.5-5l44 2c.33-.667.67-1.333 1-2a39 39 0 0 1 5.5 5q1.005 99.5 0 199c-1.55 2.55-3.72 4.39-6.5 5.5-7.83.17-15.67.33-23.5.5q-12.9.21-25.5-1.5l-5-5 1-1c-4.46-3.95-7.46-8.79-9-14.5-4.64-3.39-7.14-7.72-7.5-13-3.28-2.31-5.78-5.313-7.5-9 .21-.586.54-1.086 1-1.5l-9-11c.67-.333 1.33-.667 2-1-5.59-4.732-9.26-10.565-11-17.5",
+      clipRule: "evenodd",
+      opacity: "0.936"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M1162.01 316q-1.995.5 0 1 2.355 4.704 7.5 9-.36 3.844 3 7c3.91 2.59 6.24 6.256 7 11 1.51.757 2.85 1.757 4 3 .35 2.348 1.51 4.181 3.5 5.5-.95.718-1.12 1.551-.5 2.5 4.47 3.23 7.3 7.23 8.5 12 5.19 3.91 8.19 8.74 9 14.5 1.05 1.12 2.22 1.62 3.5 1.5 3.15 4.54 3.65 9.21 1.5 14-9.46.65-18.96.99-28.5 1-10.24.13-20.4-.37-30.5-1.5-4.99-7.61-10.99-14.94-18-22l1-1c-1.45-3.12-3.62-5.62-6.5-7.5a57 57 0 0 1-3-8c-.33.333-.67.67-1 1-3.37-4.07-5.54-8.404-6.5-13q-2.835-1.386-4.5-4c.62-1.595.28-2.928-1-4-1.67.84-1.83.34-.5-1.5q-5.64-4.629-9-11c.33-.333.67-.667 1-1-2.17-2.167-4.33-4.333-6.5-6.5-2.37 5.702-6.2 10.202-11.5 13.5q1.14 2.046-1.5 3.5c-.33 18.667-.67 37.33-1 56a11.5 11.5 0 0 0-3.5 5l-3 1.5c-7.33.17-14.67.33-22 .5-8.41.12-16.74-.38-25-1.5a25.5 25.5 0 0 1-4-4.5 4913 4913 0 0 0 0-198c1.24-2.253 2.91-4.253 5-6 .33.667.67 1.333 1 2 16.35-1.27 32.52-1.27 48.5 0l3 5c.33 23 .67 46 1 69 3.22-1.223 4.89-3.556 5-7a22.8 22.8 0 0 0 4-5c.33.333.67.667 1 1 1.25-5.59 4.42-9.757 9.5-12.5-.33-.333-.67-.667-1-1 2.67-4 6-7.333 10-10a3.6 3.6 0 0 1-1-1.5c3.82-3.452 6.65-7.118 8.5-11a18.8 18.8 0 0 1 5.5-4.5c-.33-.333-.67-.667-1-1a42.5 42.5 0 0 0 4.5-6.5 27 27 0 0 0 6.5-5.5c-.95-.718-1.12-1.551-.5-2.5l7.5-7.5c10.68-.117 21.51-.283 32.5-.5 10.26-.144 20.43.356 30.5 1.5.46.414.79.914 1 1.5-2.82 3.182-4.65 6.516-5.5 10a25.8 25.8 0 0 0-6.5 5.5c.95.718 1.12 1.551.5 2.5a21.6 21.6 0 0 0-5 6c-.33-.333-.67-.667-1-1-.89 4.84-3.73 8.673-8.5 11.5.33.333.67.667 1 1a172.5 172.5 0 0 1-17 20c.78 1.073.61 2.24-.5 3.5a36.6 36.6 0 0 1-7.5 6.5q.3 6.055-6 8.5-2.46 7.654-9 12.5c.6 1.628.26 3.295-1 5q7.425 5.266 9 13a33.3 33.3 0 0 1 8 9.5 3.6 3.6 0 0 1-1 1.5c2.92 2.416 5.26 5.25 7 8.5",
+      clipRule: "evenodd",
+      opacity: "0.929"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M99.013 189q-1 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M707.013 189q22.974.069 45.5 0 4.638 2.135 6 7 1 97 0 194a82 82 0 0 0-5.5 6.5c-1 .33-2 .67-3 1q-21.5 1.005-43 0-4.044-1.035-6.5-4.5-1-100.5 0-201l3-3q1.938 1.937 3.5 0",
+      clipRule: "evenodd",
+      opacity: "0.895"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M163.013 193q2 1 0 0M589.013 194q2 1 0 0M1024.01 194c.17 65.334 0 130.668-.5 196-.83-65.501-.67-130.835.5-196",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M105.013 202h1q-.278 1.005-1 0",
+      clipRule: "evenodd",
+      opacity: "0.012"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M170.013 206q2 1 0 0M420.013 211q-1 1 0 0M419.013 214q-1-2 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M248.013 213a325 325 0 0 1 36 1q1.477 2.397.5 5a41 41 0 0 0-5.5 9.5l1 1a31.7 31.7 0 0 0-2 6.5 686 686 0 0 1-27-18.5 11.1 11.1 0 0 1-3-4.5",
+      clipRule: "evenodd",
+      opacity: "0.922"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M380.013 216q2 1 0 0M473.013 226q2 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M414.013 225q.5 2 1 0a4.93 4.93 0 0 1 3 .5 495 495 0 0 0 42 29.5v1q-2.858 2.323-1 5.5-2.701.476-1 2a35.3 35.3 0 0 1-3.5 8.5q-1.38.645-2.5 1a3.65 3.65 0 0 0 1 1.5q-2.767 4.277-3.5 9.5a220 220 0 0 0-8.5 17q-2 1 0 2a30.7 30.7 0 0 1-6.5 12q-.526 7.058-4 14-1 2-2 0a46 46 0 0 0-2 10q-.912 2.35-2.5 4-1.575-.607 0-2a812 812 0 0 0-44-31q.957-2.94 0-5.5 3.103-.486 1-2.5a230 230 0 0 0 9-16.5 3.65 3.65 0 0 1-1-1.5 56 56 0 0 1 8-15q-.025-6.212 3.5-12 1.524 1.701 2-1a15.3 15.3 0 0 1 1.5-4.5q-1.701-1.524 1-2-.931-6.07 4.5-11.5a43 43 0 0 0 2-9q.913-2.35 2.5-4",
+      clipRule: "evenodd",
+      opacity: "0.977"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M125.013 237q1.356 1.063 1 3 3.424.162 6 2.5a805 805 0 0 0 39 28 14.7 14.7 0 0 1 3 3.5q-14.508.25-29-.5-1.13-2.23-2.5-.5-2.755-5.277-5.5-10.5l1-1q-3.25-1.25-4.5-4.5a43.4 43.4 0 0 1-2-8q-6.843-4.431-6.5-12",
+      clipRule: "evenodd",
+      opacity: "0.922"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M466.013 242q2 1 0 0M892.013 243q1.995 1 0 0M465.013 244q2 1 0 2zM460.013 256q2 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M303.013 256q4.821 1.41 9 4.5a1389 1389 0 0 0 37 26.5 5.58 5.58 0 0 0 1 3 276 276 0 0 0-5.5 12l-1-1q-2.71 3.309-1.5 7a145 145 0 0 1-4.5 11q-1 2-2 0-.453 10.981-8 20a38 38 0 0 1-2.5 6.5q.686.621 1 1.5l-8 16c-.838.34-1.172 1.01-1 2-1.333.33-1.333.67 0 1a31.6 31.6 0 0 1-2 6 4.95 4.95 0 0 1-3-.5 645 645 0 0 0-44-30.5 32.3 32.3 0 0 0 5-9l-1-2q2.237-7.486 7.5-13 .073-7.26 4-14 1 2 2 0a19.95 19.95 0 0 1 2.5-8 3.65 3.65 0 0 0-1-1.5l9-17q-1.165-2.655.5-5.5a150 150 0 0 0 7.5-13 44 44 0 0 1-1-2",
+      clipRule: "evenodd",
+      opacity: "0.98"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M923.013 292q1.995 1 0 0M442.013 300q2 1 0 0M441.013 301h1q.258 1.488-1 2z",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M380.013 310a812 812 0 0 1 44 31q-1.575 1.393 0 2c-3.209 10.425-7.542 20.42-13 30-.322 3.04-1.322 6.2-3 9.5-3.201 2.55-4.534 5.71-4 9.5a90 90 0 0 1-5.5 12c-.333-.33-.667-.67-1-1-.345 3.26-1.512 6.1-3.5 8.5 1.017 1.05 1.184 2.22.5 3.5a71.4 71.4 0 0 1-5.5 10 602 602 0 0 1-43-29.5c-1.428-.58-2.762-.41-4 .5q2.656-7.32 7.5-15c.684-1.28.517-2.45-.5-3.5a235 235 0 0 1 10-18q-1.526-1.574-.5-3.5l7.5-13q-.186-.91-1-1 4.245-10.885 10-20.5l-2-1q2.605-5.994 7-10.5",
+      clipRule: "evenodd",
+      opacity: "0.983"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M435.013 316q2 1 0 0M1162.01 316q1.995 1 0 0M883.013 323q-1.005 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M268.013 341a645 645 0 0 1 44 30.5c.948.48 1.948.65 3 .5-.614 1.78-1.78 3.12-3.5 4q-1.098 9.3-6 18c-.333-.33-.667-.67-1-1-1.225 9.27-4.725 17.44-10.5 24.5.667.33 1.333.67 2 1-2.339 4.37-4.672 8.7-7 13 2 2.67 4 5.33 6 8-.667.33-1.333.67-2 1 5.31 5.33 8.977 11.66 11 19 2.934 2.69 5.267 5.86 7 9.5l4.5-9c.333.33.667.67 1 1 .345-3.26 1.512-6.1 3.5-8.5-.667-.33-1.333-.67-2-1a185 185 0 0 1 9-16c-1.017-1.05-1.184-2.22-.5-3.5q3.22-8.19 8.5-15c-.124-.61-.457-.94-1-1q1.614-6.945 6-12c1.409-2.64 2.076-5.3 2-8 1.238-.91 2.572-1.08 4-.5a602 602 0 0 0 43 29.5c-1.184 1.19-1.184 2.35 0 3.5a481 481 0 0 1-9 18.5c-.667 0-1 .33-1 1-1.333.67-1.333 1.33 0 2-.542 4.09-2.375 7.42-5.5 10q-1.098 9.3-6 18c-.333-.33-.667-.67-1-1l-3 12a671 671 0 0 0-6.5 12.5c.333.33.667.67 1 1a100 100 0 0 1-5 8.5c-39.928-28.31-79.928-56.64-120-85q2.148-9.345 8-18c-.333-.67-.667-1.33-1-2 2.204-5.74 4.871-11.08 8-16q1.248-7.455 5.5-15c.333.33.667.67 1 1 1.686-9 5.186-17.16 10.5-24.5l-2-1q3.606-.762 2-3.5.944-3.361 3-6",
+      clipRule: "evenodd",
+      opacity: "0.969"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M365.013 342q-1 1 0 0M590.013 344a915 915 0 0 1 74-.5q-36.996.75-74 .5M318.013 363q2 1.005 0 0M317.013 365q2 1.005 0 0M411.013 373q2 1.005 0 0M248.013 390q-1-1.995 0 0M669.013 393h1q-.278 1.005-1 0M340.013 404q-1-1.995 0 0M334.013 416q-1 1.005 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M233.013 426c40.072 28.36 80.072 56.69 120 85a44.4 44.4 0 0 0-5 11c-1.333.67-1.333 1.33 0 2-.827 4.48-2.66 7.81-5.5 10-1.11 1.9-1.276 3.73-.5 5.5a51.4 51.4 0 0 1-5 10.5q-.5-1.995-1 0c-.984 2.55-1.984 5.22-3 8q.314.885 1 1.5a3820 3820 0 0 0-17 35q-2.494.39-4.5-1.5c-1.427-2.21-1.927-4.37-1.5-6.5-4.258-4.38-6.925-9.21-8-14.5a29.3 29.3 0 0 0-5.5-8c-.45-4.9-2.617-9.24-6.5-13q2.032-1.77-.5-3c-.333.33-.667.67-1 1-1.138-4.6-3.471-8.93-7-13-2.095-3.26-3.095-6.59-3-10-3.486-2.96-5.986-6.63-7.5-11-.032-3.04-1.532-5.7-4.5-8q-2.052-2.235-.5-4.5c-.753-1.49-1.586-1.65-2.5-.5.053-3.9-1.614-7.23-5-10a40 40 0 0 1-5-13c-.333.33-.667.67-1 1-2.753-3.63-4.253-7.46-4.5-11.5-1.158-3.42-2.992-5.58-5.5-6.5-.36-1.92-1.194-3.59-2.5-5q.314-.885 1-1.5l-10-15q.686-.615 1-1.5a18.4 18.4 0 0 0-4-6c2.082-1.92 3.416-4.26 4-7",
+      clipRule: "evenodd",
+      opacity: "0.974"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#4775C9",
+      fillRule: "evenodd",
+      d: "M380.013 447q2 1.005 0 0M379.013 448h1c.172.99-.162 1.66-1 2zM272.013 515q-1-1.995 0 0M349.013 521q2 1.005 0 0M348.013 522h1c.172.99-.162 1.66-1 2zM336.013 550h1q-.278 1.005-1 0M303.013 572q-1 1.005 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SlLogoBlue);
+
+/***/ },
+
+/***/ "./src/icons/SlinkLogoRed.jsx"
+/*!************************************!*\
+  !*** ./src/icons/SlinkLogoRed.jsx ***!
+  \************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const SlinkLogoRed = () => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "1211",
+    height: "595",
+    fill: "none",
+    viewBox: "0 0 1211 595",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M103.013 0a1666 1666 0 0 0 78 56.5q2.248 1.257 1 2.5-45.528-.988-90 2 4.43 6.464 9 14.5-1.701 1.524 1 2-1.552 2.26.5 4.5 1-2 2 0a42.3 42.3 0 0 1 3.5 8q-2 .5 0 1a323 323 0 0 0 9 13.5l-2 1q7.725 7.447 10 18 4.008 2.756 5 7.5a3203 3203 0 0 0-98-69q-6.486-12.939-16-25.5l1-1a38 38 0 0 1-2.5-6.5l-1 1q-4.635-6.273-6-14-4.71-3.155-6.5-10 .814-.09 1-1-2.175-2.025-2-5z",
+      clipRule: "evenodd",
+      opacity: "0.975"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M103.013 0h155a1666 1666 0 0 0 78 56.5q2.248 1.257 1 2.5-77.016-.993-153 2h-2v-2q1.248-1.243-1-2.5a1666 1666 0 0 1-78-56.5",
+      clipRule: "evenodd",
+      opacity: "0.984"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M258.013 0h155a4997 4997 0 0 0 117 84.5q1.129 1.006 1 2.5-1.234 4.277-4 8l1 2a222 222 0 0 0-4.5 11q-1 2-2 0-1.411 11.914-8.5 21.5-2.241 11.727-9 21.5a3.65 3.65 0 0 0 1 1.5q-1.373.417-2 1.5-2 .5 0 1-1.541 5.575-5.5 10-1.974 3.699-1.5 7 0-1-1-1a1060 1060 0 0 0-44-32q-.814-.09-1-1 2.294-6.219 6.5-11 1.55-9.084 6-18l1 2q1.214-12.863 9-23 1.665-2.845.5-5.5 4.566-.539 1-2a57.2 57.2 0 0 1 6.5-10.5q2.127-3.966 1.5-8-72.493-1.5-145-1v-2q1.248-1.243-1-2.5a1666 1666 0 0 1-78-56.5",
+      clipRule: "evenodd",
+      opacity: "0.975"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M413.013 0h154q.41 2.927-2 4.5l2 1a346 346 0 0 0-8 15.5q-1.257.512-1 2-2 .5 0 1-1.255 7.597-6.5 13-1.026 1.926.5 3.5-3.819 9.564-9 17l1 1a116.6 116.6 0 0 1-10 20.5q1.103 4.823-3 8 .129-1.494-1-2.5a4997 4997 0 0 1-117-84.5",
+      clipRule: "evenodd",
+      opacity: "0.969"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M1.013 6q-1-2 0 0M559.013 21q2 1 0 0M558.013 23q2 1 0 0M182.013 59v2h-90q44.472-2.988 90-2M337.013 59v2h-153q75.984-2.993 153-2",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M32.013 62a3203 3203 0 0 1 98 69q2.18 1.53 1 3.5 3.103.486 1 2.5.948 3.697 4.5 5a23.4 23.4 0 0 1 2.5 6q-2 .5 0 1 3.92 6.448 8 13a3.65 3.65 0 0 1-1 1.5q8.616 8.48 10.5 20.5l3 1a42.3 42.3 0 0 1 3.5 8q-2 .5 0 1 1.037 4.298 5 6.5l-1 1q2.461 1.693 3 4.5-.814.09-1 1a79 79 0 0 1 4 5.5q37.497.75 75 .5a11.1 11.1 0 0 0 3 4.5 686 686 0 0 0 27 18.5l-2.5 5q-1 2-2 0-1.094 11.674-8 21a71 71 0 0 0-2 9q-1 2-2 0a9.5 9.5 0 0 1-1.5 2.5q-42.997.75-86 .5a14.7 14.7 0 0 0-3-3.5 805 805 0 0 1-39-28q-2.576-2.338-6-2.5.356-1.937-1-3-5.575-5.616-9-13a3.65 3.65 0 0 1 1-1.5 51.8 51.8 0 0 1-9-14l1-1a87 87 0 0 1-3-5.5q-.5-2-1 0a81 81 0 0 1-2.5-3q-2.778-5.203-3.5-10-3.295-2.751-5-7a3.65 3.65 0 0 1 1-1.5q-9.35-12.805-16-26 3.566-1.461-1-2l1-1q-7.314-8.564-10-19.5a40.6 40.6 0 0 1-7-10 3.65 3.65 0 0 1 1-1.5 69.2 69.2 0 0 1-9-13 3.65 3.65 0 0 0 1-1.5 65.3 65.3 0 0 1-9-14.5q1.199-2.623-2-4l1-1a6.98 6.98 0 0 1-3.5-2.5 29 29 0 0 1-3-10q-6.173-4.866-6.5-12",
+      clipRule: "evenodd",
+      opacity: "0.978"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M108.013 90q2 1 0 0M194.013 105a8823 8823 0 0 1 230-.5q-115 .75-230 .5",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M194.013 105a842 842 0 0 0 58 1q-.129 1.494 1 2.5l75 53q1.776 1.718 0 3.5-68.507.5-137-1a19.9 19.9 0 0 1-5-6.5q1.552-2.26-.5-4.5-4.187-3.772-6.5-9a3.65 3.65 0 0 1 1-1.5 14168 14168 0 0 1-9-13l1-1a46.5 46.5 0 0 0-6.5-9.5q-2.273-6.165-4.5-12 .166-.925 1-1.5 15.992-.75 32-.5",
+      clipRule: "evenodd",
+      opacity: "0.968"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M252.013 106h155q-.128 1.494 1 2.5a161 161 0 0 0 13 8.5h1a120 120 0 0 0-5.5 15 42 42 0 0 0-6.5 12q-2 1 0 2-1.638 6.481-5.5 10-.738 8.458-5.5 16-.5-2-1 0a95 95 0 0 1-4 10.5l1 1q-3.882 7.849-8 14 1.936 1.938 0 3.5-.5-2-1 0-1.933 1.501-4-.5a44674 44674 0 0 1-41-29.5v-6h-13q1.776-1.782 0-3.5l-75-53q-1.129-1.006-1-2.5",
+      clipRule: "evenodd",
+      opacity: "0.987"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M407.013 106h19q.065 6.35-4 11-.5-2-1 0a161 161 0 0 1-13-8.5q-1.128-1.006-1-2.5",
+      clipRule: "evenodd",
+      opacity: "0.842"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M161.013 107q-1 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M451.013 139a1060 1060 0 0 1 44 32q1 0 1 1-1.632 7.84-6.5 12a15.3 15.3 0 0 1-1.5 4.5q.499 6.945-5.5 13.5-2.41 13.316-10.5 24 .186.91 1 1-3.345 8.534-7 15-1.257.513-1 2-2 1 0 2-.016 2.276-2 3.5l1 1q-1.174 3.177-4 4.5a495 495 0 0 1-42-29.5 4.93 4.93 0 0 0-3-.5h-1a48.7 48.7 0 0 0 5-11q2.823-1.082 1-3 2.755-8.718 8-16-1.325-2.97.5-6 1.824-4.899 4.5-7 2.12-4.712 2.5-10a372 372 0 0 1 15.5-33",
+      clipRule: "evenodd",
+      opacity: "0.974"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M411.013 143q2 1 0 0M410.013 144h1q.258 1.487-1 2zM139.013 148q2 1 0 0M503.013 154q2 1 0 0M398.013 172h1q-.278 1.005-1 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M341.013 171a44674 44674 0 0 0 41 29.5q2.067 2.001 4 .5h1a153 153 0 0 0-7 15q-2 .5 0 1-1.782 8.064-7.5 14-.29 8.388-5 16l-1-1q-.17 5.942-3 12a164 164 0 0 0-7.5 14 3.65 3.65 0 0 0 1 1.5 89 89 0 0 1-8 13.5 1389 1389 0 0 1-37-26.5q-4.179-3.09-9-4.5 2.988-8.814 8-14.5-.368-3.134 0-6a103 103 0 0 0 4.5-8.5l1 2q1.373-12.321 9-23 1.529-2.654.5-5l8-16q1.047-6.38 4.5-13 1.738 1.6 2.5-1",
+      clipRule: "evenodd",
+      opacity: "0.975"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M433.013 182q-1-2 0 0M334.013 185q-1-2 0 0M539.013 187q2 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M670.013 393q-.5-1.995-1 0c-1.333.33-1.333.67 0 1-.953 2.11-2.619 3.28-5 3.5q-63 1.005-126 0c-1.331-2-3.165-3.83-5.5-5.5a6601 6601 0 0 1 .5-199 21.6 21.6 0 0 1 4-5l47 2q3.365-1.324 5 2.5a5834 5834 0 0 0-1 152.5q39.362.492 78.5-1 2 3 5 5 1 21 0 42c-.278.92-.778 1.58-1.5 2",
+      clipRule: "evenodd",
+      opacity: "0.928"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M707.013 189a2.43 2.43 0 0 1-2-.5q1.405-1.038 2 .5M856.013 189a2.42 2.42 0 0 1-2-.5c.94-.692 1.6-.525 2 .5",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M883.013 323c-2.85-2.006-5.02-4.672-6.5-8-.62-.949-.45-1.782.5-2.5-1.33-1-2.67-2-4-3 .33-.333.67-.667 1-1a9.4 9.4 0 0 1-2.5-1.5c-1.53-2.755-2.7-5.755-3.5-9q-6.315-4.93-7.5-12c-3.99-2.645-6.32-6.312-7-11-.33 39.333-.67 78.667-1 118-1.19 1.06-1.69 2.4-1.5 4a370 370 0 0 1-46 .5 15.8 15.8 0 0 1-5.5-3.5q-.738-101.06-.5-201.5 2.75-.75 3.5-3.5 26.86.015 53.5 0c3.47.978 5.3 3.312 5.5 7a40.1 40.1 0 0 1 7 8c.62.949.45 1.782-.5 2.5a46 46 0 0 1 7.5 8.5q.99 5.542 6 10a15.8 15.8 0 0 0 3.5 5.5c-.95.718-1.12 1.551-.5 2.5q4.95 3.142 7.5 8.5-3.735 1.057 0 2.5a77 77 0 0 1 6.5 8c.62.949.45 1.782-.5 2.5a55 55 0 0 1 5 5.5 3.6 3.6 0 0 1-1 1.5c1.05 1.119 2.22 1.619 3.5 1.5a59.4 59.4 0 0 1 4 10c.33-.333.67-.667 1-1l3 4 3 8c.91-1.154 1.75-.987 2.5.5-.33.333-.67.667-1 1 2.26 1.753 3.93 3.919 5 6.5q-1.995.5 0 1c.66 1.987 1.83 3.654 3.5 5 .33-35 .67-70 1-105 2.37-1.616 4.21-3.283 5.5-5l44 2c.33-.667.67-1.333 1-2a39 39 0 0 1 5.5 5q1.005 99.5 0 199c-1.55 2.55-3.72 4.39-6.5 5.5-7.83.17-15.67.33-23.5.5q-12.9.21-25.5-1.5l-5-5 1-1c-4.46-3.95-7.46-8.79-9-14.5-4.64-3.39-7.14-7.72-7.5-13-3.28-2.31-5.78-5.313-7.5-9 .21-.586.54-1.086 1-1.5l-9-11c.67-.333 1.33-.667 2-1-5.59-4.732-9.26-10.565-11-17.5",
+      clipRule: "evenodd",
+      opacity: "0.936"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M1162.01 316q-1.995.5 0 1 2.355 4.704 7.5 9-.36 3.844 3 7c3.91 2.59 6.24 6.256 7 11 1.51.757 2.85 1.757 4 3 .35 2.348 1.51 4.181 3.5 5.5-.95.718-1.12 1.551-.5 2.5 4.47 3.23 7.3 7.23 8.5 12 5.19 3.91 8.19 8.74 9 14.5 1.05 1.12 2.22 1.62 3.5 1.5 3.15 4.54 3.65 9.21 1.5 14-9.46.65-18.96.99-28.5 1-10.24.13-20.4-.37-30.5-1.5-4.99-7.61-10.99-14.94-18-22l1-1c-1.45-3.12-3.62-5.62-6.5-7.5a57 57 0 0 1-3-8c-.33.333-.67.67-1 1-3.37-4.07-5.54-8.404-6.5-13q-2.835-1.386-4.5-4c.62-1.595.28-2.928-1-4-1.67.84-1.83.34-.5-1.5q-5.64-4.629-9-11c.33-.333.67-.667 1-1-2.17-2.167-4.33-4.333-6.5-6.5-2.37 5.702-6.2 10.202-11.5 13.5q1.14 2.046-1.5 3.5c-.33 18.667-.67 37.33-1 56a11.5 11.5 0 0 0-3.5 5l-3 1.5c-7.33.17-14.67.33-22 .5-8.41.12-16.74-.38-25-1.5a25.5 25.5 0 0 1-4-4.5 4913 4913 0 0 0 0-198c1.24-2.253 2.91-4.253 5-6 .33.667.67 1.333 1 2 16.35-1.27 32.52-1.27 48.5 0l3 5c.33 23 .67 46 1 69 3.22-1.223 4.89-3.556 5-7a22.8 22.8 0 0 0 4-5c.33.333.67.667 1 1 1.25-5.59 4.42-9.757 9.5-12.5-.33-.333-.67-.667-1-1 2.67-4 6-7.333 10-10a3.6 3.6 0 0 1-1-1.5c3.82-3.452 6.65-7.118 8.5-11a18.8 18.8 0 0 1 5.5-4.5c-.33-.333-.67-.667-1-1a42.5 42.5 0 0 0 4.5-6.5 27 27 0 0 0 6.5-5.5c-.95-.718-1.12-1.551-.5-2.5l7.5-7.5c10.68-.117 21.51-.283 32.5-.5 10.26-.144 20.43.356 30.5 1.5.46.414.79.914 1 1.5-2.82 3.182-4.65 6.516-5.5 10a25.8 25.8 0 0 0-6.5 5.5c.95.718 1.12 1.551.5 2.5a21.6 21.6 0 0 0-5 6c-.33-.333-.67-.667-1-1-.89 4.84-3.73 8.673-8.5 11.5.33.333.67.667 1 1a172.5 172.5 0 0 1-17 20c.78 1.073.61 2.24-.5 3.5a36.6 36.6 0 0 1-7.5 6.5q.3 6.055-6 8.5-2.46 7.654-9 12.5c.6 1.628.26 3.295-1 5q7.425 5.266 9 13a33.3 33.3 0 0 1 8 9.5 3.6 3.6 0 0 1-1 1.5c2.92 2.416 5.26 5.25 7 8.5",
+      clipRule: "evenodd",
+      opacity: "0.929"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M99.013 189q-1 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M707.013 189q22.974.069 45.5 0 4.638 2.135 6 7 1 97 0 194a82 82 0 0 0-5.5 6.5c-1 .33-2 .67-3 1q-21.5 1.005-43 0-4.044-1.035-6.5-4.5-1-100.5 0-201l3-3q1.938 1.937 3.5 0",
+      clipRule: "evenodd",
+      opacity: "0.895"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M163.013 193q2 1 0 0M589.013 194q2 1 0 0M1024.01 194c.17 65.334 0 130.668-.5 196-.83-65.501-.67-130.835.5-196",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M105.013 202h1q-.278 1.005-1 0",
+      clipRule: "evenodd",
+      opacity: "0.012"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M170.013 206q2 1 0 0M420.013 211q-1 1 0 0M419.013 214q-1-2 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M248.013 213a325 325 0 0 1 36 1q1.477 2.397.5 5a41 41 0 0 0-5.5 9.5l1 1a31.7 31.7 0 0 0-2 6.5 686 686 0 0 1-27-18.5 11.1 11.1 0 0 1-3-4.5",
+      clipRule: "evenodd",
+      opacity: "0.922"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M380.013 216q2 1 0 0M473.013 226q2 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M414.013 225q.5 2 1 0a4.93 4.93 0 0 1 3 .5 495 495 0 0 0 42 29.5v1q-2.858 2.323-1 5.5-2.701.476-1 2a35.3 35.3 0 0 1-3.5 8.5q-1.38.645-2.5 1a3.65 3.65 0 0 0 1 1.5q-2.767 4.277-3.5 9.5a220 220 0 0 0-8.5 17q-2 1 0 2a30.7 30.7 0 0 1-6.5 12q-.526 7.058-4 14-1 2-2 0a46 46 0 0 0-2 10q-.912 2.35-2.5 4-1.575-.607 0-2a812 812 0 0 0-44-31q.957-2.94 0-5.5 3.103-.486 1-2.5a230 230 0 0 0 9-16.5 3.65 3.65 0 0 1-1-1.5 56 56 0 0 1 8-15q-.025-6.212 3.5-12 1.524 1.701 2-1a15.3 15.3 0 0 1 1.5-4.5q-1.701-1.524 1-2-.931-6.07 4.5-11.5a43 43 0 0 0 2-9q.913-2.35 2.5-4",
+      clipRule: "evenodd",
+      opacity: "0.977"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M125.013 237q1.356 1.063 1 3 3.424.162 6 2.5a805 805 0 0 0 39 28 14.7 14.7 0 0 1 3 3.5q-14.508.25-29-.5-1.13-2.23-2.5-.5-2.755-5.277-5.5-10.5l1-1q-3.25-1.25-4.5-4.5a43.4 43.4 0 0 1-2-8q-6.843-4.431-6.5-12",
+      clipRule: "evenodd",
+      opacity: "0.922"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M466.013 242q2 1 0 0M892.013 243q1.995 1 0 0M465.013 244q2 1 0 2zM460.013 256q2 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M303.013 256q4.821 1.41 9 4.5a1389 1389 0 0 0 37 26.5 5.58 5.58 0 0 0 1 3 276 276 0 0 0-5.5 12l-1-1q-2.71 3.309-1.5 7a145 145 0 0 1-4.5 11q-1 2-2 0-.453 10.981-8 20a38 38 0 0 1-2.5 6.5q.686.621 1 1.5l-8 16c-.838.34-1.172 1.01-1 2-1.333.33-1.333.67 0 1a31.6 31.6 0 0 1-2 6 4.95 4.95 0 0 1-3-.5 645 645 0 0 0-44-30.5 32.3 32.3 0 0 0 5-9l-1-2q2.237-7.486 7.5-13 .073-7.26 4-14 1 2 2 0a19.95 19.95 0 0 1 2.5-8 3.65 3.65 0 0 0-1-1.5l9-17q-1.165-2.655.5-5.5a150 150 0 0 0 7.5-13 44 44 0 0 1-1-2",
+      clipRule: "evenodd",
+      opacity: "0.98"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M923.013 292q1.995 1 0 0M442.013 300q2 1 0 0M441.013 301h1q.258 1.488-1 2z",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M380.013 310a812 812 0 0 1 44 31q-1.575 1.393 0 2c-3.209 10.425-7.542 20.42-13 30-.322 3.04-1.322 6.2-3 9.5-3.201 2.55-4.534 5.71-4 9.5a90 90 0 0 1-5.5 12c-.333-.33-.667-.67-1-1-.345 3.26-1.512 6.1-3.5 8.5 1.017 1.05 1.184 2.22.5 3.5a71.4 71.4 0 0 1-5.5 10 602 602 0 0 1-43-29.5c-1.428-.58-2.762-.41-4 .5q2.656-7.32 7.5-15c.684-1.28.517-2.45-.5-3.5a235 235 0 0 1 10-18q-1.526-1.574-.5-3.5l7.5-13q-.186-.91-1-1 4.245-10.885 10-20.5l-2-1q2.605-5.994 7-10.5",
+      clipRule: "evenodd",
+      opacity: "0.983"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M435.013 316q2 1 0 0M1162.01 316q1.995 1 0 0M883.013 323q-1.005 1 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M268.013 341a645 645 0 0 1 44 30.5c.948.48 1.948.65 3 .5-.614 1.78-1.78 3.12-3.5 4q-1.098 9.3-6 18c-.333-.33-.667-.67-1-1-1.225 9.27-4.725 17.44-10.5 24.5.667.33 1.333.67 2 1-2.339 4.37-4.672 8.7-7 13 2 2.67 4 5.33 6 8-.667.33-1.333.67-2 1 5.31 5.33 8.977 11.66 11 19 2.934 2.69 5.267 5.86 7 9.5l4.5-9c.333.33.667.67 1 1 .345-3.26 1.512-6.1 3.5-8.5-.667-.33-1.333-.67-2-1a185 185 0 0 1 9-16c-1.017-1.05-1.184-2.22-.5-3.5q3.22-8.19 8.5-15c-.124-.61-.457-.94-1-1q1.614-6.945 6-12c1.409-2.64 2.076-5.3 2-8 1.238-.91 2.572-1.08 4-.5a602 602 0 0 0 43 29.5c-1.184 1.19-1.184 2.35 0 3.5a481 481 0 0 1-9 18.5c-.667 0-1 .33-1 1-1.333.67-1.333 1.33 0 2-.542 4.09-2.375 7.42-5.5 10q-1.098 9.3-6 18c-.333-.33-.667-.67-1-1l-3 12a671 671 0 0 0-6.5 12.5c.333.33.667.67 1 1a100 100 0 0 1-5 8.5c-39.928-28.31-79.928-56.64-120-85q2.148-9.345 8-18c-.333-.67-.667-1.33-1-2 2.204-5.74 4.871-11.08 8-16q1.248-7.455 5.5-15c.333.33.667.67 1 1 1.686-9 5.186-17.16 10.5-24.5l-2-1q3.606-.762 2-3.5.944-3.361 3-6",
+      clipRule: "evenodd",
+      opacity: "0.969"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M365.013 342q-1 1 0 0M590.013 344a915 915 0 0 1 74-.5q-36.996.75-74 .5M318.013 363q2 1.005 0 0M317.013 365q2 1.005 0 0M411.013 373q2 1.005 0 0M248.013 390q-1-1.995 0 0M669.013 393h1q-.278 1.005-1 0M340.013 404q-1-1.995 0 0M334.013 416q-1 1.005 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M233.013 426c40.072 28.36 80.072 56.69 120 85a44.4 44.4 0 0 0-5 11c-1.333.67-1.333 1.33 0 2-.827 4.48-2.66 7.81-5.5 10-1.11 1.9-1.276 3.73-.5 5.5a51.4 51.4 0 0 1-5 10.5q-.5-1.995-1 0c-.984 2.55-1.984 5.22-3 8q.314.885 1 1.5a3820 3820 0 0 0-17 35q-2.494.39-4.5-1.5c-1.427-2.21-1.927-4.37-1.5-6.5-4.258-4.38-6.925-9.21-8-14.5a29.3 29.3 0 0 0-5.5-8c-.45-4.9-2.617-9.24-6.5-13q2.032-1.77-.5-3c-.333.33-.667.67-1 1-1.138-4.6-3.471-8.93-7-13-2.095-3.26-3.095-6.59-3-10-3.486-2.96-5.986-6.63-7.5-11-.032-3.04-1.532-5.7-4.5-8q-2.052-2.235-.5-4.5c-.753-1.49-1.586-1.65-2.5-.5.053-3.9-1.614-7.23-5-10a40 40 0 0 1-5-13c-.333.33-.667.67-1 1-2.753-3.63-4.253-7.46-4.5-11.5-1.158-3.42-2.992-5.58-5.5-6.5-.36-1.92-1.194-3.59-2.5-5q.314-.885 1-1.5l-10-15q.686-.615 1-1.5a18.4 18.4 0 0 0-4-6c2.082-1.92 3.416-4.26 4-7",
+      clipRule: "evenodd",
+      opacity: "0.974"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      fill: "#FF3B55",
+      fillRule: "evenodd",
+      d: "M380.013 447q2 1.005 0 0M379.013 448h1c.172.99-.162 1.66-1 2zM272.013 515q-1-1.995 0 0M349.013 521q2 1.005 0 0M348.013 522h1c.172.99-.162 1.66-1 2zM336.013 550h1q-.278 1.005-1 0M303.013 572q-1 1.005 0 0",
+      clipRule: "evenodd",
+      opacity: "0.01"
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SlinkLogoRed);
+
+/***/ },
+
+/***/ "./src/icons/SllogoClasic.jsx"
+/*!************************************!*\
+  !*** ./src/icons/SllogoClasic.jsx ***!
+  \************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const SlLogoClasic = props => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 1258 496",
+  className: "w-full h-auto",
+  ...props,
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#DB0C6A",
+    d: "M0 0h374c-5.737 14.916-5.737 14.916-8.54 21.438l-.963 2.26q-1.025 2.4-2.051 4.8c-1.888 4.412-3.768 8.826-5.65 13.24-.392.923-.786 1.845-1.191 2.795a8922 8922 0 0 0-12.98 30.655l-2.39 5.664Q336.615 89.426 333 98l-9.625 22.813-1.197 2.835a15985 15985 0 0 1-17.723 41.807c-8.053 18.93-16.052 37.885-24.048 56.84q-6.543 15.506-13.092 31.011l-3.557 8.424-1.186 2.81-7.186 17.026-6.011 14.247-1.191 2.822a15492 15492 0 0 1-18.114 42.718A7805 7805 0 0 0 210 389h-3l-.911-1.762c-5.55-10.721-11.143-21.411-16.964-31.988-5.123-9.315-10.026-18.734-14.894-28.184a981 981 0 0 0-13.237-24.738A988 988 0 0 1 157 295l-1.484-2.664-1.418-2.645-1.293-2.365c-1.82-5.262 1.28-10.223 3.379-15.053l.99-2.312q1.065-2.487 2.136-4.971c1.947-4.516 3.878-9.039 5.811-13.56l1.221-2.854c4.277-10.001 8.47-20.037 12.658-30.076a6821 6821 0 0 1 18.675-44.278 9760 9760 0 0 0 16.075-37.972l1.009-2.396 2.85-6.776.819-1.946c2.538-6.038 5.055-12.085 7.572-18.132l-3.756.067a3917 3917 0 0 1-35.048.451c-6.007.052-12.013.123-18.019.236-5.796.11-11.592.169-17.39.195q-3.316.027-6.633.108c-17.326.406-17.326.406-21.762-3.145-1.606-2.62-2.537-4.97-3.392-7.912l-1.751-3.167-1.39-2.665-1.554-2.979-1.555-3.001-1.602-3.061C109.888 77.78 107.824 73.56 106 69h174c-.815 4.076-1.747 7.095-3.344 10.863l-1.5 3.561-1.656 3.888-1.746 4.13a5556 5556 0 0 1-4.76 11.222q-1.486 3.492-2.968 6.983a26393 26393 0 0 1-8.317 19.567 12138 12138 0 0 0-15.834 37.411 10066 10066 0 0 1-17.11 40.364 4048 4048 0 0 0-7.36 17.342c-4.006 9.493-8.015 18.965-12.426 28.279a878 878 0 0 0-4.801 10.378 172 172 0 0 1-2.26 4.657c-4.188 7.89-4.188 7.89-4.425 16.532 1.613 4.368 3.865 8.274 6.416 12.155 1.49 2.279 2.786 4.655 4.091 7.043l1.188 2.023C204 307 204 307 204 309h2l.523-1.647c1.826-5.625 3.935-11.058 6.258-16.494l1.108-2.615q1.802-4.249 3.611-8.494l2.557-6.03q2.653-6.258 5.31-12.515c3.667-8.637 7.314-17.283 10.962-25.929q2.959-7.013 5.921-14.026l2.375-5.625 4.75-11.25 1.187-2.812 20.293-48.06Q295.02 96.29 319 39L60 38c7.115 13.683 14.214 27.296 21.633 40.8 4.624 8.468 9.102 17.014 13.601 25.548 5.147 9.76 10.343 19.485 15.77 29.094C114 138.792 114 138.792 114 141h73c-1.856 5.567-3.675 10.844-5.918 16.223l-.794 1.912q-1.234 2.965-2.476 5.928l-1.693 4.068Q174.064 174.067 172 179c-9.953.185-19.905.328-29.86.414-4.622.042-9.243.099-13.865.19-4.46.086-8.92.134-13.383.155q-2.552.022-5.103.087c-13.316.325-13.316.325-16.875-2.503-1.335-2.087-2.15-3.993-2.914-6.343l-1.479-2.67-1.212-2.37-1.405-2.722-1.466-2.863A1023 1023 0 0 0 72 137a1051 1051 0 0 1-12-22.5 1022 1022 0 0 0-11.625-21.812c-5.157-9.389-10.185-18.842-15.187-28.313A5265 5265 0 0 0 14.084 28.48c-3.295-6.148-3.295-6.148-6.599-12.293a3421 3421 0 0 1-3.923-7.312L2.436 6.793C0 2.228 0 2.228 0 0"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#EF4791",
+    d: "M106 69h174c-.815 4.076-1.747 7.095-3.344 10.863l-1.5 3.561-1.656 3.888-1.746 4.13a5556 5556 0 0 1-4.76 11.222q-1.486 3.492-2.968 6.983a26393 26393 0 0 1-8.317 19.567 12138 12138 0 0 0-15.834 37.411 10066 10066 0 0 1-17.11 40.364 4048 4048 0 0 0-7.36 17.342c-4.006 9.493-8.015 18.965-12.426 28.279a878 878 0 0 0-4.801 10.378 172 172 0 0 1-2.26 4.657c-4.188 7.89-4.188 7.89-4.425 16.532 1.613 4.368 3.865 8.274 6.416 12.155 1.49 2.279 2.786 4.655 4.091 7.043l1.188 2.023C204 307 204 307 204 309h2l.523-1.647c1.826-5.625 3.935-11.058 6.258-16.494l1.108-2.615q1.802-4.249 3.611-8.494l2.557-6.03q2.653-6.258 5.31-12.515c3.668-8.64 7.316-17.288 10.965-25.936q2.935-6.955 5.871-13.91l1.18-2.795q3.741-8.86 7.487-17.718l7.57-17.908q1.696-4.008 3.388-8.016l1.075-2.54a746 746 0 0 0 5.126-12.415l.97-2.404q.9-2.241 1.782-4.488c1.997-4.964 1.997-4.964 4.219-6.075a9846 9846 0 0 1 9.5 6.625l2.688 1.871A485 485 0 0 1 303 167c-1.966 6.188-4.23 12.172-6.781 18.14l-1.108 2.617q-1.802 4.248-3.611 8.493l-2.552 6.018q-2.652 6.254-5.306 12.505a8158 8158 0 0 0-8.717 20.62l-2.368 5.616A15439 15439 0 0 1 253.5 286c-14.59 34.295-29.046 68.647-43.5 103h-3l-.911-1.762c-5.55-10.721-11.143-21.411-16.964-31.988-5.123-9.315-10.026-18.734-14.894-28.184a981 981 0 0 0-13.237-24.738A988 988 0 0 1 157 295l-1.484-2.664-1.418-2.645-1.293-2.365c-1.82-5.262 1.28-10.223 3.379-15.053l.99-2.312q1.065-2.487 2.136-4.971c1.947-4.516 3.878-9.039 5.811-13.56l1.221-2.854c4.277-10.001 8.47-20.037 12.658-30.076a6821 6821 0 0 1 18.675-44.278 9760 9760 0 0 0 16.075-37.972l1.009-2.396 2.85-6.776.819-1.946c2.538-6.038 5.055-12.085 7.572-18.132l-3.756.067a3917 3917 0 0 1-35.048.451c-6.007.052-12.013.123-18.019.236-5.796.11-11.592.169-17.39.195q-3.316.027-6.633.108c-17.326.406-17.326.406-21.762-3.145-1.606-2.62-2.537-4.97-3.392-7.912l-1.751-3.167-1.39-2.665-1.554-2.979-1.555-3.001-1.602-3.061C109.888 77.78 107.824 73.56 106 69"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "m537.71 123.664 2.318-.02q2.429-.015 4.857-.015c2.474-.004 4.946-.04 7.42-.078q2.36-.009 4.718-.012l2.239-.043c3.394.03 5.342.2 8.074 2.29 1.503 2 2.94 3.967 4.258 6.093l1.414 2.262 1.492 2.422 3.219 5.16 1.652 2.66c2.522 4.052 5.076 8.084 7.629 12.117l2.98 4.719 1.498 2.37 9.25 14.655q3.965 6.278 7.952 12.541l1.89 2.97L612 196l.025-2.644q.116-12.316.263-24.633.076-6.333.134-12.665.056-6.108.136-12.216.028-2.333.045-4.667c.017-2.174.046-4.348.078-6.522l.04-3.755C613 126 613 126 615 124c3.041-.259 3.041-.259 6.906-.266l2.062-.005q2.16-.002 4.318.01c2.205.011 4.41 0 6.616-.012q2.096 0 4.192.007l3.865.007C646 124 646 124 648 126c.249 2.305.249 2.305.247 5.245l.013 3.37-.017 3.713.006 3.898c.005 3.533-.003 7.066-.013 10.598-.009 3.692-.007 7.383-.007 11.074q-.002 9.297-.023 18.594-.023 10.763-.02 21.527 0 10.338-.013 20.676-.006 4.407-.006 8.815c-.001 4.097-.011 8.194-.022 12.291l.002 3.72-.013 3.361-.005 2.939C648 258 648 258 647 259c-4.876.413-9.753.528-14.645.625q-2.465.062-4.928.184c-13.531.663-13.531.663-17.89-2.721-1.857-2.607-3.198-5.184-4.537-8.088a330 330 0 0 0-3.07-5.05q-1.533-2.63-3.055-5.262c-4.851-8.301-9.818-16.516-14.902-24.677-4.919-7.9-9.754-15.85-14.568-23.813l-1.702-2.807-1.51-2.5c-1.055-1.827-1.055-1.827-2.193-2.891l-.031 2.879q-.147 13.398-.308 26.797-.084 6.888-.158 13.778-.072 6.642-.156 13.285-.031 2.54-.056 5.08a2213 2213 0 0 1-.086 7.09l-.017 2.144c-.074 4.833-.074 4.833-1.188 5.947a168 168 0 0 1-7.316.098l-2.216-.005c-2.343-.005-4.687-.018-7.03-.03l-4.756-.014Q534.84 259.032 529 259c-1.276-2.551-1.129-4.343-1.134-7.2l-.013-3.34.002-3.68-.01-3.864a4480 4480 0 0 1-.012-10.506q-.003-4.38-.008-8.76-.013-10.33-.01-20.66-.001-10.67-.026-21.34-.019-9.15-.018-18.3.002-5.47-.013-10.939c-.011-4.063-.007-8.127 0-12.19-.007-1.215-.012-2.43-.018-3.68l.013-3.34-.002-2.915c.613-5.634 5.5-4.609 9.96-4.622"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#E774A7",
+    d: "M0 0c8.572-.28 17.142-.492 25.717-.622 3.985-.062 7.966-.146 11.948-.283 32.311-1.087 32.311-1.087 44.22 9.853l1.625 1.607c1.996 1.936 4.195 3.475 6.49 5.039q2 1.451 4 2.906a1012 1012 0 0 0 16.309 11.63q2.278 1.593 4.562 3.177A271 271 0 0 1 120 37v1H60c7.115 13.683 14.214 27.296 21.633 40.8 4.624 8.468 9.102 17.014 13.601 25.548 5.147 9.76 10.343 19.485 15.77 29.094C114 138.792 114 138.792 114 141h73c-1.856 5.567-3.675 10.844-5.918 16.223l-.794 1.912q-1.234 2.965-2.476 5.928l-1.693 4.068Q174.064 174.067 172 179c-9.953.185-19.905.328-29.86.414-4.622.042-9.243.099-13.865.19-4.46.086-8.92.134-13.383.155q-2.552.022-5.103.087c-13.316.325-13.316.325-16.875-2.503-1.335-2.087-2.15-3.993-2.914-6.343l-1.479-2.67-1.212-2.37-1.405-2.722-1.466-2.863A1023 1023 0 0 0 72 137a1051 1051 0 0 1-12-22.5 1022 1022 0 0 0-11.625-21.812c-5.157-9.389-10.185-18.842-15.187-28.313A5265 5265 0 0 0 14.084 28.48c-3.295-6.148-3.295-6.148-6.599-12.293a3421 3421 0 0 1-3.923-7.312L2.436 6.793C0 2.228 0 2.228 0 0"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "m686.125 123.734 2.13-.005q2.229-.002 4.458.01c2.278.011 4.556 0 6.834-.012q2.164 0 4.328.007l3.992.007C711 124 711 124 713 126c.278 2.063.278 2.063.319 4.633l.06 2.912.035 3.15.059 3.22c.06 3.403.106 6.807.152 10.21q.057 3.455.117 6.91.143 8.483.258 16.965 2.849-3.553 5.695-7.105l1.61-2.008c4.498-5.615 8.887-11.307 13.261-17.018q4.393-5.725 8.809-11.431l1.804-2.347 1.72-2.22 1.52-1.97L750 128c.535-.732 1.07-1.464 1.623-2.218 3.65-2.736 7.077-2.28 11.518-2.173l2.673.018c2.812.022 5.624.072 8.436.123q2.863.03 5.727.055c4.675.044 9.349.113 14.023.195 0 5.103-2.173 7.354-5.187 11.188l-1.636 2.127q-1.715 2.229-3.44 4.449c-2.209 2.844-4.39 5.708-6.572 8.572a2790 2790 0 0 1-4.845 6.332q-3.45 4.5-6.89 9.008l-1.772 2.32-3.345 4.385A493 493 0 0 1 752 183c1.242 3.334 2.637 6.194 4.635 9.134l1.604 2.375 1.738 2.542 1.813 2.677q1.92 2.832 3.845 5.66 2.989 4.395 5.965 8.798a7124 7124 0 0 0 15.649 23.045 1920 1920 0 0 1 3.508 5.17 871 871 0 0 0 4.025 5.895l1.738 2.575 1.471 2.154C799 255 799 255 799 259c-5.568.199-11.134.343-16.705.44a366 366 0 0 0-5.677.164c-15.65.56-15.65.56-20.297-2.187-1.825-2.048-3.065-3.986-4.321-6.417a188 188 0 0 0-2.379-3.29l-2.183-3.335-1.225-1.865c-7.23-11.058-14.448-22.16-21.213-33.51-5.087 2.358-8.455 4.894-11 10-1.285 6.526-.937 13.318-.875 19.938q-.012 4.076-.042 8.153-.013 2.527.003 5.055c.007 1.951-.034 3.903-.086 5.854-1.733 1.733-3.962 1.128-6.271 1.139l-2.229-.006-2.275.003q-2.385 0-4.772-.006-3.664-.005-7.328.007-2.312 0-4.625-.004l-2.229.006c-5.156-.024-5.156-.024-6.271-1.139-.1-1.704-.13-3.411-.134-5.118l-.013-3.361.002-3.72-.01-3.892q-.014-5.3-.012-10.6-.003-4.417-.008-8.834-.013-10.418-.01-20.837-.001-10.763-.026-21.525a8287 8287 0 0 1-.018-18.453q.002-5.517-.013-11.033c-.011-4.1-.007-8.2 0-12.299-.007-1.225-.012-2.45-.018-3.713l.013-3.37-.002-2.94c.596-5.517 4.859-4.563 9.374-4.57M361.125 123.734l2.13-.005q2.229-.002 4.458.01c2.278.011 4.556 0 6.834-.012q2.164 0 4.328.007l3.992.007C386 124 386 124 388 126c.246 1.808.246 1.808.24 4.037l.009 2.558-.022 2.812v2.956c0 3.236-.016 6.472-.032 9.707l-.008 6.718c-.008 5.902-.028 11.804-.05 17.706-.02 6.019-.03 12.038-.04 18.057-.02 11.816-.055 23.633-.097 35.449l1.96-.013q10.074-.066 20.147-.097 3.762-.016 7.525-.04c3.6-.025 7.198-.036 10.798-.045l3.415-.032H435l2.785-.014C440 226 440 226 442 228c.227 2.981.227 2.981.195 6.758l-.008 2.01c-.011 2.119-.037 4.238-.062 6.357q-.016 2.154-.027 4.309A1959 1959 0 0 1 442 258c-3.203 1.601-6.68 1.138-10.198 1.13l-2.567.005q-4.214.004-8.426-.002-2.919 0-5.836.003-6.12.001-12.24-.006-7.862-.006-15.724.004-6.027.005-12.052 0-2.9 0-5.8.002-4.045.003-8.089-.007l-2.445.007c-5.509-.022-5.509-.022-6.623-1.136-.1-1.704-.13-3.411-.134-5.118l-.013-3.361.002-3.72-.01-3.892q-.014-5.3-.012-10.6-.002-4.417-.008-8.834-.013-10.418-.01-20.837-.001-10.763-.026-21.525a8287 8287 0 0 1-.018-18.453q.002-5.517-.013-11.033c-.011-4.1-.007-8.2 0-12.299-.007-1.225-.012-2.45-.018-3.713l.013-3.37-.002-2.94c.596-5.517 4.859-4.563 9.374-4.57"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#B21259",
+    d: "M106 69h174c-.847 4.234-1.888 7.425-3.555 11.355l-.78 1.853q-1.264 2.991-2.54 5.98l-1.755 4.143a5552 5552 0 0 1-2.694 6.352 1738 1738 0 0 0-5.914 14.11l-1.51 3.626a1767 1767 0 0 0-2.824 6.82l-1.283 3.066-1.114 2.687C255 131 255 131 253 132q-4.473-3.026-8.937-6.062l-2.518-1.702C235.857 120.363 230.38 116.29 225 112l1-5-3.756.067a3917 3917 0 0 1-35.048.451c-6.007.052-12.013.123-18.019.236-5.796.11-11.592.169-17.39.195q-3.316.027-6.633.108c-17.326.406-17.326.406-21.762-3.145-1.606-2.62-2.537-4.97-3.392-7.912l-1.751-3.167-1.39-2.665-1.554-2.979-1.555-3.001-1.602-3.061C109.888 77.78 107.824 73.56 106 69"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    d: "m472.125 123.734 2.13-.005q2.229-.002 4.458.01c2.278.011 4.556 0 6.834-.012q2.164 0 4.328.007l3.992.007C497 124 497 124 499 126c.249 2.305.249 2.305.247 5.245l.013 3.37-.017 3.713.006 3.898c.005 3.533-.003 7.066-.013 10.598-.009 3.692-.007 7.383-.007 11.074q-.002 9.297-.023 18.594-.023 10.763-.02 21.527 0 10.338-.013 20.676-.006 4.407-.006 8.815c-.001 4.097-.011 8.194-.022 12.291l.002 3.72-.013 3.361-.005 2.939C499 258 499 258 498 259c-2.51.1-4.99.14-7.5.133l-2.275.003q-2.385 0-4.772-.006-3.664-.005-7.328.007-2.312 0-4.625-.004l-2.229.006c-5.156-.024-5.156-.024-6.271-1.139-.1-1.704-.13-3.411-.134-5.118l-.013-3.361.002-3.72-.01-3.892q-.014-5.3-.012-10.6-.002-4.417-.008-8.834-.013-10.418-.01-20.837-.001-10.763-.026-21.525a8287 8287 0 0 1-.018-18.453q.002-5.517-.013-11.033c-.011-4.1-.007-8.2 0-12.299-.007-1.225-.012-2.45-.018-3.713l.013-3.37-.002-2.94c.596-5.517 4.859-4.563 9.374-4.57"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#E33D83",
+    d: "M0 0c8.572-.28 17.142-.492 25.717-.622 3.985-.062 7.966-.146 11.948-.283 32.311-1.087 32.311-1.087 44.22 9.853l1.625 1.607c1.996 1.936 4.195 3.475 6.49 5.039q2 1.451 4 2.906a1012 1012 0 0 0 16.309 11.63q2.278 1.593 4.562 3.177A271 271 0 0 1 120 37v1H60c10.387 20.03 10.387 20.03 21.27 39.746C83 81 83 81 83 83c-4.847-1.566-8.35-4.354-12.312-7.437-5.428-4.15-10.908-8.166-16.563-12-6.712-4.553-13.298-9.261-19.835-14.06l-2.134-1.558-2.092-1.538c-2.016-1.436-2.016-1.436-4.142-2.478-6.852-3.56-9.244-9.147-12.484-15.929l-3.36-6.754-1.6-3.266C6.154 13.292 3.617 8.733 1.075 4.16 0 2 0 2 0 0"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#B21259",
+    d: "M68 0c12.953-.326 25.905-.574 38.861-.725 6.019-.073 12.034-.171 18.051-.331a864 864 0 0 1 17.468-.272q3.308-.039 6.615-.152c16.542-.55 26.112 3.073 38.81 13.69 3.521 2.871 7.264 5.408 11.007 7.977a1356 1356 0 0 1 16.75 12l1.97 1.425A201 201 0 0 1 222 37v1c-12.988.303-25.974.533-38.965.674-6.034.067-12.065.158-18.098.307-5.836.142-11.67.219-17.507.252q-3.318.035-6.637.141c-15.75.484-24.908-2.225-36.803-12.687-3.34-2.831-6.948-5.27-10.552-7.75q-2.08-1.462-4.157-2.93-4.556-3.203-9.125-6.39l-2.392-1.675a1480 1480 0 0 0-4.585-3.198A269 269 0 0 1 68 1z"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#F160A2",
+    d: "M153 280c3.008.602 5.031 1.51 7.512 3.3l2.019 1.444 2.156 1.568 4.61 3.305 2.373 1.71c2.88 2.068 5.78 4.108 8.682 6.146a1573 1573 0 0 1 19.46 13.902C210.426 319.07 221.093 326.728 232 334c-.695 4.801-2.526 8.956-4.422 13.379l-1.036 2.448a3192 3192 0 0 1-3.292 7.736l-2.172 5.119q-2.088 4.923-4.182 9.846A1944 1944 0 0 0 210 389h-3l-.911-1.762c-5.55-10.721-11.143-21.411-16.964-31.988-5.123-9.315-10.026-18.734-14.894-28.184a981 981 0 0 0-13.237-24.738A988 988 0 0 1 157 295l-1.484-2.664-1.418-2.645-1.293-2.365c-.978-2.825-.616-4.489.195-7.326"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#E33C83",
+    d: "M106 69c7.598-.233 15.195-.41 22.796-.518 3.53-.052 7.059-.122 10.589-.236 27.171-.858 27.171-.858 34.467 5.399A167 167 0 0 1 179 79a89 89 0 0 0 4.793 3.363l2.194 1.48c1.09.727 1.09.727 2.2 1.47a879 879 0 0 1 19.938 13.874l2.352 1.676 2.156 1.555 1.903 1.368C216 105 216 105 217 107c-11.76.232-23.521.41-35.284.518-5.462.052-10.923.123-16.384.236-5.272.11-10.542.169-15.814.195q-3.016.027-6.03.108c-15.745.406-15.745.406-19.975-3.145-1.595-2.605-2.59-5.008-3.513-7.912l-1.751-3.167-1.39-2.665-1.554-2.979-1.555-3.001-1.602-3.061C109.898 77.8 107.788 73.539 106 69"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#E33D83",
+    d: "M224 112c3.418 1.322 6.222 2.69 9.18 4.863l2.316 1.69 2.379 1.76 4.68 3.425 2.26 1.663A806 806 0 0 0 254 132c-4.199 12.002-9.225 23.625-14.329 35.262-3.01 6.868-5.952 13.749-8.671 20.738-3.262-1.202-5.924-2.483-8.672-4.61l-2.002-1.53-2.076-1.61c-5.625-4.297-11.288-8.428-17.25-12.25 2.192-6.9 4.81-13.511 7.668-20.16l1.332-3.123q2.09-4.89 4.188-9.78l2.85-6.67Q220.512 120.132 224 112"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#E874A7",
+    d: "M201 168c8.505 4.253 15.801 9.94 23.315 15.708A527 527 0 0 0 230 188c-2.192 6.9-4.81 13.511-7.668 20.16L221 211.283a6852 6852 0 0 1-4.187 9.78l-2.85 6.67Q210.487 235.868 207 244c-3.969-2.224-7.8-4.446-11.48-7.129l-2.338-1.697-2.37-1.737-2.404-1.748A821 821 0 0 1 178 224c.602-5.646 2.65-10.343 4.895-15.492l1.177-2.742q1.233-2.864 2.474-5.724c1.258-2.897 2.506-5.8 3.753-8.702l2.408-5.582 1.121-2.602A269 269 0 0 1 201 168"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#B21259",
+    d: "M297 91c2.954 1.401 5.608 3.012 8.3 4.863l2.464 1.69 2.548 1.76 2.514 1.724c4.76 3.273 9.484 6.59 14.174 9.963-4.433 11.911-9.387 23.6-14.312 35.313l-2.534 6.037Q307.08 159.676 304 167c-3.437-1.26-6.233-2.697-9.18-4.863l-2.316-1.69c-1.178-.87-1.178-.87-2.379-1.76l-4.68-3.425-2.26-1.663A806 806 0 0 0 274 147c7.386-18.782 15.21-37.383 23-56"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#E33D83",
+    d: "M274 147c5.727 3.112 10.934 6.712 16.188 10.563l2.404 1.748c3.488 2.539 6.96 5.095 10.408 7.689-2.111 6.717-4.655 13.178-7.414 19.652l-1.258 2.974q-1.973 4.657-3.953 9.311l-2.68 6.33q-2.438 5.76-4.885 11.518l-.989 2.327A81 81 0 0 1 280 223c-3.083-1.449-5.803-3.163-8.59-5.117l-2.627-1.84-2.72-1.918-2.71-1.895c-4.218-2.962-8.385-5.933-12.353-9.23.597-3.413 1.46-6.416 2.81-9.603l1.123-2.67 1.215-2.848 1.253-2.962a3164 3164 0 0 1 2.627-6.19 3884 3884 0 0 0 4.003-9.448l2.555-6.025 1.203-2.842c1.939-4.548 3.933-9.023 6.211-13.412"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#E874A7",
+    d: "M250 203c3.106 1.21 5.776 2.362 8.453 4.355l1.865 1.378 1.932 1.454 1.996 1.484A611 611 0 0 1 279 223c-.597 3.413-1.46 6.416-2.81 9.603l-1.123 2.67-1.215 2.848-1.253 2.962a3164 3164 0 0 1-2.627 6.19 3884 3884 0 0 0-4.003 9.448l-2.555 6.025-1.203 2.842c-1.939 4.548-3.933 9.023-6.211 13.412-10.07-6.1-19.506-13.052-29-20 2.192-6.9 4.81-13.511 7.668-20.16l1.332-3.123q2.09-4.89 4.188-9.78l2.85-6.67Q246.512 211.132 250 203"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#EF4791",
+    d: "M83 157c2.937 1.395 5.584 2.992 8.266 4.828l2.449 1.676 2.535 1.746 2.488 1.7c11.336 7.778 11.336 7.778 15.262 11.05v1c-3.066.217-6.117.375-9.187.5l-2.62.203c-2.606.08-4.685.023-7.193-.703-2.396-2.332-3.636-4.977-5-8q-1.005-1.924-2.02-3.844a585 585 0 0 1-1.793-3.656c-.31-.632-.622-1.263-.943-1.914A1250 1250 0 0 1 83 157"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#E43E84",
+    d: "M164 141h23c-3 9-3 9-5 13-12.493-7.84-12.493-7.84-18-12z"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fill: "#DC0C69",
+    d: "M268 69h12c-1 5-1 5-3 8a1271 1271 0 0 1-4.5-3.437l-2.531-1.934L268 70z"
+  })]
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SlLogoClasic);
+
+/***/ },
+
+/***/ "./src/icons/WhatsappIcon.jsx"
+/*!************************************!*\
+  !*** ./src/icons/WhatsappIcon.jsx ***!
+  \************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const WhatsappIcon = props => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  xmlSpace: "preserve",
+  width: "512",
+  height: "512",
+  viewBox: "0 0 24 24",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+    fillRule: "evenodd",
+    d: "M20.463 3.488A11.82 11.82 0 0 0 12.05 0C5.495 0 .16 5.334.157 11.892a11.87 11.87 0 0 0 1.588 5.946L.057 24l6.304-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.479-8.413M12.05 21.785h-.004a9.86 9.86 0 0 1-5.031-1.378l-.361-.214-3.741.981.999-3.648-.235-.374a9.86 9.86 0 0 1-1.511-5.26c.002-5.45 4.437-9.884 9.889-9.884 2.64 0 5.122 1.03 6.988 2.898a9.83 9.83 0 0 1 2.892 6.993c-.003 5.452-4.437 9.886-9.885 9.886m5.422-7.403c-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.148s-.767.967-.941 1.166-.347.223-.644.074-1.255-.462-2.39-1.475c-.883-.788-1.48-1.761-1.653-2.059s-.018-.458.13-.606c.134-.133.297-.347.446-.521.15-.172.199-.296.299-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.241-.58-.486-.501-.669-.51-.173-.009-.371-.01-.57-.01s-.52.074-.792.372-1.04 1.017-1.04 2.479 1.065 2.876 1.213 3.074 2.095 3.2 5.076 4.487c.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413s.248-1.29.173-1.413c-.074-.125-.272-.199-.569-.348",
+    clipRule: "evenodd",
+    "data-original": "#000000"
+  })
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WhatsappIcon);
 
 /***/ },
 
@@ -363,23 +1542,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/MobileTranfer'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _icons_MobileTranfer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../icons/MobileTranfer */ "./src/icons/MobileTranfer.jsx");
 /* harmony import */ var _componet_Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../componet/Input */ "./src/componet/Input.jsx");
 /* harmony import */ var _utils_bancos_venezuela__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/bancos-venezuela */ "./src/utils/bancos-venezuela.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/mobile.svg'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var _util_proyect_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/proyect-config */ "./src/util/proyect-config.js");
-/* harmony import */ var _util_api_endpoints__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/api-endpoints */ "./src/util/api-endpoints.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/MobileTransferFlaticon'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var _componet_DateInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../componet/DateInput */ "./src/componet/DateInput.jsx");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/MobileTraferFlaticoBlack'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var _TrasanctionProsess__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./TrasanctionProsess */ "./src/template/TrasanctionProsess.jsx");
-/* harmony import */ var _componet_SuccessComponent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../componet/SuccessComponent */ "./src/componet/SuccessComponent.jsx");
-/* harmony import */ var _utils_payment_payload_helper__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/payment-payload-helper */ "./src/utils/payment-payload-helper.js");
-/* harmony import */ var _componet_PaymentReminderModal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../componet/PaymentReminderModal */ "./src/componet/PaymentReminderModal.jsx");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/WhatsappIcon'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _icons_mobile_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../icons/mobile.svg */ "./src/icons/mobile.svg");
+/* harmony import */ var _util_proyect_config__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/proyect-config */ "./src/util/proyect-config.js");
+/* harmony import */ var _util_api_endpoints__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/api-endpoints */ "./src/util/api-endpoints.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+/* harmony import */ var _icons_MobileTransferFlaticon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../icons/MobileTransferFlaticon */ "./src/icons/MobileTransferFlaticon.jsx");
+/* harmony import */ var _componet_DateInput__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../componet/DateInput */ "./src/componet/DateInput.jsx");
+/* harmony import */ var _icons_MobileTraferFlaticoBlack__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../icons/MobileTraferFlaticoBlack */ "./src/icons/MobileTraferFlaticoBlack.jsx");
+/* harmony import */ var _TrasanctionProsess__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./TrasanctionProsess */ "./src/template/TrasanctionProsess.jsx");
+/* harmony import */ var _componet_SuccessComponent__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../componet/SuccessComponent */ "./src/componet/SuccessComponent.jsx");
+/* harmony import */ var _utils_payment_payload_helper__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../utils/payment-payload-helper */ "./src/utils/payment-payload-helper.js");
+/* harmony import */ var _componet_PaymentReminderModal__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../componet/PaymentReminderModal */ "./src/componet/PaymentReminderModal.jsx");
+/* harmony import */ var _icons_WhatsappIcon__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../icons/WhatsappIcon */ "./src/icons/WhatsappIcon.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__);
 
 
 
@@ -488,7 +1667,7 @@ function MobilePaymentForm({
         fullInvoiceData
       } = hData;
       const subscriberId = sub || suscriptor || "";
-      const commonPayload = (0,_utils_payment_payload_helper__WEBPACK_IMPORTED_MODULE_10__.getJsonPaymentPayload)(hData, {
+      const commonPayload = (0,_utils_payment_payload_helper__WEBPACK_IMPORTED_MODULE_13__.getJsonPaymentPayload)(hData, {
         total,
         amountPaid: total,
         tasaActual,
@@ -499,8 +1678,8 @@ function MobilePaymentForm({
         subscriberId,
         date: startDate
       });
-      const conceptoParaDataToSend = `pago ${hData.ac || 'servicios'}`;
-      const url = isBdv ? _util_api_endpoints__WEBPACK_IMPORTED_MODULE_5__.API_ENDPOINTS.MOBILE_PAYMENT.C2P_BDV : _util_api_endpoints__WEBPACK_IMPORTED_MODULE_5__.API_ENDPOINTS.MOBILE_PAYMENT.C2P_MB;
+      const conceptoParaDataToSend = `pago ${hData.ac || "servicios"}`;
+      const url = isBdv ? _util_api_endpoints__WEBPACK_IMPORTED_MODULE_6__.API_ENDPOINTS.MOBILE_PAYMENT.C2P_BDV : _util_api_endpoints__WEBPACK_IMPORTED_MODULE_6__.API_ENDPOINTS.MOBILE_PAYMENT.C2P_MB;
       const dataToSend = {
         TelefonoDestino: TelefonoDestino,
         Cedula: `${tipoDocumento}${Cedula}`,
@@ -563,8 +1742,8 @@ function MobilePaymentForm({
       // ------------------
 
       try {
-        const res = await axios__WEBPACK_IMPORTED_MODULE_6__["default"].post(url, dataToSend, {
-          headers: _util_proyect_config__WEBPACK_IMPORTED_MODULE_4__.apiPaymentHeader
+        const res = await axios__WEBPACK_IMPORTED_MODULE_7__["default"].post(url, dataToSend, {
+          headers: _util_proyect_config__WEBPACK_IMPORTED_MODULE_5__.apiPaymentHeader
         });
         if (isBdv) {
           const {
@@ -639,7 +1818,7 @@ function MobilePaymentForm({
         changeStep(3);
       } catch (error) {
         let specificErrorMessage = "Ocurrió un error desconocido al procesar el pago. Por favor, intente de nuevo.";
-        if (axios__WEBPACK_IMPORTED_MODULE_6__["default"].isAxiosError(error) && error.response && error.response.data) {
+        if (axios__WEBPACK_IMPORTED_MODULE_7__["default"].isAxiosError(error) && error.response && error.response.data) {
           const {
             code,
             message
@@ -664,35 +1843,35 @@ function MobilePaymentForm({
       setErrosState({});
     }
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_componet_PaymentReminderModal__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_componet_PaymentReminderModal__WEBPACK_IMPORTED_MODULE_14__["default"], {
       isOpen: isReminderOpen,
       onClose: () => setIsReminderOpen(false)
-    }), step === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("form", {
+    }), step === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("form", {
       className: "w-full mt-4",
       onSubmit: checkout,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
         className: "mb-[16px]",
         children: "M\xE9todo de Pago:"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
         className: "w-full flex justify-start items-center gap-[8px] form-title mb-[32px]",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
           className: "relative main-svg",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
             className: "p-[4px] bg-sl-pink-700 absolute top-[-10px] right-[-15px] text-[10px] rounded-lg",
             children: "P2C"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/MobileTraferFlaticoBlack'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_icons_MobileTraferFlaticoBlack__WEBPACK_IMPORTED_MODULE_10__["default"], {
             className: "w-full h-full"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("h3", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("h3", {
           className: "pl-5",
           children: ["Pago M\xF3vil P2C ", isBdv ? "BDV" : ""]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("h5", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("h5", {
         children: "Paso 1: Coloque sus Datos Personales de Pago M\xF3vil."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
         className: "flex flex-col",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_componet_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_componet_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
           isNumber: true,
           labelText: "Número de Teléfono*",
           name: "TelefonoDestino",
@@ -704,14 +1883,14 @@ function MobilePaymentForm({
           }),
           error: errosState.TelefonoDestino
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
         className: "input-box mt-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
           className: "font-semibold",
           children: "Cedula*"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
           className: "flex gap-2 w-full",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("select", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("select", {
             id: "tipoDocumento",
             className: "p-2 !w-[140px] cedula",
             name: "tipoDocumento",
@@ -720,17 +1899,17 @@ function MobilePaymentForm({
               ...formData,
               tipoDocumento: e.target.value
             }),
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("option", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("option", {
               value: "",
               children: "Seleccione"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("option", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("option", {
               value: "V",
               children: "V"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("option", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("option", {
               value: "E",
               children: "E"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("input", {
             type: "number",
             className: "w-full",
             id: "Cedula",
@@ -742,19 +1921,19 @@ function MobilePaymentForm({
               Cedula: e.target.value
             })
           })]
-        }), errosState.tipoDocumento && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("p", {
+        }), errosState.tipoDocumento && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("p", {
           className: "!text-red-600 text-sm mt-1",
           children: [errosState.tipoDocumento, " "]
-        }), errosState.Cedula && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), errosState.Cedula && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
           className: "!text-red-600 text-sm mt-1",
           children: errosState.Cedula
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
         className: "input-box mt-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("span", {
           className: "font-semibold",
           children: "Banco*"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("select", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("select", {
           name: "Banco",
           id: "Banco",
           className: "w-full p-2",
@@ -763,28 +1942,28 @@ function MobilePaymentForm({
             ...formData,
             Banco: e.target.value
           }),
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("option", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("option", {
             value: "",
             children: "Seleccione su Banco"
           }), _utils_bancos_venezuela__WEBPACK_IMPORTED_MODULE_3__.bancos_venezuela.map(banco => {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("option", {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("option", {
               value: banco.codigo,
               children: ["(", banco.codigo, ") ", banco.nombre]
             });
           })]
-        }), errosState.Banco && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), errosState.Banco && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
           className: "!text-red-600 text-sm mt-1",
           children: errosState.Banco
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
         className: "my-4",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_componet_DateInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_componet_DateInput__WEBPACK_IMPORTED_MODULE_9__["default"], {
           labelText: "Fecha de Dep\xF3sito*",
           value: startDate,
           onChange: setStartDate,
           error: errosState.date
         })
-      }), !formData.isOwnerAcc && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_componet_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }), !formData.isOwnerAcc && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_componet_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
         labelText: "Titular de la Cuenta",
         description: "Coloque Este Dato si no es el Titular de la Cuenta a Debitar",
         name: "ownerAcc",
@@ -794,23 +1973,23 @@ function MobilePaymentForm({
           ownerAcc: e.target.value
         }),
         error: errosState.ownerAcc
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("h5", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("h5", {
         className: "my-[24px]",
         children: "Paso 2: Solicite su clave de aprobaci\xF3n de 8 d\xEDgitos o token de acceso."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
         children: "Su banco de confianza le entregar\xE1 su clave token de acceso."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
         className: "w-full mt-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_componet_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_componet_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
           isNumber: true,
           name: "Otp",
-          labelText: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+          labelText: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
             className: "flex gap-2 items-center",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("img", {
               className: "w-4 h-4",
-              src: Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/mobile.svg'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()),
+              src: _icons_mobile_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
               alt: ""
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("span", {
               className: "font-semibold",
               children: "OTP*"
             })]
@@ -829,68 +2008,68 @@ function MobilePaymentForm({
               });
             }
           }
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
           className: "text-sm text-gray-500 mt-1",
           children: "Introduzca su clave de 8 d\xEDgitos"
-        }), errosState.Otp && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), errosState.Otp && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
           className: "text-red-500 text-sm mt-1",
           children: errosState.Otp
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
         className: "my-[32px] !border-none",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("button", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("button", {
           type: "submit",
           className: "my-2 base !border-none",
           disabled: disableSubmit,
           children: "Pagar Servicio"
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_TrasanctionProsess__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_TrasanctionProsess__WEBPACK_IMPORTED_MODULE_11__["default"], {
       step: step,
       chageStep: changeStep,
-      failMessage: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      failMessage: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
         className: "w-full flex flex-col items-center text-white",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
           className: "w-full relative bg-sl-gray-900 border border-sl-gray-700 text-white px-4 py-3 rounded-lg mt-4 text-center",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("strong", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("strong", {
             className: "font-bold block text-amber-500",
             children: "Mensaje del Sistema"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("span", {
             className: "block sm:inline mt-1 text-yellow-600 font-semibold",
             children: requestErrorMessege
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
             className: "text-sm mt-2 text-gray-300",
             children: "Por favor, verifique los datos e intente de nuevo. Si el problema persiste, contacte a soporte."
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("a", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("a", {
           href: "https://wa.me/584126389082",
           className: "flex gap-2 items-center py-4 ",
           target: "_blank",
           rel: "noopener noreferrer",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("span", {
             className: "w-5 h-5",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/WhatsappIcon'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_icons_WhatsappIcon__WEBPACK_IMPORTED_MODULE_15__["default"], {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("span", {
             className: "font-medium text-sm !text-slate-500",
             children: "Contactar a Soporte"
           })]
         })]
       }),
-      meesageProcess: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+      meesageProcess: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
         className: "max-w-[300px]  text-center",
         children: "Se est\xE1 procesando el pago"
       }),
-      messageSucces: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_componet_SuccessComponent__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      messageSucces: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_componet_SuccessComponent__WEBPACK_IMPORTED_MODULE_12__["default"], {
         message: "Los datos fueron recibidos correctamente.",
-        transactionInfo: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.Fragment, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("h4", {
+        transactionInfo: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("h4", {
             className: "text-center border-b-sl-gray-800 border-b !text-sl-blue-600",
             children: "Informaci\xF3n de la Transacci\xF3n"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
             className: "sl-invocie-item !p-0",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
               children: "Aviso de cobro:"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
               children: hData.firstime === "true" ? (() => {
                 try {
                   const allFirstTimeInvoices = JSON.parse(sessionStorage.getItem("allFirstTimeInvoices") || "[]");
@@ -906,32 +2085,32 @@ function MobilePaymentForm({
                 }
               })() : hData.ac
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
             className: "sl-invocie-item !p-0",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
               children: "Forma de Pago:"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
               children: "Pago M\xF3vil P2C"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
             className: "sl-invocie-item !p-0",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
               children: "Referencia:"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
               children: paymentReferecce
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
             className: "sl-invocie-item !border-b-sl-gray-800 !p-0",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
               children: "Fecha de dep\xF3sito:"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
               children: startDate ? startDate.toLocaleDateString() : "N/A"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
             className: "sl-invocie-item !p-0",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
               children: "Monto pagado"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("p", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("p", {
               children: [total, "Bs."]
             })]
           })]
@@ -956,15 +2135,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/CloseIcon'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/SlinkLogoRed'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/SlLogoBlack'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/InvalidWanrnigRed'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/SlLogoBlue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/SllogoClasic'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/Conffetti'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _icons_CloseIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../icons/CloseIcon */ "./src/icons/CloseIcon.jsx");
+/* harmony import */ var _icons_SlinkLogoRed__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../icons/SlinkLogoRed */ "./src/icons/SlinkLogoRed.jsx");
+/* harmony import */ var _icons_SlLogoBlack__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../icons/SlLogoBlack */ "./src/icons/SlLogoBlack.jsx");
+/* harmony import */ var _icons_InvalidWanrnigRed__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../icons/InvalidWanrnigRed */ "./src/icons/InvalidWanrnigRed.jsx");
+/* harmony import */ var _icons_SlLogoBlue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../icons/SlLogoBlue */ "./src/icons/SlLogoBlue.jsx");
+/* harmony import */ var _icons_SllogoClasic__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../icons/SllogoClasic */ "./src/icons/SllogoClasic.jsx");
+/* harmony import */ var _icons_Conffetti__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../icons/Conffetti */ "./src/icons/Conffetti.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__);
 
 
 
@@ -989,72 +2168,72 @@ const TrasactionProgress = ({
   //     }
   // }, [step]);
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: step > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+    children: step > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
       id: "sl-transaction-progress",
       className: "\r absolute \r p-[32px] \r top-0 \r left-0 \r right-0 \r bottom-0\r w-full \r h-full \r ",
-      children: [step === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      children: [step === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "progress-box",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "sl-logo-process",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/SlLogoBlack'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_icons_SlLogoBlack__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h4", {
             children: processTitle || "Procesando Pago"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           className: "w-full  flex justify-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "loader"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           children: meesageProcess
         })]
-      }), step === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), step === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "progress-box overflow-auto",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
           className: "flex flex-col items-center",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "sl-logo-process",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/SlinkLogoRed'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_icons_SlinkLogoRed__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h4", {
             children: "Error al Procesar el Pago"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           className: "procces-error-icon",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/InvalidWanrnigRed'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_icons_InvalidWanrnigRed__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
           className: "w-full",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "w-full",
             children: failMessage
-          }), reloadProcess && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          }), reloadProcess && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
             children: "Intentar De Nuevo"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
             className: "box-btn !bg-sl-pink-500 hover:!text-white hover:!bg-sl-pink-800 ",
             onClick: () => chageStep(0),
             children: "Cerrar"
           })]
         })]
-      }), step === 3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), step === 3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "progress-box overflow-auto h-auto !justify-start"
         // ref={scrollRef}
         ,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           className: "flex flex-col items-center"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
           className: "flex flex-col items-center w-full",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             children: messageSucces
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("a", {
             href: "https://7linknetwork.com/",
             children: "Volver al Home"
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
         className: "absolute right-0 top-0 close-btn",
         onClick: () => chageStep(0),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '../icons/CloseIcon'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {})
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_icons_CloseIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {})
       })]
     })
   });
@@ -1454,16 +2633,6 @@ const getCommonPaymentPayload = (hData, extraData = {}) => {
 
 /***/ },
 
-/***/ "./src/main.css"
-/*!**********************!*\
-  !*** ./src/main.css ***!
-  \**********************/
-() {
-
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nHookWebpackError: Cannot find module './icons/Isotipo 7Link.svg'\n    at tryRunOrWebpackError (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\HookWebpackError.js:116:9)\n    at __webpack_require_module__ (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5626:14)\n    at __webpack_require__ (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5570:20)\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5661:22\n    at symbolIterator (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3527:9)\n    at Hook.eval [as callAsync] (eval at create (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\tapable\\lib\\HookCodeFactory.js:31:10), <anonymous>:15:1)\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5545:45\n    at symbolIterator (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5502:18\n    at symbolIterator (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3527:9)\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5404:8\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:3802:5\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Cache.js:100:5\n    at Hook.eval [as callAsync] (eval at create (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\tapable\\lib\\HookCodeFactory.js:31:10), <anonymous>:16:1)\n    at Cache.get (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Cache.js:82:18)\n    at ItemCacheFacade.get (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\CacheFacade.js:115:15)\n    at Compilation._codeGenerationModule (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:3764:9)\n    at codeGen (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5392:11)\n    at symbolIterator (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5464:16\n    at symbolIterator (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3485:9)\n    at timesSync (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5422:14\n    at processQueue (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\util\\processAsyncTree.js:61:4)\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)\n-- inner error --\nError: Cannot find module './icons/Isotipo 7Link.svg'\n    at webpackMissingModule (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\css-loader\\dist\\cjs.js??ruleSet[1].rules[2].use[1]!C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\postcss-loader\\dist\\cjs.js??ruleSet[1].rules[2].use[2]!C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\src\\main.css:15:113)\n    at Module.<anonymous> (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\css-loader\\dist\\cjs.js??ruleSet[1].rules[2].use[1]!C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\postcss-loader\\dist\\cjs.js??ruleSet[1].rules[2].use[2]!C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\src\\main.css:15:213)\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\javascript\\JavascriptModulesPlugin.js:596:10\n    at Hook.eval [as call] (eval at create (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\tapable\\lib\\HookCodeFactory.js:19:10), <anonymous>:7:1)\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5628:41\n    at tryRunOrWebpackError (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\HookWebpackError.js:111:7)\n    at __webpack_require_module__ (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5626:14)\n    at __webpack_require__ (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5570:20)\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5661:22\n    at symbolIterator (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3527:9)\n    at Hook.eval [as callAsync] (eval at create (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\tapable\\lib\\HookCodeFactory.js:31:10), <anonymous>:15:1)\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5545:45\n    at symbolIterator (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5502:18\n    at symbolIterator (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3527:9)\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5404:8\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:3802:5\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Cache.js:100:5\n    at Hook.eval [as callAsync] (eval at create (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\tapable\\lib\\HookCodeFactory.js:31:10), <anonymous>:16:1)\n    at Cache.get (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Cache.js:82:18)\n    at ItemCacheFacade.get (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\CacheFacade.js:115:15)\n    at Compilation._codeGenerationModule (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:3764:9)\n    at codeGen (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5392:11)\n    at symbolIterator (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5464:16\n    at symbolIterator (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3485:9)\n    at timesSync (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\Compilation.js:5422:14\n    at processQueue (C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\webpack\\lib\\util\\processAsyncTree.js:61:4)\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)\n\nGenerated code for C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\css-loader\\dist\\cjs.js??ruleSet[1].rules[2].use[1]!C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\node_modules\\postcss-loader\\dist\\cjs.js??ruleSet[1].rules[2].use[2]!C:\\Users\\Daniel\\Desktop\\Nueva carpeta-wp\\versiones\\zoho\\repo\\portal-zoho\\src\\main.css\n   1 | __webpack_require__.r(__webpack_exports__);\n   2 | /* harmony export */ __webpack_require__.d(__webpack_exports__, {\n   3 | /* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n   4 | /* harmony export */ });\n   5 | /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/sourceMaps.js */ \"C:\\\\Users\\\\Daniel\\\\Desktop\\\\Nueva carpeta-wp\\\\versiones\\\\zoho\\\\repo\\\\portal-zoho\\\\node_modules\\\\css-loader\\\\dist\\\\runtime\\\\sourceMaps.js\");\n   6 | /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n   7 | /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"C:\\\\Users\\\\Daniel\\\\Desktop\\\\Nueva carpeta-wp\\\\versiones\\\\zoho\\\\repo\\\\portal-zoho\\\\node_modules\\\\css-loader\\\\dist\\\\runtime\\\\api.js\");\n   8 | /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n   9 | /* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ \"C:\\\\Users\\\\Daniel\\\\Desktop\\\\Nueva carpeta-wp\\\\versiones\\\\zoho\\\\repo\\\\portal-zoho\\\\node_modules\\\\css-loader\\\\dist\\\\runtime\\\\getUrl.js\");\n  10 | /* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);\n  11 | // Imports\n  12 | \n  13 | \n  14 | \n  15 | var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ Object(function webpackMissingModule() { var e = new Error(\"Cannot find module './icons/Isotipo 7Link.svg'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), __webpack_require__.b);\n  16 | var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n  17 | var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);\n  18 | // Module\n  19 | ___CSS_LOADER_EXPORT___.push([module.id, `@layer theme, base, components, utilities;\n  20 | \n  21 | @layer theme {\n  22 |   @theme default {\n  23 |     --font-sans:\n  24 |       ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\",\n  25 |       \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  26 |     --font-serif: ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif;\n  27 |     --font-mono:\n  28 |       ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\",\n  29 |       \"Courier New\", monospace;\n  30 | \n  31 |     --color-red-50: oklch(97.1% 0.013 17.38);\n  32 |     --color-red-100: oklch(93.6% 0.032 17.717);\n  33 |     --color-red-200: oklch(88.5% 0.062 18.334);\n  34 |     --color-red-300: oklch(80.8% 0.114 19.571);\n  35 |     --color-red-400: oklch(70.4% 0.191 22.216);\n  36 |     --color-red-500: oklch(63.7% 0.237 25.331);\n  37 |     --color-red-600: oklch(57.7% 0.245 27.325);\n  38 |     --color-red-700: oklch(50.5% 0.213 27.518);\n  39 |     --color-red-800: oklch(44.4% 0.177 26.899);\n  40 |     --color-red-900: oklch(39.6% 0.141 25.723);\n  41 |     --color-red-950: oklch(25.8% 0.092 26.042);\n  42 | \n  43 |     --color-orange-50: oklch(98% 0.016 73.684);\n  44 |     --color-orange-100: oklch(95.4% 0.038 75.164);\n  45 |     --color-orange-200: oklch(90.1% 0.076 70.697);\n  46 |     --color-orange-300: oklch(83.7% 0.128 66.29);\n  47 |     --color-orange-400: oklch(75% 0.183 55.934);\n  48 |     --color-orange-500: oklch(70.5% 0.213 47.604);\n  49 |     --color-orange-600: oklch(64.6% 0.222 41.116);\n  50 |     --color-orange-700: oklch(55.3% 0.195 38.402);\n  51 |     --color-orange-800: oklch(47% 0.157 37.304);\n  52 |     --color-orange-900: oklch(40.8% 0.123 38.172);\n  53 |     --color-orange-950: oklch(26.6% 0.079 36.259);\n  54 | \n  55 |     --color-amber-50: oklch(98.7% 0.022 95.277);\n  56 |     --color-amber-100: oklch(96.2% 0.059 95.617);\n  57 |     --color-amber-200: oklch(92.4% 0.12 95.746);\n  58 |     --color-amber-300: oklch(87.9% 0.169 91.605);\n  59 |     --color-amber-400: oklch(82.8% 0.189 84.429);\n  60 |     --color-amber-500: oklch(76.9% 0.188 70.08);\n  61 |     --color-amber-600: oklch(66.6% 0.179 58.318);\n  62 |     --color-amber-700: oklch(55.5% 0.163 48.998);\n  63 |     --color-amber-800: oklch(47.3% 0.137 46.201);\n  64 |     --color-amber-900: oklch(41.4% 0.112 45.904);\n  65 |     --color-amber-950: oklch(27.9% 0.077 45.635);\n  66 | \n  67 |     --color-yellow-50: oklch(98.7% 0.026 102.212);\n  68 |     --color-yellow-100: oklch(97.3% 0.071 103.193);\n  69 |     --color-yellow-200: oklch(94.5% 0.129 101.54);\n  70 |     --color-yellow-300: oklch(90.5% 0.182 98.111);\n  71 |     --color-yellow-400: oklch(85.2% 0.199 91.936);\n  72 |     --color-yellow-500: oklch(79.5% 0.184 86.047);\n  73 |     --color-yellow-600: oklch(68.1% 0.162 75.834);\n  74 |     --color-yellow-700: oklch(55.4% 0.135 66.442);\n  75 |     --color-yellow-800: oklch(47.6% 0.114 61.907);\n  76 |     --color-yellow-900: oklch(42.1% 0.095 57.708);\n  77 |     --color-yellow-950: oklch(28.6% 0.066 53.813);\n  78 | \n  79 |     --color-lime-50: oklch(98.6% 0.031 120.757);\n  80 |     --color-lime-100: oklch(96.7% 0.067 122.328);\n  81 |     --color-lime-200: oklch(93.8% 0.127 124.321);\n  82 |     --color-lime-300: oklch(89.7% 0.196 126.665);\n  83 |     --color-lime-400: oklch(84.1% 0.238 128.85);\n  84 |     --color-lime-500: oklch(76.8% 0.233 130.85);\n  85 |     --color-lime-600: oklch(64.8% 0.2 131.684);\n  86 |     --color-lime-700: oklch(53.2% 0.157 131.589);\n  87 |     --color-lime-800: oklch(45.3% 0.124 130.933);\n  88 |     --color-lime-900: oklch(40.5% 0.101 131.063);\n  89 |     --color-lime-950: oklch(27.4% 0.072 132.109);\n  90 | \n  91 |     --color-green-50: oklch(98.2% 0.018 155.826);\n  92 |     --color-green-100: oklch(96.2% 0.044 156.743);\n  93 |     --color-green-200: oklch(92.5% 0.084 155.995);\n  94 |     --color-green-300: oklch(87.1% 0.15 154.449);\n  95 |     --color-green-400: oklch(79.2% 0.209 151.711);\n  96 |     --color-green-500: oklch(72.3% 0.219 149.579);\n  97 |     --color-green-600: oklch(62.7% 0.194 149.214);\n  98 |     --color-green-700: oklch(52.7% 0.154 150.069);\n  99 |     --color-green-800: oklch(44.8% 0.119 151.328);\n 100 |     --color-green-900: oklch(39.3% 0.095 152.535);\n 101 |     --color-green-950: oklch(26.6% 0.065 152.934);\n 102 | \n 103 |     --color-emerald-50: oklch(97.9% 0.021 166.113);\n 104 |     --color-emerald-100: oklch(95% 0.052 163.051);\n 105 |     --color-emerald-200: oklch(90.5% 0.093 164.15);\n 106 |     --color-emerald-300: oklch(84.5% 0.143 164.978);\n 107 |     --color-emerald-400: oklch(76.5% 0.177 163.223);\n 108 |     --color-emerald-500: oklch(69.6% 0.17 162.48);\n 109 |     --color-emerald-600: oklch(59.6% 0.145 163.225);\n 110 |     --color-emerald-700: oklch(50.8% 0.118 165.612);\n 111 |     --color-emerald-800: oklch(43.2% 0.095 166.913);\n 112 |     --color-emerald-900: oklch(37.8% 0.077 168.94);\n 113 |     --color-emerald-950: oklch(26.2% 0.051 172.552);\n 114 | \n 115 |     --color-teal-50: oklch(98.4% 0.014 180.72);\n 116 |     --color-teal-100: oklch(95.3% 0.051 180.801);\n 117 |     --color-teal-200: oklch(91% 0.096 180.426);\n 118 |     --color-teal-300: oklch(85.5% 0.138 181.071);\n 119 |     --color-teal-400: oklch(77.7% 0.152 181.912);\n 120 |     --color-teal-500: oklch(70.4% 0.14 182.503);\n 121 |     --color-teal-600: oklch(60% 0.118 184.704);\n 122 |     --color-teal-700: oklch(51.1% 0.096 186.391);\n 123 |     --color-teal-800: oklch(43.7% 0.078 188.216);\n 124 |     --color-teal-900: oklch(38.6% 0.063 188.416);\n 125 |     --color-teal-950: oklch(27.7% 0.046 192.524);\n 126 | \n 127 |     --color-cyan-50: oklch(98.4% 0.019 200.873);\n 128 |     --color-cyan-100: oklch(95.6% 0.045 203.388);\n 129 |     --color-cyan-200: oklch(91.7% 0.08 205.041);\n 130 |     --color-cyan-300: oklch(86.5% 0.127 207.078);\n 131 |     --color-cyan-400: oklch(78.9% 0.154 211.53);\n 132 |     --color-cyan-500: oklch(71.5% 0.143 215.221);\n 133 |     --color-cyan-600: oklch(60.9% 0.126 221.723);\n 134 |     --color-cyan-700: oklch(52% 0.105 223.128);\n 135 |     --color-cyan-800: oklch(45% 0.085 224.283);\n 136 |     --color-cyan-900: oklch(39.8% 0.07 227.392);\n 137 |     --color-cyan-950: oklch(30.2% 0.056 229.695);\n 138 | \n 139 |     --color-sky-50: oklch(97.7% 0.013 236.62);\n 140 |     --color-sky-100: oklch(95.1% 0.026 236.824);\n 141 |     --color-sky-200: oklch(90.1% 0.058 230.902);\n 142 |     --color-sky-300: oklch(82.8% 0.111 230.318);\n 143 |     --color-sky-400: oklch(74.6% 0.16 232.661);\n 144 |     --color-sky-500: oklch(68.5% 0.169 237.323);\n 145 |     --color-sky-600: oklch(58.8% 0.158 241.966);\n 146 |     --color-sky-700: oklch(50% 0.134 242.749);\n 147 |     --color-sky-800: oklch(44.3% 0.11 240.79);\n 148 |     --color-sky-900: oklch(39.1% 0.09 240.876);\n 149 |     --color-sky-950: oklch(29.3% 0.066 243.157);\n 150 | \n 151 |     --color-blue-50: oklch(97% 0.014 254.604);\n 152 |     --color-blue-100: oklch(93.2% 0.032 255.585);\n 153 |     --color-blue-200: oklch(88.2% 0.059 254.128);\n 154 |     --color-blue-300: oklch(80.9% 0.105 251.813);\n 155 |     --color-blue-400: oklch(70.7% 0.165 254.624);\n 156 |     --color-blue-500: oklch(62.3% 0.214 259.815);\n 157 |     --color-blue-600: oklch(54.6% 0.245 262.881);\n 158 |     --color-blue-700: oklch(48.8% 0.243 264.376);\n 159 |     --color-blue-800: oklch(42.4% 0.199 265.638);\n 160 |     --color-blue-900: oklch(37.9% 0.146 265.522);\n 161 |     --color-blue-950: oklch(28.2% 0.091 267.935);\n 162 | \n 163 |     --color-indigo-50: oklch(96.2% 0.018 272.314);\n 164 |     --color-indigo-100: oklch(93% 0.034 272.788);\n 165 |     --color-indigo-200: oklch(87% 0.065 274.039);\n 166 |     --color-indigo-300: oklch(78.5% 0.115 274.713);\n 167 |     --color-indigo-400: oklch(67.3% 0.182 276.935);\n 168 |     --color-indigo-500: oklch(58.5% 0.233 277.117);\n 169 |     --color-indigo-600: oklch(51.1% 0.262 276.966);\n 170 |     --color-indigo-700: oklch(45.7% 0.24 277.023);\n 171 |     --color-indigo-800: oklch(39.8% 0.195 277.366);\n 172 |     --color-indigo-900: oklch(35.9% 0.144 278.697);\n 173 |     --color-indigo-950: oklch(25.7% 0.09 281.288);\n 174 | \n 175 |     --color-violet-50: oklch(96.9% 0.016 293.756);\n 176 |     --color-violet-100: oklch(94.3% 0.029 294.588);\n 177 |     --color-violet-200: oklch(89.4% 0.057 293.283);\n 178 |     --color-violet-300: oklch(81.1% 0.111 293.571);\n 179 |     --color-violet-400: oklch(70.2% 0.183 293.541);\n 180 |     --color-violet-500: oklch(60.6% 0.25 292.717);\n 181 |     --color-violet-600: oklch(54.1% 0.281 293.009);\n 182 |     --color-violet-700: oklch(49.1% 0.27 292.581);\n 183 |     --color-violet-800: oklch(43.2% 0.232 292.759);\n 184 |     --color-violet-900: oklch(38% 0.189 293.745);\n 185 |     --color-violet-950: oklch(28.3% 0.141 291.089);\n 186 | \n 187 |     --color-purple-50: oklch(97.7% 0.014 308.299);\n 188 |     --color-purple-100: oklch(94.6% 0.033 307.174);\n 189 |     --color-purple-200: oklch(90.2% 0.063 306.703);\n 190 |     --color-purple-300: oklch(82.7% 0.119 306.383);\n 191 |     --color-purple-400: oklch(71.4% 0.203 305.504);\n 192 |     --color-purple-500: oklch(62.7% 0.265 303.9);\n 193 |     --color-purple-600: oklch(55.8% 0.288 302.321);\n 194 |     --color-purple-700: oklch(49.6% 0.265 301.924);\n 195 |     --color-purple-800: oklch(43.8% 0.218 303.724);\n 196 |     --color-purple-900: oklch(38.1% 0.176 304.987);\n 197 |     --color-purple-950: oklch(29.1% 0.149 302.717);\n 198 | \n 199 |     --color-fuchsia-50: oklch(97.7% 0.017 320.058);\n 200 |     --color-fuchsia-100: oklch(95.2% 0.037 318.852);\n 201 |     --color-fuchsia-200: oklch(90.3% 0.076 319.62);\n 202 |     --color-fuchsia-300: oklch(83.3% 0.145 321.434);\n 203 |     --color-fuchsia-400: oklch(74% 0.238 322.16);\n 204 |     --color-fuchsia-500: oklch(66.7% 0.295 322.15);\n 205 |     --color-fuchsia-600: oklch(59.1% 0.293 322.896);\n 206 |     --color-fuchsia-700: oklch(51.8% 0.253 323.949);\n 207 |     --color-fuchsia-800: oklch(45.2% 0.211 324.591);\n 208 |     --color-fuchsia-900: oklch(40.1% 0.17 325.612);\n 209 |     --color-fuchsia-950: oklch(29.3% 0.136 325.661);\n 210 | \n 211 |     --color-pink-50: oklch(97.1% 0.014 343.198);\n 212 |     --color-pink-100: oklch(94.8% 0.028 342.258);\n 213 |     --color-pink-200: oklch(89.9% 0.061 343.231);\n 214 |     --color-pink-300: oklch(82.3% 0.12 346.018);\n 215 |     --color-pink-400: oklch(71.8% 0.202 349.761);\n 216 |     --color-pink-500: oklch(65.6% 0.241 354.308);\n 217 |     --color-pink-600: oklch(59.2% 0.249 0.584);\n 218 |     --color-pink-700: oklch(52.5% 0.223 3.958);\n 219 |     --color-pink-800: oklch(45.9% 0.187 3.815);\n 220 |     --color-pink-900: oklch(40.8% 0.153 2.432);\n 221 |     --color-pink-950: oklch(28.4% 0.109 3.907);\n 222 | \n 223 |     --color-rose-50: oklch(96.9% 0.015 12.422);\n 224 |     --color-rose-100: oklch(94.1% 0.03 12.58);\n 225 |     --color-rose-200: oklch(89.2% 0.058 10.001);\n 226 |     --color-rose-300: oklch(81% 0.117 11.638);\n 227 |     --color-rose-400: oklch(71.2% 0.194 13.428);\n 228 |     --color-rose-500: oklch(64.5% 0.246 16.439);\n 229 |     --color-rose-600: oklch(58.6% 0.253 17.585);\n 230 |     --color-rose-700: oklch(51.4% 0.222 16.935);\n 231 |     --color-rose-800: oklch(45.5% 0.188 13.697);\n 232 |     --color-rose-900: oklch(41% 0.159 10.272);\n 233 |     --color-rose-950: oklch(27.1% 0.105 12.094);\n 234 | \n 235 |     --color-slate-50: oklch(98.4% 0.003 247.858);\n 236 |     --color-slate-100: oklch(96.8% 0.007 247.896);\n 237 |     --color-slate-200: oklch(92.9% 0.013 255.508);\n 238 |     --color-slate-300: oklch(86.9% 0.022 252.894);\n 239 |     --color-slate-400: oklch(70.4% 0.04 256.788);\n 240 |     --color-slate-500: oklch(55.4% 0.046 257.417);\n 241 |     --color-slate-600: oklch(44.6% 0.043 257.281);\n 242 |     --color-slate-700: oklch(37.2% 0.044 257.287);\n 243 |     --color-slate-800: oklch(27.9% 0.041 260.031);\n 244 |     --color-slate-900: oklch(20.8% 0.042 265.755);\n 245 |     --color-slate-950: oklch(12.9% 0.042 264.695);\n 246 | \n 247 |     --color-gray-50: oklch(98.5% 0.002 247.839);\n 248 |     --color-gray-100: oklch(96.7% 0.003 264.542);\n 249 |     --color-gray-200: oklch(92.8% 0.006 264.531);\n 250 |     --color-gray-300: oklch(87.2% 0.01 258.338);\n 251 |     --color-gray-400: oklch(70.7% 0.022 261.325);\n 252 |     --color-gray-500: oklch(55.1% 0.027 264.364);\n 253 |     --color-gray-600: oklch(44.6% 0.03 256.802);\n 254 |     --color-gray-700: oklch(37.3% 0.034 259.733);\n 255 |     --color-gray-800: oklch(27.8% 0.033 256.848);\n 256 |     --color-gray-900: oklch(21% 0.034 264.665);\n 257 |     --color-gray-950: oklch(13% 0.028 261.692);\n 258 | \n 259 |     --color-zinc-50: oklch(98.5% 0 0);\n 260 |     --color-zinc-100: oklch(96.7% 0.001 286.375);\n 261 |     --color-zinc-200: oklch(92% 0.004 286.32);\n 262 |     --color-zinc-300: oklch(87.1% 0.006 286.286);\n 263 |     --color-zinc-400: oklch(70.5% 0.015 286.067);\n 264 |     --color-zinc-500: oklch(55.2% 0.016 285.938);\n 265 |     --color-zinc-600: oklch(44.2% 0.017 285.786);\n 266 |     --color-zinc-700: oklch(37% 0.013 285.805);\n 267 |     --color-zinc-800: oklch(27.4% 0.006 286.033);\n 268 |     --color-zinc-900: oklch(21% 0.006 285.885);\n 269 |     --color-zinc-950: oklch(14.1% 0.005 285.823);\n 270 | \n 271 |     --color-neutral-50: oklch(98.5% 0 0);\n 272 |     --color-neutral-100: oklch(97% 0 0);\n 273 |     --color-neutral-200: oklch(92.2% 0 0);\n 274 |     --color-neutral-300: oklch(87% 0 0);\n 275 |     --color-neutral-400: oklch(70.8% 0 0);\n 276 |     --color-neutral-500: oklch(55.6% 0 0);\n 277 |     --color-neutral-600: oklch(43.9% 0 0);\n 278 |     --color-neutral-700: oklch(37.1% 0 0);\n 279 |     --color-neutral-800: oklch(26.9% 0 0);\n 280 |     --color-neutral-900: oklch(20.5% 0 0);\n 281 |     --color-neutral-950: oklch(14.5% 0 0);\n 282 | \n 283 |     --color-stone-50: oklch(98.5% 0.001 106.423);\n 284 |     --color-stone-100: oklch(97% 0.001 106.424);\n 285 |     --color-stone-200: oklch(92.3% 0.003 48.717);\n 286 |     --color-stone-300: oklch(86.9% 0.005 56.366);\n 287 |     --color-stone-400: oklch(70.9% 0.01 56.259);\n 288 |     --color-stone-500: oklch(55.3% 0.013 58.071);\n 289 |     --color-stone-600: oklch(44.4% 0.011 73.639);\n 290 |     --color-stone-700: oklch(37.4% 0.01 67.558);\n 291 |     --color-stone-800: oklch(26.8% 0.007 34.298);\n 292 |     --color-stone-900: oklch(21.6% 0.006 56.043);\n 293 |     --color-stone-950: oklch(14.7% 0.004 49.25);\n 294 | \n 295 |     --color-mauve-50: oklch(98.5% 0 0);\n 296 |     --color-mauve-100: oklch(96% 0.003 325.6);\n 297 |     --color-mauve-200: oklch(92.2% 0.005 325.62);\n 298 |     --color-mauve-300: oklch(86.5% 0.012 325.68);\n 299 |     --color-mauve-400: oklch(71.1% 0.019 323.02);\n 300 |     --color-mauve-500: oklch(54.2% 0.034 322.5);\n 301 |     --color-mauve-600: oklch(43.5% 0.029 321.78);\n 302 |     --color-mauve-700: oklch(36.4% 0.029 323.89);\n 303 |     --color-mauve-800: oklch(26.3% 0.024 320.12);\n 304 |     --color-mauve-900: oklch(21.2% 0.019 322.12);\n 305 |     --color-mauve-950: oklch(14.5% 0.008 326);\n 306 | \n 307 |     --color-olive-50: oklch(98.8% 0.003 106.5);\n 308 |     --color-olive-100: oklch(96.6% 0.005 106.5);\n 309 |     --color-olive-200: oklch(93% 0.007 106.5);\n 310 |     --color-olive-300: oklch(88% 0.011 106.6);\n 311 |     --color-olive-400: oklch(73.7% 0.021 106.9);\n 312 |     --color-olive-500: oklch(58% 0.031 107.3);\n 313 |     --color-olive-600: oklch(46.6% 0.025 107.3);\n 314 |     --color-olive-700: oklch(39.4% 0.023 107.4);\n 315 |     --color-olive-800: oklch(28.6% 0.016 107.4);\n 316 |     --color-olive-900: oklch(22.8% 0.013 107.4);\n 317 |     --color-olive-950: oklch(15.3% 0.006 107.1);\n 318 | \n 319 |     --color-mist-50: oklch(98.7% 0.002 197.1);\n 320 |     --color-mist-100: oklch(96.3% 0.002 197.1);\n 321 |     --color-mist-200: oklch(92.5% 0.005 214.3);\n 322 |     --color-mist-300: oklch(87.2% 0.007 219.6);\n 323 |     --color-mist-400: oklch(72.3% 0.014 214.4);\n 324 |     --color-mist-500: oklch(56% 0.021 213.5);\n 325 |     --color-mist-600: oklch(45% 0.017 213.2);\n 326 |     --color-mist-700: oklch(37.8% 0.015 216);\n 327 |     --color-mist-800: oklch(27.5% 0.011 216.9);\n 328 |     --color-mist-900: oklch(21.8% 0.008 223.9);\n 329 |     --color-mist-950: oklch(14.8% 0.004 228.8);\n 330 | \n 331 |     --color-taupe-50: oklch(98.6% 0.002 67.8);\n 332 |     --color-taupe-100: oklch(96% 0.002 17.2);\n 333 |     --color-taupe-200: oklch(92.2% 0.005 34.3);\n 334 |     --color-taupe-300: oklch(86.8% 0.007 39.5);\n 335 |     --color-taupe-400: oklch(71.4% 0.014 41.2);\n 336 |     --color-taupe-500: oklch(54.7% 0.021 43.1);\n 337 |     --color-taupe-600: oklch(43.8% 0.017 39.3);\n 338 |     --color-taupe-700: oklch(36.7% 0.016 35.7);\n 339 |     --color-taupe-800: oklch(26.8% 0.011 36.5);\n 340 |     --color-taupe-900: oklch(21.4% 0.009 43.1);\n 341 |     --color-taupe-950: oklch(14.7% 0.004 49.3);\n 342 | \n 343 |     --color-black: #000;\n 344 |     --color-white: #fff;\n 345 | \n 346 |     --spacing: 0.25rem;\n 347 | \n 348 |     --breakpoint-sm: 40rem;\n 349 |     --breakpoint-md: 48rem;\n 350 |     --breakpoint-lg: 64rem;\n 351 |     --breakpoint-xl: 80rem;\n 352 |     --breakpoint-2xl: 96rem;\n 353 | \n 354 |     --container-3xs: 16rem;\n 355 |     --container-2xs: 18rem;\n 356 |     --container-xs: 20rem;\n 357 |     --container-sm: 24rem;\n 358 |     --container-md: 28rem;\n 359 |     --container-lg: 32rem;\n 360 |     --container-xl: 36rem;\n 361 |     --container-2xl: 42rem;\n 362 |     --container-3xl: 48rem;\n 363 |     --container-4xl: 56rem;\n 364 |     --container-5xl: 64rem;\n 365 |     --container-6xl: 72rem;\n 366 |     --container-7xl: 80rem;\n 367 | \n 368 |     --text-xs: 0.75rem;\n 369 |     --text-xs--line-height: calc(1 / 0.75);\n 370 |     --text-sm: 0.875rem;\n 371 |     --text-sm--line-height: calc(1.25 / 0.875);\n 372 |     --text-base: 1rem;\n 373 |     --text-base--line-height: calc(1.5 / 1);\n 374 |     --text-lg: 1.125rem;\n 375 |     --text-lg--line-height: calc(1.75 / 1.125);\n 376 |     --text-xl: 1.25rem;\n 377 |     --text-xl--line-height: calc(1.75 / 1.25);\n 378 |     --text-2xl: 1.5rem;\n 379 |     --text-2xl--line-height: calc(2 / 1.5);\n 380 |     --text-3xl: 1.875rem;\n 381 |     --text-3xl--line-height: calc(2.25 / 1.875);\n 382 |     --text-4xl: 2.25rem;\n 383 |     --text-4xl--line-height: calc(2.5 / 2.25);\n 384 |     --text-5xl: 3rem;\n 385 |     --text-5xl--line-height: 1;\n 386 |     --text-6xl: 3.75rem;\n 387 |     --text-6xl--line-height: 1;\n 388 |     --text-7xl: 4.5rem;\n 389 |     --text-7xl--line-height: 1;\n 390 |     --text-8xl: 6rem;\n 391 |     --text-8xl--line-height: 1;\n 392 |     --text-9xl: 8rem;\n 393 |     --text-9xl--line-height: 1;\n 394 | \n 395 |     --font-weight-thin: 100;\n 396 |     --font-weight-extralight: 200;\n 397 |     --font-weight-light: 300;\n 398 |     --font-weight-normal: 400;\n 399 |     --font-weight-medium: 500;\n 400 |     --font-weight-semibold: 600;\n 401 |     --font-weight-bold: 700;\n 402 |     --font-weight-extrabold: 800;\n 403 |     --font-weight-black: 900;\n 404 | \n 405 |     --tracking-tighter: -0.05em;\n 406 |     --tracking-tight: -0.025em;\n 407 |     --tracking-normal: 0em;\n 408 |     --tracking-wide: 0.025em;\n 409 |     --tracking-wider: 0.05em;\n 410 |     --tracking-widest: 0.1em;\n 411 | \n 412 |     --leading-tight: 1.25;\n 413 |     --leading-snug: 1.375;\n 414 |     --leading-normal: 1.5;\n 415 |     --leading-relaxed: 1.625;\n 416 |     --leading-loose: 2;\n 417 | \n 418 |     --radius-xs: 0.125rem;\n 419 |     --radius-sm: 0.25rem;\n 420 |     --radius-md: 0.375rem;\n 421 |     --radius-lg: 0.5rem;\n 422 |     --radius-xl: 0.75rem;\n 423 |     --radius-2xl: 1rem;\n 424 |     --radius-3xl: 1.5rem;\n 425 |     --radius-4xl: 2rem;\n 426 | \n 427 |     --shadow-2xs: 0 1px rgb(0 0 0 / 0.05);\n 428 |     --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);\n 429 |     --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);\n 430 |     --shadow-md:\n 431 |       0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);\n 432 |     --shadow-lg:\n 433 |       0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);\n 434 |     --shadow-xl:\n 435 |       0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);\n 436 |     --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);\n 437 | \n 438 |     --inset-shadow-2xs: inset 0 1px rgb(0 0 0 / 0.05);\n 439 |     --inset-shadow-xs: inset 0 1px 1px rgb(0 0 0 / 0.05);\n 440 |     --inset-shadow-sm: inset 0 2px 4px rgb(0 0 0 / 0.05);\n 441 | \n 442 |     --drop-shadow-xs: 0 1px 1px rgb(0 0 0 / 0.05);\n 443 |     --drop-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.15);\n 444 |     --drop-shadow-md: 0 3px 3px rgb(0 0 0 / 0.12);\n 445 |     --drop-shadow-lg: 0 4px 4px rgb(0 0 0 / 0.15);\n 446 |     --drop-shadow-xl: 0 9px 7px rgb(0 0 0 / 0.1);\n 447 |     --drop-shadow-2xl: 0 25px 25px rgb(0 0 0 / 0.15);\n 448 | \n 449 |     --text-shadow-2xs: 0px 1px 0px rgb(0 0 0 / 0.15);\n 450 |     --text-shadow-xs: 0px 1px 1px rgb(0 0 0 / 0.2);\n 451 |     --text-shadow-sm:\n 452 |       0px 1px 0px rgb(0 0 0 / 0.075), 0px 1px 1px rgb(0 0 0 / 0.075),\n 453 |       0px 2px 2px rgb(0 0 0 / 0.075);\n 454 |     --text-shadow-md:\n 455 |       0px 1px 1px rgb(0 0 0 / 0.1), 0px 1px 2px rgb(0 0 0 / 0.1),\n 456 |       0px 2px 4px rgb(0 0 0 / 0.1);\n 457 |     --text-shadow-lg:\n 458 |       0px 1px 2px rgb(0 0 0 / 0.1), 0px 3px 2px rgb(0 0 0 / 0.1),\n 459 |       0px 4px 8px rgb(0 0 0 / 0.1);\n 460 | \n 461 |     --ease-in: cubic-bezier(0.4, 0, 1, 1);\n 462 |     --ease-out: cubic-bezier(0, 0, 0.2, 1);\n 463 |     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);\n 464 | \n 465 |     --animate-spin: spin 1s linear infinite;\n 466 |     --animate-ping: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;\n 467 |     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;\n 468 |     --animate-bounce: bounce 1s infinite;\n 469 | \n 470 |     @keyframes spin {\n 471 |       to {\n 472 |         transform: rotate(360deg);\n 473 |       }\n 474 |     }\n 475 | \n 476 |     @keyframes ping {\n 477 |       75%,\n 478 |       100% {\n 479 |         transform: scale(2);\n 480 |         opacity: 0;\n 481 |       }\n 482 |     }\n 483 | \n 484 |     @keyframes pulse {\n 485 |       50% {\n 486 |         opacity: 0.5;\n 487 |       }\n 488 |     }\n 489 | \n 490 |     @keyframes bounce {\n 491 |       0%,\n 492 |       100% {\n 493 |         transform: translateY(-25%);\n 494 |         animation-timing-function: cubic-bezier(0.8, 0, 1, 1);\n 495 |       }\n 496 | \n 497 |       50% {\n 498 |         transform: none;\n 499 |         animation-timing-function: cubic-bezier(0, 0, 0.2, 1);\n 500 |       }\n 501 |     }\n 502 | \n 503 |     --blur-xs: 4px;\n 504 |     --blur-sm: 8px;\n 505 |     --blur-md: 12px;\n 506 |     --blur-lg: 16px;\n 507 |     --blur-xl: 24px;\n 508 |     --blur-2xl: 40px;\n 509 |     --blur-3xl: 64px;\n 510 | \n 511 |     --perspective-dramatic: 100px;\n 512 |     --perspective-near: 300px;\n 513 |     --perspective-normal: 500px;\n 514 |     --perspective-midrange: 800px;\n 515 |     --perspective-distant: 1200px;\n 516 | \n 517 |     --aspect-video: 16 / 9;\n 518 | \n 519 |     --default-transition-duration: 150ms;\n 520 |     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n 521 |     --default-font-family: --theme(--font-sans, initial);\n 522 |     --default-font-feature-settings: --theme(\n 523 |       --font-sans--font-feature-settings,\n 524 |       initial\n 525 |     );\n 526 |     --default-font-variation-settings: --theme(\n 527 |       --font-sans--font-variation-settings,\n 528 |       initial\n 529 |     );\n 530 |     --default-mono-font-family: --theme(--font-mono, initial);\n 531 |     --default-mono-font-feature-settings: --theme(\n 532 |       --font-mono--font-feature-settings,\n 533 |       initial\n 534 |     );\n 535 |     --default-mono-font-variation-settings: --theme(\n 536 |       --font-mono--font-variation-settings,\n 537 |       initial\n 538 |     );\n 539 |   }\n 540 | \n 541 |   /* Deprecated */\n 542 |   @theme default inline reference {\n 543 |     --blur: 8px;\n 544 |     --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);\n 545 |     --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);\n 546 |     --drop-shadow: 0 1px 2px rgb(0 0 0 / 0.1), 0 1px 1px rgb(0 0 0 / 0.06);\n 547 |     --radius: 0.25rem;\n 548 |     --max-width-prose: 65ch;\n 549 |   }\n 550 | }\n 551 | \n 552 | @layer base {\n 553 |   /*\n 554 |   1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)\n 555 |   2. Remove default margins and padding\n 556 |   3. Reset all borders.\n 557 | */\n 558 | \n 559 |   *,\n 560 |   ::after,\n 561 |   ::before,\n 562 |   ::backdrop,\n 563 |   ::file-selector-button {\n 564 |     box-sizing: border-box; /* 1 */\n 565 |     margin: 0; /* 2 */\n 566 |     padding: 0; /* 2 */\n 567 |     border: 0 solid; /* 3 */\n 568 |   }\n 569 | \n 570 |   /*\n 571 |   1. Use a consistent sensible line-height in all browsers.\n 572 |   2. Prevent adjustments of font size after orientation changes in iOS.\n 573 |   3. Use a more readable tab size.\n 574 |   4. Use the user's configured \\`sans\\` font-family by default.\n 575 |   5. Use the user's configured \\`sans\\` font-feature-settings by default.\n 576 |   6. Use the user's configured \\`sans\\` font-variation-settings by default.\n 577 |   7. Disable tap highlights on iOS.\n 578 | */\n 579 | \n 580 |   html,\n 581 |   :host {\n 582 |     line-height: 1.5; /* 1 */\n 583 |     -webkit-text-size-adjust: 100%; /* 2 */\n 584 |     -moz-tab-size: 4;\n 585 |       -o-tab-size: 4;\n 586 |          tab-size: 4; /* 3 */\n 587 |     font-family: --theme(\n 588 |       --default-font-family,\n 589 |       ui-sans-serif,\n 590 |       system-ui,\n 591 |       sans-serif,\n 592 |       \"Apple Color Emoji\",\n 593 |       \"Segoe UI Emoji\",\n 594 |       \"Segoe UI Symbol\",\n 595 |       \"Noto Color Emoji\"\n 596 |     ); /* 4 */\n 597 |     font-feature-settings: --theme(\n 598 |       --default-font-feature-settings,\n 599 |       normal\n 600 |     ); /* 5 */\n 601 |     font-variation-settings: --theme(\n 602 |       --default-font-variation-settings,\n 603 |       normal\n 604 |     ); /* 6 */\n 605 |     -webkit-tap-highlight-color: transparent; /* 7 */\n 606 |   }\n 607 | \n 608 |   /*\n 609 |   1. Add the correct height in Firefox.\n 610 |   2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)\n 611 |   3. Reset the default border style to a 1px solid border.\n 612 | */\n 613 | \n 614 |   hr {\n 615 |     height: 0; /* 1 */\n 616 |     color: inherit; /* 2 */\n 617 |     border-top-width: 1px; /* 3 */\n 618 |   }\n 619 | \n 620 |   /*\n 621 |   Add the correct text decoration in Chrome, Edge, and Safari.\n 622 | */\n 623 | \n 624 |   abbr:where([title]) {\n 625 |     -webkit-text-decoration: underline dotted;\n 626 |     text-decoration: underline dotted;\n 627 |   }\n 628 | \n 629 |   /*\n 630 |   Remove the default font size and weight for headings.\n 631 | */\n 632 | \n 633 |   h1,\n 634 |   h2,\n 635 |   h3,\n 636 |   h4,\n 637 |   h5,\n 638 |   h6 {\n 639 |     font-size: inherit;\n 640 |     font-weight: inherit;\n 641 |   }\n 642 | \n 643 |   /*\n 644 |   Reset links to optimize for opt-in styling instead of opt-out.\n 645 | */\n 646 | \n 647 |   a {\n 648 |     color: inherit;\n 649 |     -webkit-text-decoration: inherit;\n 650 |     text-decoration: inherit;\n 651 |   }\n 652 | \n 653 |   /*\n 654 |   Add the correct font weight in Edge and Safari.\n 655 | */\n 656 | \n 657 |   b,\n 658 |   strong {\n 659 |     font-weight: bolder;\n 660 |   }\n 661 | \n 662 |   /*\n 663 |   1. Use the user's configured \\`mono\\` font-family by default.\n 664 |   2. Use the user's configured \\`mono\\` font-feature-settings by default.\n 665 |   3. Use the user's configured \\`mono\\` font-variation-settings by default.\n 666 |   4. Correct the odd \\`em\\` font sizing in all browsers.\n 667 | */\n 668 | \n 669 |   code,\n 670 |   kbd,\n 671 |   samp,\n 672 |   pre {\n 673 |     font-family: --theme(\n 674 |       --default-mono-font-family,\n 675 |       ui-monospace,\n 676 |       SFMono-Regular,\n 677 |       Menlo,\n 678 |       Monaco,\n 679 |       Consolas,\n 680 |       \"Liberation Mono\",\n 681 |       \"Courier New\",\n 682 |       monospace\n 683 |     ); /* 1 */\n 684 |     font-feature-settings: --theme(\n 685 |       --default-mono-font-feature-settings,\n 686 |       normal\n 687 |     ); /* 2 */\n 688 |     font-variation-settings: --theme(\n 689 |       --default-mono-font-variation-settings,\n 690 |       normal\n 691 |     ); /* 3 */\n 692 |     font-size: 1em; /* 4 */\n 693 |   }\n 694 | \n 695 |   /*\n 696 |   Add the correct font size in all browsers.\n 697 | */\n 698 | \n 699 |   small {\n 700 |     font-size: 80%;\n 701 |   }\n 702 | \n 703 |   /*\n 704 |   Prevent \\`sub\\` and \\`sup\\` elements from affecting the line height in all browsers.\n 705 | */\n 706 | \n 707 |   sub,\n 708 |   sup {\n 709 |     font-size: 75%;\n 710 |     line-height: 0;\n 711 |     position: relative;\n 712 |     vertical-align: baseline;\n 713 |   }\n 714 | \n 715 |   sub {\n 716 |     bottom: -0.25em;\n 717 |   }\n 718 | \n 719 |   sup {\n 720 |     top: -0.5em;\n 721 |   }\n 722 | \n 723 |   /*\n 724 |   1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)\n 725 |   2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)\n 726 |   3. Remove gaps between table borders by default.\n 727 | */\n 728 | \n 729 |   table {\n 730 |     text-indent: 0; /* 1 */\n 731 |     border-color: inherit; /* 2 */\n 732 |     border-collapse: collapse; /* 3 */\n 733 |   }\n 734 | \n 735 |   /*\n 736 |   Use the modern Firefox focus style for all focusable elements.\n 737 | */\n 738 | \n 739 |   :-moz-focusring {\n 740 |     outline: auto;\n 741 |   }\n 742 | \n 743 |   /*\n 744 |   Add the correct vertical alignment in Chrome and Firefox.\n 745 | */\n 746 | \n 747 |   progress {\n 748 |     vertical-align: baseline;\n 749 |   }\n 750 | \n 751 |   /*\n 752 |   Add the correct display in Chrome and Safari.\n 753 | */\n 754 | \n 755 |   summary {\n 756 |     display: list-item;\n 757 |   }\n 758 | \n 759 |   /*\n 760 |   Make lists unstyled by default.\n 761 | */\n 762 | \n 763 |   ol,\n 764 |   ul,\n 765 |   menu {\n 766 |     list-style: none;\n 767 |   }\n 768 | \n 769 |   /*\n 770 |   1. Make replaced elements \\`display: block\\` by default. (https://github.com/mozdevs/cssremedy/issues/14)\n 771 |   2. Add \\`vertical-align: middle\\` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)\n 772 |       This can trigger a poorly considered lint error in some tools but is included by design.\n 773 | */\n 774 | \n 775 |   img,\n 776 |   svg,\n 777 |   video,\n 778 |   canvas,\n 779 |   audio,\n 780 |   iframe,\n 781 |   embed,\n 782 |   object {\n 783 |     display: block; /* 1 */\n 784 |     vertical-align: middle; /* 2 */\n 785 |   }\n 786 | \n 787 |   /*\n 788 |   Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)\n 789 | */\n 790 | \n 791 |   img,\n 792 |   video {\n 793 |     max-width: 100%;\n 794 |     height: auto;\n 795 |   }\n 796 | \n 797 |   /*\n 798 |   1. Inherit font styles in all browsers.\n 799 |   2. Remove border radius in all browsers.\n 800 |   3. Remove background color in all browsers.\n 801 |   4. Ensure consistent opacity for disabled states in all browsers.\n 802 | */\n 803 | \n 804 |   button,\n 805 |   input,\n 806 |   select,\n 807 |   optgroup,\n 808 |   textarea,\n 809 |   ::file-selector-button {\n 810 |     font: inherit; /* 1 */\n 811 |     font-feature-settings: inherit; /* 1 */\n 812 |     font-variation-settings: inherit; /* 1 */\n 813 |     letter-spacing: inherit; /* 1 */\n 814 |     color: inherit; /* 1 */\n 815 |     border-radius: 0; /* 2 */\n 816 |     background-color: transparent; /* 3 */\n 817 |     opacity: 1; /* 4 */\n 818 |   }\n 819 | \n 820 |   /*\n 821 |   Restore default font weight.\n 822 | */\n 823 | \n 824 |   :where(select:is([multiple], [size])) optgroup {\n 825 |     font-weight: bolder;\n 826 |   }\n 827 | \n 828 |   /*\n 829 |   Restore indentation.\n 830 | */\n 831 | \n 832 |   :where(select:is([multiple], [size])) optgroup option {\n 833 |     padding-inline-start: 20px;\n 834 |   }\n 835 | \n 836 |   /*\n 837 |   Restore space after button.\n 838 | */\n 839 | \n 840 |   ::file-selector-button {\n 841 |     margin-inline-end: 4px;\n 842 |   }\n 843 | \n 844 |   /*\n 845 |   Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)\n 846 | */\n 847 | \n 848 |   ::-moz-placeholder {\n 849 |     opacity: 1;\n 850 |   }\n 851 | \n 852 |   ::placeholder {\n 853 |     opacity: 1;\n 854 |   }\n 855 | \n 856 |   /*\n 857 |   Set the default placeholder color to a semi-transparent version of the current text color in browsers that do not\n 858 |   crash when using \\`color-mix(…)\\` with \\`currentcolor\\`. (https://github.com/tailwindlabs/tailwindcss/issues/17194)\n 859 | */\n 860 | \n 861 |   @supports (not (-webkit-appearance: -apple-pay-button)) /* Not Safari */ or\n 862 |     (contain-intrinsic-size: 1px) /* Safari 17+ */ {\n 863 |     ::-moz-placeholder {\n 864 |       color: color-mix(in oklab, currentcolor 50%, transparent);\n 865 |     }\n 866 |     ::placeholder {\n 867 |       color: color-mix(in oklab, currentcolor 50%, transparent);\n 868 |     }\n 869 |   }\n 870 | \n 871 |   /*\n 872 |   Prevent resizing textareas horizontally by default.\n 873 | */\n 874 | \n 875 |   textarea {\n 876 |     resize: vertical;\n 877 |   }\n 878 | \n 879 |   /*\n 880 |   Remove the inner padding in Chrome and Safari on macOS.\n 881 | */\n 882 | \n 883 |   ::-webkit-search-decoration {\n 884 |     -webkit-appearance: none;\n 885 |   }\n 886 | \n 887 |   /*\n 888 |   1. Ensure date/time inputs have the same height when empty in iOS Safari.\n 889 |   2. Ensure text alignment can be changed on date/time inputs in iOS Safari.\n 890 | */\n 891 | \n 892 |   ::-webkit-date-and-time-value {\n 893 |     min-height: 1lh; /* 1 */\n 894 |     text-align: inherit; /* 2 */\n 895 |   }\n 896 | \n 897 |   /*\n 898 |   Prevent height from changing on date/time inputs in macOS Safari when the input is set to \\`display: block\\`.\n 899 | */\n 900 | \n 901 |   ::-webkit-datetime-edit {\n 902 |     display: inline-flex;\n 903 |   }\n 904 | \n 905 |   /*\n 906 |   Remove excess padding from pseudo-elements in date/time inputs to ensure consistent height across browsers.\n 907 | */\n 908 | \n 909 |   ::-webkit-datetime-edit-fields-wrapper {\n 910 |     padding: 0;\n 911 |   }\n 912 | \n 913 |   ::-webkit-datetime-edit,\n 914 |   ::-webkit-datetime-edit-year-field,\n 915 |   ::-webkit-datetime-edit-month-field,\n 916 |   ::-webkit-datetime-edit-day-field,\n 917 |   ::-webkit-datetime-edit-hour-field,\n 918 |   ::-webkit-datetime-edit-minute-field,\n 919 |   ::-webkit-datetime-edit-second-field,\n 920 |   ::-webkit-datetime-edit-millisecond-field,\n 921 |   ::-webkit-datetime-edit-meridiem-field {\n 922 |     padding-block: 0;\n 923 |   }\n 924 | \n 925 |   /*\n 926 |   Center dropdown marker shown on inputs with paired \\`<datalist>\\`s in Chrome. (https://github.com/tailwindlabs/tailwindcss/issues/18499)\n 927 | */\n 928 | \n 929 |   ::-webkit-calendar-picker-indicator {\n 930 |     line-height: 1;\n 931 |   }\n 932 | \n 933 |   /*\n 934 |   Remove the additional \\`:invalid\\` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)\n 935 | */\n 936 | \n 937 |   :-moz-ui-invalid {\n 938 |     box-shadow: none;\n 939 |   }\n 940 | \n 941 |   /*\n 942 |   Correct the inability to style the border radius in iOS Safari.\n 943 | */\n 944 | \n 945 |   button,\n 946 |   input:where([type=\"button\"], [type=\"reset\"], [type=\"submit\"]),\n 947 |   ::file-selector-button {\n 948 |     -webkit-appearance: button;\n 949 |        -moz-appearance: button;\n 950 |             appearance: button;\n 951 |   }\n 952 | \n 953 |   /*\n 954 |   Correct the cursor style of increment and decrement buttons in Safari.\n 955 | */\n 956 | \n 957 |   ::-webkit-inner-spin-button,\n 958 |   ::-webkit-outer-spin-button {\n 959 |     height: auto;\n 960 |   }\n 961 | \n 962 |   /*\n 963 |   Make elements with the HTML hidden attribute stay hidden by default.\n 964 | */\n 965 | \n 966 |   [hidden]:where(:not([hidden=\"until-found\"])) {\n 967 |     display: none !important;\n 968 |   }\n 969 | }\n 970 | \n 971 | @layer utilities {\n 972 |   @tailwind utilities;\n 973 | }\n 974 | \n 975 | @plugin \"daisyui\";\n 976 | \n 977 | /* @theme {\n 978 |   --color-razzle-dazzle-rose-50 : #fdf2fa;\n 979 |   --color-razzle-dazzle-rose-100: #fde6f8;\n 980 |   --color-razzle-dazzle-rose-200: #fccef2;\n 981 |   --color-razzle-dazzle-rose-300: #fba6e7;\n 982 |   --color-razzle-dazzle-rose-400: #f76fd4;\n 983 |   --color-razzle-dazzle-rose-500: #f044bf;\n 984 |   --color-razzle-dazzle-rose-600: #df23a1;\n 985 |   --color-razzle-dazzle-rose-700: #c21482;\n 986 |   --color-razzle-dazzle-rose-800: #a0146b;\n 987 |   --color-razzle-dazzle-rose-900: #86155b;\n 988 |   --color-razzle-dazzle-rose-950: #520535;\n 989 |  */\n 990 | \n 991 | /* colores de azul sieten link --color-sl-blue-50: #f2f6fc; */\n 992 | \n 993 | /* --color-sl-blue-100: #e1ecf8;\n 994 |   --color-sl-blue-200: #caddf3;\n 995 |   --color-sl-blue-300: #a5c8eb;\n 996 |   --color-sl-blue-400: #7aace0;\n 997 |   --color-sl-blue-500: #5b8ed6;\n 998 |   --color-sl-blue-600: #4775c9;\n 999 |   --color-sl-blue-700: #3d61b8;\n1000 |   --color-sl-blue-800: #375096;\n1001 |   --color-sl-blue-900: #304678;\n1002 |   --color-sl-blue-950: #212c4a; */\n1003 | \n1004 | /* colores primario de siete lin Tailwin */\n1005 | \n1006 | /* \n1007 |   --color-sl-pink-50 : #fef1f7;\n1008 |   --color-sl-pink-100: #fee5f0;\n1009 |   --color-sl-pink-200: #ffcae4;\n1010 |   --color-sl-pink-300: #ff9fcb;\n1011 |   --color-sl-pink-400: #ff63a7;\n1012 |   --color-sl-pink-500: #ff3a87;\n1013 |   --color-sl-pink-600: #f0125e;\n1014 |   --color-sl-pink-700: #d10545;\n1015 |   --color-sl-pink-800: #ad0739;\n1016 |   --color-sl-pink-900: #8f0c34;\n1017 |   --color-sl-pink-950: #580019;\n1018 | \n1019 |  */\n1020 | \n1021 | /* color nerutral sl  */\n1022 | \n1023 | /* \n1024 | } */\n1025 | \n1026 | /* body {\n1027 |   background-color: var(--color-razzle-dazzle-rose-50);\n1028 |   color           : var(--color-razzle-dazzle-rose-900);\n1029 | }\n1030 | \n1031 | \n1032 | \n1033 | input[type=\"number\"]::-webkit-inner-spin-button,\n1034 | input[type=\"number\"]::-webkit-outer-spin-button {\n1035 |   -webkit-appearance: none;\n1036 |   margin            : 0;\n1037 | }\n1038 |  */\n1039 | \n1040 | /* Eliminando las flechitas en Firefox */\n1041 | \n1042 | /* input[type=\"number\"] {\n1043 |   -moz-appearance: textfield;\n1044 | } */\n1045 | \n1046 | /* #mi-plugin-root { */\n1047 | \n1048 | /* background-color: red; */\n1049 | \n1050 | /* width  : 100%;\n1051 |   max-width: 1400px;\n1052 |   padding: 0;\n1053 |   margin : 0;\n1054 | \n1055 |   @apply bg-pink-400; */\n1056 | \n1057 | /* background-color: black */\n1058 | \n1059 | /* } */\n1060 | \n1061 | /* #sl-payment-form-wrapper { */\n1062 | \n1063 | /* background-color: red; */\n1064 | \n1065 | /* .sl-drop-zone {\n1066 |     @apply flex flex-col;\n1067 |     @apply justify-center items-center;\n1068 |     @apply p-4 rounded-2xl border border-dashed;\n1069 |     @apply border-slate-500;\n1070 |     @apply drop-shadow-xs;\n1071 |     @apply min-h-[120px]; */\n1072 | \n1073 | /* @apply blur */\n1074 | \n1075 | /* button {\n1076 |       @apply w-fit;\n1077 |       @apply text-sm;\n1078 |     }\n1079 | \n1080 |     p {\n1081 |       @apply  !text-sm;\n1082 |     }\n1083 | \n1084 |     iframe {\n1085 |       width : 100%; */\n1086 | \n1087 | /* Ajusta al ancho total del contenedor */\n1088 | \n1089 | /* height: 800px; */\n1090 | \n1091 | /* Cambia la altura como necesites */\n1092 | \n1093 | /* }\n1094 |   }\n1095 |  */\n1096 | \n1097 | /* .monto-acc-header {\n1098 |     p {\n1099 |       @apply text-white;\n1100 |       @apply text-sm font-medium;\n1101 |     }\n1102 | \n1103 |     h4 {\n1104 |       @apply text-white;\n1105 |       @apply text-2xl font-bold;\n1106 |     }\n1107 | \n1108 |     h5 {\n1109 |       @apply text-white;\n1110 |       @apply text-base font-semibold;\n1111 |     }\n1112 | \n1113 |     svg {\n1114 |       width : 16px;\n1115 |       height: 16px;\n1116 |       @apply fill-white;\n1117 |     }\n1118 |   }\n1119 | \n1120 |   form {\n1121 |     button {\n1122 |       @apply w-full p-4 text-center font-medium text-white bg-razzle-dazzle-rose-500 rounded-lg;\n1123 |       @apply hover:bg-razzle-dazzle-rose-600 hover:cursor-pointer;\n1124 |     }\n1125 |   } */\n1126 | \n1127 | /* min-h-[120px]\n1128 |     p-4\n1129 |     flex\n1130 |     justify-center\n1131 |     items-center\n1132 |     rounded-xl\n1133 |     border\n1134 |     border-dashed\n1135 |     border-slate-500\n1136 |     drop-shadow-xs */\n1137 | \n1138 | /* .mini {\n1139 |     svg {\n1140 |       width : 16px;\n1141 |       height: 16px;\n1142 |     }\n1143 |   }\n1144 | \n1145 |   svg {\n1146 |     height: 60px;\n1147 |     width : auto;\n1148 |   }\n1149 | \n1150 |   .icon-lg {\n1151 |     svg {\n1152 |       width : 20px;\n1153 |       height: 20px;\n1154 |     }\n1155 |   }\n1156 | \n1157 |   @apply flex w-full justify-center min-h-screen;\n1158 | \n1159 |   .sl-payment-form-conatiner {\n1160 |     @apply w-full p-4 max-w-[500px];\n1161 |     @apply bg-slate-100;\n1162 |     @apply rounded-2xl;\n1163 | \n1164 |     label span {\n1165 |       @apply text-sm font-medium;\n1166 |     }\n1167 | \n1168 |     input[type=\"text\"],\n1169 |     input[type=\"number\"] {\n1170 |       @apply bg-slate-300 rounded-xl;\n1171 |       @apply text-base p-2 font-medium;\n1172 |     }\n1173 | \n1174 |     select {\n1175 |       @apply bg-slate-300 rounded-xl;\n1176 |       @apply text-base p-2 font-medium;\n1177 |     }\n1178 | \n1179 |     .input-box {\n1180 |       @apply flex flex-col gap-2;\n1181 |     }\n1182 |   }\n1183 | \n1184 |   .bank-card {\n1185 |     svg {\n1186 |       width : 12px;\n1187 |       height: 12px;\n1188 |     }\n1189 |  */\n1190 | \n1191 | /* @apply !bg-amber-600; */\n1192 | \n1193 | /* } */\n1194 | \n1195 | /* .tab-bar {\n1196 |     @apply bg-slate-300;\n1197 |     @apply p-4 rounded-xl;\n1198 | \n1199 |     ul {\n1200 |       @apply flex gap-2 flex-wrap justify-start;\n1201 |     }\n1202 | \n1203 |     li {\n1204 |       height: 90px;\n1205 |       @apply bg-slate-400;\n1206 |       flex-grow                              : 1;\n1207 |       max-width                              : 130px;\n1208 |       @apply rounded p-2 cursor-pointer hover:cursor-pointer;\n1209 |       @apply transition-colors;\n1210 |       @apply duration-300;\n1211 |       @apply ease-in-out;\n1212 |       @apply hover:bg-slate-500;\n1213 | \n1214 | \n1215 | \n1216 |       svg {\n1217 |         @apply w-8 h-8;\n1218 |       } */\n1219 | \n1220 | /* min-height: 100px; */\n1221 | \n1222 | /* p {\n1223 |         @apply text-center;\n1224 |         @apply text-xs font-medium;\n1225 |       }\n1226 |     }\n1227 | \n1228 |     h3 {\n1229 |       @apply font-semibold;\n1230 |     }\n1231 | \n1232 |     .paypal {\n1233 |       svg {\n1234 |         height: 60px;\n1235 |         width : 100%;\n1236 |       }\n1237 |     }\n1238 |   }\n1239 | \n1240 |   .data-box { */\n1241 | \n1242 | /* background: #000; */\n1243 | \n1244 | /* svg {\n1245 |       width : 16px;\n1246 |       height: 16px;\n1247 |     }\n1248 |   }\n1249 | \n1250 | \n1251 | } */\n1252 | \n1253 | .react-datepicker-popper {\n1254 |   position: absolute;\n1255 |    left: 25px !important;\n1256 | }\n1257 | \n1258 | .react-datepicker__month {\n1259 |   position: relative;\n1260 |   overflow: hidden;\n1261 | }\n1262 | \n1263 | .react-datepicker__month::before {\n1264 |   content: '';\n1265 |   position: absolute;\n1266 |   inset: 0;\n1267 |   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});\n1268 |   background-size: contain;\n1269 |   background-repeat: no-repeat;\n1270 |   background-position: center 1px;\n1271 |   background-color: rgba(241, 241, 241, 0.5);\n1272 |   background-blend-mode: lighten;\n1273 |   z-index: 0;\n1274 |   transform: translateY(5px); /* baja 5px sin cambiar tamaño */\n1275 | }\n1276 | \n1277 | .react-datepicker__month * {\n1278 |   position: relative;\n1279 |   z-index: 1;\n1280 | }\n1281 | \n1282 | .react-datepicker__navigation {\n1283 |   width: 32px;\n1284 |   height: 32px;\n1285 |   border: none;\n1286 |   z-index: 2;\n1287 |   cursor: pointer;\n1288 | }\n1289 | \n1290 | .react-datepicker__navigation--previous::before,\n1291 | .react-datepicker__navigation--next::before {\n1292 |   content: '';\n1293 |   position: absolute;\n1294 |   top: 50%;\n1295 |   left: 50%;\n1296 |   border: solid white;\n1297 |   border-width: 0 3px 3px 0;\n1298 |   padding: 4px;\n1299 | }\n1300 | \n1301 | .react-datepicker__navigation--previous::before {\n1302 |   transform: translate(-50%, -50%) rotate(135deg); /* ← */\n1303 | }\n1304 | \n1305 | .react-datepicker__navigation--next::before {\n1306 |   transform: translate(-50%, -50%) rotate(-45deg); /* → */\n1307 | }\n1308 | \n1309 | /* HTML: <div class=\"loader\"></div> */\n1310 | \n1311 | /* .loader {\n1312 |   width       : 60px;\n1313 |   aspect-ratio: 2;\n1314 |   --_g        : no-repeat radial-gradient(circle closest-side, #64748b 90%, #0000);\n1315 |   background  :\n1316 |     var(--_g) 0% 50%,\n1317 |     var(--_g) 50% 50%,\n1318 |     var(--_g) 100% 50%;\n1319 |   background-size: calc(80%/3) 50%;\n1320 |   animation      : l3 1s infinite linear;\n1321 | }\n1322 | \n1323 | @keyframes l3 {\n1324 |   20% {\n1325 |     background-position: 0% 0%, 50% 50%, 100% 50%\n1326 |   }\n1327 | \n1328 |   40% {\n1329 |     background-position: 0% 100%, 50% 0%, 100% 50%\n1330 |   }\n1331 | \n1332 |   60% {\n1333 |     background-position: 0% 50%, 50% 100%, 100% 0%\n1334 |   }\n1335 | \n1336 |   80% {\n1337 |     background-position: 0% 50%, 50% 50%, 100% 100%\n1338 |   }\n1339 | } */\n1340 | `, \"\",{\"version\":3,\"sources\":[\"webpack://./node_modules/tailwindcss/index.css\",\"webpack://./src/main.css\"],\"names\":[],\"mappings\":\"AAAA,yCAAyC;;AAEzC;EACE;IACE;;6DAEyD;IACzD,yEAAyE;IACzE;;8BAE0B;;IAE1B,wCAAwC;IACxC,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;;IAE1C,0CAA0C;IAC1C,6CAA6C;IAC7C,6CAA6C;IAC7C,4CAA4C;IAC5C,2CAA2C;IAC3C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,2CAA2C;IAC3C,6CAA6C;IAC7C,6CAA6C;;IAE7C,2CAA2C;IAC3C,4CAA4C;IAC5C,2CAA2C;IAC3C,4CAA4C;IAC5C,4CAA4C;IAC5C,2CAA2C;IAC3C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;;IAE5C,6CAA6C;IAC7C,8CAA8C;IAC9C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;;IAE7C,2CAA2C;IAC3C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,2CAA2C;IAC3C,2CAA2C;IAC3C,0CAA0C;IAC1C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;;IAE5C,4CAA4C;IAC5C,6CAA6C;IAC7C,6CAA6C;IAC7C,4CAA4C;IAC5C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;;IAE7C,8CAA8C;IAC9C,6CAA6C;IAC7C,8CAA8C;IAC9C,+CAA+C;IAC/C,+CAA+C;IAC/C,6CAA6C;IAC7C,+CAA+C;IAC/C,+CAA+C;IAC/C,+CAA+C;IAC/C,8CAA8C;IAC9C,+CAA+C;;IAE/C,0CAA0C;IAC1C,4CAA4C;IAC5C,0CAA0C;IAC1C,4CAA4C;IAC5C,4CAA4C;IAC5C,2CAA2C;IAC3C,0CAA0C;IAC1C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;;IAE5C,2CAA2C;IAC3C,4CAA4C;IAC5C,2CAA2C;IAC3C,4CAA4C;IAC5C,2CAA2C;IAC3C,4CAA4C;IAC5C,4CAA4C;IAC5C,0CAA0C;IAC1C,0CAA0C;IAC1C,2CAA2C;IAC3C,4CAA4C;;IAE5C,yCAAyC;IACzC,2CAA2C;IAC3C,2CAA2C;IAC3C,2CAA2C;IAC3C,0CAA0C;IAC1C,2CAA2C;IAC3C,2CAA2C;IAC3C,yCAAyC;IACzC,yCAAyC;IACzC,0CAA0C;IAC1C,2CAA2C;;IAE3C,yCAAyC;IACzC,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;;IAE5C,6CAA6C;IAC7C,4CAA4C;IAC5C,4CAA4C;IAC5C,8CAA8C;IAC9C,8CAA8C;IAC9C,8CAA8C;IAC9C,8CAA8C;IAC9C,6CAA6C;IAC7C,8CAA8C;IAC9C,8CAA8C;IAC9C,6CAA6C;;IAE7C,6CAA6C;IAC7C,8CAA8C;IAC9C,8CAA8C;IAC9C,8CAA8C;IAC9C,8CAA8C;IAC9C,6CAA6C;IAC7C,8CAA8C;IAC9C,6CAA6C;IAC7C,8CAA8C;IAC9C,4CAA4C;IAC5C,8CAA8C;;IAE9C,6CAA6C;IAC7C,8CAA8C;IAC9C,8CAA8C;IAC9C,8CAA8C;IAC9C,8CAA8C;IAC9C,4CAA4C;IAC5C,8CAA8C;IAC9C,8CAA8C;IAC9C,8CAA8C;IAC9C,8CAA8C;IAC9C,8CAA8C;;IAE9C,8CAA8C;IAC9C,+CAA+C;IAC/C,8CAA8C;IAC9C,+CAA+C;IAC/C,4CAA4C;IAC5C,8CAA8C;IAC9C,+CAA+C;IAC/C,+CAA+C;IAC/C,+CAA+C;IAC/C,8CAA8C;IAC9C,+CAA+C;;IAE/C,2CAA2C;IAC3C,4CAA4C;IAC5C,4CAA4C;IAC5C,2CAA2C;IAC3C,4CAA4C;IAC5C,4CAA4C;IAC5C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;;IAE1C,0CAA0C;IAC1C,yCAAyC;IACzC,2CAA2C;IAC3C,yCAAyC;IACzC,2CAA2C;IAC3C,2CAA2C;IAC3C,2CAA2C;IAC3C,2CAA2C;IAC3C,2CAA2C;IAC3C,yCAAyC;IACzC,2CAA2C;;IAE3C,4CAA4C;IAC5C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,4CAA4C;IAC5C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;;IAE7C,2CAA2C;IAC3C,4CAA4C;IAC5C,4CAA4C;IAC5C,2CAA2C;IAC3C,4CAA4C;IAC5C,4CAA4C;IAC5C,2CAA2C;IAC3C,4CAA4C;IAC5C,4CAA4C;IAC5C,0CAA0C;IAC1C,0CAA0C;;IAE1C,iCAAiC;IACjC,4CAA4C;IAC5C,yCAAyC;IACzC,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,0CAA0C;IAC1C,4CAA4C;IAC5C,0CAA0C;IAC1C,4CAA4C;;IAE5C,oCAAoC;IACpC,mCAAmC;IACnC,qCAAqC;IACrC,mCAAmC;IACnC,qCAAqC;IACrC,qCAAqC;IACrC,qCAAqC;IACrC,qCAAqC;IACrC,qCAAqC;IACrC,qCAAqC;IACrC,qCAAqC;;IAErC,4CAA4C;IAC5C,2CAA2C;IAC3C,4CAA4C;IAC5C,4CAA4C;IAC5C,2CAA2C;IAC3C,4CAA4C;IAC5C,4CAA4C;IAC5C,2CAA2C;IAC3C,4CAA4C;IAC5C,4CAA4C;IAC5C,2CAA2C;;IAE3C,kCAAkC;IAClC,yCAAyC;IACzC,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,2CAA2C;IAC3C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,4CAA4C;IAC5C,yCAAyC;;IAEzC,0CAA0C;IAC1C,2CAA2C;IAC3C,yCAAyC;IACzC,yCAAyC;IACzC,2CAA2C;IAC3C,yCAAyC;IACzC,2CAA2C;IAC3C,2CAA2C;IAC3C,2CAA2C;IAC3C,2CAA2C;IAC3C,2CAA2C;;IAE3C,yCAAyC;IACzC,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,wCAAwC;IACxC,wCAAwC;IACxC,wCAAwC;IACxC,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;;IAE1C,yCAAyC;IACzC,wCAAwC;IACxC,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;IAC1C,0CAA0C;;IAE1C,mBAAmB;IACnB,mBAAmB;;IAEnB,kBAAkB;;IAElB,sBAAsB;IACtB,sBAAsB;IACtB,sBAAsB;IACtB,sBAAsB;IACtB,uBAAuB;;IAEvB,sBAAsB;IACtB,sBAAsB;IACtB,qBAAqB;IACrB,qBAAqB;IACrB,qBAAqB;IACrB,qBAAqB;IACrB,qBAAqB;IACrB,sBAAsB;IACtB,sBAAsB;IACtB,sBAAsB;IACtB,sBAAsB;IACtB,sBAAsB;IACtB,sBAAsB;;IAEtB,kBAAkB;IAClB,sCAAsC;IACtC,mBAAmB;IACnB,0CAA0C;IAC1C,iBAAiB;IACjB,uCAAuC;IACvC,mBAAmB;IACnB,0CAA0C;IAC1C,kBAAkB;IAClB,yCAAyC;IACzC,kBAAkB;IAClB,sCAAsC;IACtC,oBAAoB;IACpB,2CAA2C;IAC3C,mBAAmB;IACnB,yCAAyC;IACzC,gBAAgB;IAChB,0BAA0B;IAC1B,mBAAmB;IACnB,0BAA0B;IAC1B,kBAAkB;IAClB,0BAA0B;IAC1B,gBAAgB;IAChB,0BAA0B;IAC1B,gBAAgB;IAChB,0BAA0B;;IAE1B,uBAAuB;IACvB,6BAA6B;IAC7B,wBAAwB;IACxB,yBAAyB;IACzB,yBAAyB;IACzB,2BAA2B;IAC3B,uBAAuB;IACvB,4BAA4B;IAC5B,wBAAwB;;IAExB,2BAA2B;IAC3B,0BAA0B;IAC1B,sBAAsB;IACtB,wBAAwB;IACxB,wBAAwB;IACxB,wBAAwB;;IAExB,qBAAqB;IACrB,qBAAqB;IACrB,qBAAqB;IACrB,wBAAwB;IACxB,kBAAkB;;IAElB,qBAAqB;IACrB,oBAAoB;IACpB,qBAAqB;IACrB,mBAAmB;IACnB,oBAAoB;IACpB,kBAAkB;IAClB,oBAAoB;IACpB,kBAAkB;;IAElB,qCAAqC;IACrC,0CAA0C;IAC1C,0EAA0E;IAC1E;sEACkE;IAClE;wEACoE;IACpE;yEACqE;IACrE,iDAAiD;;IAEjD,iDAAiD;IACjD,oDAAoD;IACpD,oDAAoD;;IAEpD,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,6CAA6C;IAC7C,4CAA4C;IAC5C,gDAAgD;;IAEhD,gDAAgD;IAChD,8CAA8C;IAC9C;;oCAEgC;IAChC;;kCAE8B;IAC9B;;kCAE8B;;IAE9B,qCAAqC;IACrC,sCAAsC;IACtC,2CAA2C;;IAE3C,uCAAuC;IACvC,2DAA2D;IAC3D,+DAA+D;IAC/D,oCAAoC;;IAEpC;MACE;QACE,yBAAyB;MAC3B;IACF;;IAEA;MACE;;QAEE,mBAAmB;QACnB,UAAU;MACZ;IACF;;IAEA;MACE;QACE,YAAY;MACd;IACF;;IAEA;MACE;;QAEE,2BAA2B;QAC3B,qDAAqD;MACvD;;MAEA;QACE,eAAe;QACf,qDAAqD;MACvD;IACF;;IAEA,cAAc;IACd,cAAc;IACd,eAAe;IACf,eAAe;IACf,eAAe;IACf,gBAAgB;IAChB,gBAAgB;;IAEhB,6BAA6B;IAC7B,yBAAyB;IACzB,2BAA2B;IAC3B,6BAA6B;IAC7B,6BAA6B;;IAE7B,sBAAsB;;IAEtB,oCAAoC;IACpC,kEAAkE;IAClE,oDAAoD;IACpD;;;KAGC;IACD;;;KAGC;IACD,yDAAyD;IACzD;;;KAGC;IACD;;;KAGC;EACH;;EAEA,eAAe;EACf;IACE,WAAW;IACX,uEAAuE;IACvE,mDAAmD;IACnD,sEAAsE;IACtE,iBAAiB;IACjB,uBAAuB;EACzB;AACF;;AAEA;EACE;;;;CAID;;EAEC;;;;;IAKE,sBAAsB,EAAE,MAAM;IAC9B,SAAS,EAAE,MAAM;IACjB,UAAU,EAAE,MAAM;IAClB,eAAe,EAAE,MAAM;EACzB;;EAEA;;;;;;;;CAQD;;EAEC;;IAEE,gBAAgB,EAAE,MAAM;IACxB,8BAA8B,EAAE,MAAM;IACtC,gBAAW;MAAX,cAAW;SAAX,WAAW,EAAE,MAAM;IACnB;;;;;;;;;KASC,EAAE,MAAM;IACT;;;KAGC,EAAE,MAAM;IACT;;;KAGC,EAAE,MAAM;IACT,wCAAwC,EAAE,MAAM;EAClD;;EAEA;;;;CAID;;EAEC;IACE,SAAS,EAAE,MAAM;IACjB,cAAc,EAAE,MAAM;IACtB,qBAAqB,EAAE,MAAM;EAC/B;;EAEA;;CAED;;EAEC;IACE,yCAAyC;IACzC,iCAAiC;EACnC;;EAEA;;CAED;;EAEC;;;;;;IAME,kBAAkB;IAClB,oBAAoB;EACtB;;EAEA;;CAED;;EAEC;IACE,cAAc;IACd,gCAAgC;IAChC,wBAAwB;EAC1B;;EAEA;;CAED;;EAEC;;IAEE,mBAAmB;EACrB;;EAEA;;;;;CAKD;;EAEC;;;;IAIE;;;;;;;;;;KAUC,EAAE,MAAM;IACT;;;KAGC,EAAE,MAAM;IACT;;;KAGC,EAAE,MAAM;IACT,cAAc,EAAE,MAAM;EACxB;;EAEA;;CAED;;EAEC;IACE,cAAc;EAChB;;EAEA;;CAED;;EAEC;;IAEE,cAAc;IACd,cAAc;IACd,kBAAkB;IAClB,wBAAwB;EAC1B;;EAEA;IACE,eAAe;EACjB;;EAEA;IACE,WAAW;EACb;;EAEA;;;;CAID;;EAEC;IACE,cAAc,EAAE,MAAM;IACtB,qBAAqB,EAAE,MAAM;IAC7B,yBAAyB,EAAE,MAAM;EACnC;;EAEA;;CAED;;EAEC;IACE,aAAa;EACf;;EAEA;;CAED;;EAEC;IACE,wBAAwB;EAC1B;;EAEA;;CAED;;EAEC;IACE,kBAAkB;EACpB;;EAEA;;CAED;;EAEC;;;IAGE,gBAAgB;EAClB;;EAEA;;;;CAID;;EAEC;;;;;;;;IAQE,cAAc,EAAE,MAAM;IACtB,sBAAsB,EAAE,MAAM;EAChC;;EAEA;;CAED;;EAEC;;IAEE,eAAe;IACf,YAAY;EACd;;EAEA;;;;;CAKD;;EAEC;;;;;;IAME,aAAa,EAAE,MAAM;IACrB,8BAA8B,EAAE,MAAM;IACtC,gCAAgC,EAAE,MAAM;IACxC,uBAAuB,EAAE,MAAM;IAC/B,cAAc,EAAE,MAAM;IACtB,gBAAgB,EAAE,MAAM;IACxB,6BAA6B,EAAE,MAAM;IACrC,UAAU,EAAE,MAAM;EACpB;;EAEA;;CAED;;EAEC;IACE,mBAAmB;EACrB;;EAEA;;CAED;;EAEC;IACE,0BAA0B;EAC5B;;EAEA;;CAED;;EAEC;IACE,sBAAsB;EACxB;;EAEA;;CAED;;EAEC;IACE,UAAU;EACZ;;EAFA;IACE,UAAU;EACZ;;EAEA;;;CAGD;;EAEC;;IAEE;MACE,yDAAyD;IAC3D;IAFA;MACE,yDAAyD;IAC3D;EACF;;EAEA;;CAED;;EAEC;IACE,gBAAgB;EAClB;;EAEA;;CAED;;EAEC;IACE,wBAAwB;EAC1B;;EAEA;;;CAGD;;EAEC;IACE,eAAe,EAAE,MAAM;IACvB,mBAAmB,EAAE,MAAM;EAC7B;;EAEA;;CAED;;EAEC;IACE,oBAAoB;EACtB;;EAEA;;CAED;;EAEC;IACE,UAAU;EACZ;;EAEA;;;;;;;;;IASE,gBAAgB;EAClB;;EAEA;;CAED;;EAEC;IACE,cAAc;EAChB;;EAEA;;CAED;;EAEC;IACE,gBAAgB;EAClB;;EAEA;;CAED;;EAEC;;;IAGE,0BAAkB;OAAlB,uBAAkB;YAAlB,kBAAkB;EACpB;;EAEA;;CAED;;EAEC;;IAEE,YAAY;EACd;;EAEA;;CAED;;EAEC;IACE,wBAAwB;EAC1B;AACF;;AAEA;EACE,mBAAmB;AACrB;;AC96BA,iBAAiB;;AAEjB;;;;;;;;;;;;EAYE;;AACA,6DAA6D;;AAE7D;;;;;;;;;iCAS+B;;AAE/B,0CAA0C;;AAC5C;;;;;;;;;;;;;EAaE;;AACA,uBAAuB;;AAGzB;GACG;;AAGH;;;;;;;;;;;;EAYE;;AACF,wCAAwC;;AACxC;;GAEG;;AAEH,sBAAsB;;AACpB,2BAA2B;;AAC3B;;;;;uBAKqB;;AACrB,4BAA4B;;AAK9B,MAAM;;AAEN,+BAA+B;;AAC7B,2BAA2B;;AAE3B;;;;;;2BAMyB;;AACvB,gBAAgB;;AAIhB;;;;;;;;;;qBAUiB;;AACf,yCAAyC;;AACzC,mBAAmB;;AACnB,oCAAoC;;AACtC;;EAEF;;AACA;;;;;;;;;;;;;;;;;;;;;;;;;;;;KA4BG;;AAEH;;;;;;;;;oBASkB;;AAClB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAmDA;;AACE,0BAA0B;;AAC5B,MAAM;;AAEN;;;;;;;;;;;;;;;;;;;;;;;SAuBO;;AAEH,uBAAuB;;AACvB;;;;;;;;;;;;;;;;;;eAkBS;;AAEX,sBAAsB;;AACtB;;;;;;;GAOD;;AAEH;EACE,kBAAkB;GACjB,qBAAqB;AACxB;;AAEA;EACE,kBAAkB;EAClB,gBAAgB;AAClB;;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,QAAQ;EACR,yDAAkD;EAClD,wBAAwB;EACxB,4BAA4B;EAC5B,+BAA+B;EAC/B,0CAA0C;EAC1C,8BAA8B;EAC9B,UAAU;EACV,0BAA0B,EAAE,gCAAgC;AAC9D;;AAEA;EACE,kBAAkB;EAClB,UAAU;AACZ;;AACA;EACE,WAAW;EACX,YAAY;EACZ,YAAY;EACZ,UAAU;EACV,eAAe;AACjB;;AAEA;;EAEE,WAAW;EACX,kBAAkB;EAClB,QAAQ;EACR,SAAS;EACT,mBAAmB;EACnB,yBAAyB;EACzB,YAAY;AACd;;AAEA;EACE,+CAA+C,EAAE,MAAM;AACzD;;AAEA;EACE,+CAA+C,EAAE,MAAM;AACzD;;AAGA,qCAAqC;;AACrC;;;;;;;;;;;;;;;;;;;;;;;;;;;;GA4BG\",\"sourcesContent\":[\"@layer theme, base, components, utilities;\\n\\n@layer theme {\\n  @theme default {\\n    --font-sans:\\n      ui-sans-serif, system-ui, sans-serif, \\\"Apple Color Emoji\\\",\\n      \\\"Segoe UI Emoji\\\", \\\"Segoe UI Symbol\\\", \\\"Noto Color Emoji\\\";\\n    --font-serif: ui-serif, Georgia, Cambria, \\\"Times New Roman\\\", Times, serif;\\n    --font-mono:\\n      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \\\"Liberation Mono\\\",\\n      \\\"Courier New\\\", monospace;\\n\\n    --color-red-50: oklch(97.1% 0.013 17.38);\\n    --color-red-100: oklch(93.6% 0.032 17.717);\\n    --color-red-200: oklch(88.5% 0.062 18.334);\\n    --color-red-300: oklch(80.8% 0.114 19.571);\\n    --color-red-400: oklch(70.4% 0.191 22.216);\\n    --color-red-500: oklch(63.7% 0.237 25.331);\\n    --color-red-600: oklch(57.7% 0.245 27.325);\\n    --color-red-700: oklch(50.5% 0.213 27.518);\\n    --color-red-800: oklch(44.4% 0.177 26.899);\\n    --color-red-900: oklch(39.6% 0.141 25.723);\\n    --color-red-950: oklch(25.8% 0.092 26.042);\\n\\n    --color-orange-50: oklch(98% 0.016 73.684);\\n    --color-orange-100: oklch(95.4% 0.038 75.164);\\n    --color-orange-200: oklch(90.1% 0.076 70.697);\\n    --color-orange-300: oklch(83.7% 0.128 66.29);\\n    --color-orange-400: oklch(75% 0.183 55.934);\\n    --color-orange-500: oklch(70.5% 0.213 47.604);\\n    --color-orange-600: oklch(64.6% 0.222 41.116);\\n    --color-orange-700: oklch(55.3% 0.195 38.402);\\n    --color-orange-800: oklch(47% 0.157 37.304);\\n    --color-orange-900: oklch(40.8% 0.123 38.172);\\n    --color-orange-950: oklch(26.6% 0.079 36.259);\\n\\n    --color-amber-50: oklch(98.7% 0.022 95.277);\\n    --color-amber-100: oklch(96.2% 0.059 95.617);\\n    --color-amber-200: oklch(92.4% 0.12 95.746);\\n    --color-amber-300: oklch(87.9% 0.169 91.605);\\n    --color-amber-400: oklch(82.8% 0.189 84.429);\\n    --color-amber-500: oklch(76.9% 0.188 70.08);\\n    --color-amber-600: oklch(66.6% 0.179 58.318);\\n    --color-amber-700: oklch(55.5% 0.163 48.998);\\n    --color-amber-800: oklch(47.3% 0.137 46.201);\\n    --color-amber-900: oklch(41.4% 0.112 45.904);\\n    --color-amber-950: oklch(27.9% 0.077 45.635);\\n\\n    --color-yellow-50: oklch(98.7% 0.026 102.212);\\n    --color-yellow-100: oklch(97.3% 0.071 103.193);\\n    --color-yellow-200: oklch(94.5% 0.129 101.54);\\n    --color-yellow-300: oklch(90.5% 0.182 98.111);\\n    --color-yellow-400: oklch(85.2% 0.199 91.936);\\n    --color-yellow-500: oklch(79.5% 0.184 86.047);\\n    --color-yellow-600: oklch(68.1% 0.162 75.834);\\n    --color-yellow-700: oklch(55.4% 0.135 66.442);\\n    --color-yellow-800: oklch(47.6% 0.114 61.907);\\n    --color-yellow-900: oklch(42.1% 0.095 57.708);\\n    --color-yellow-950: oklch(28.6% 0.066 53.813);\\n\\n    --color-lime-50: oklch(98.6% 0.031 120.757);\\n    --color-lime-100: oklch(96.7% 0.067 122.328);\\n    --color-lime-200: oklch(93.8% 0.127 124.321);\\n    --color-lime-300: oklch(89.7% 0.196 126.665);\\n    --color-lime-400: oklch(84.1% 0.238 128.85);\\n    --color-lime-500: oklch(76.8% 0.233 130.85);\\n    --color-lime-600: oklch(64.8% 0.2 131.684);\\n    --color-lime-700: oklch(53.2% 0.157 131.589);\\n    --color-lime-800: oklch(45.3% 0.124 130.933);\\n    --color-lime-900: oklch(40.5% 0.101 131.063);\\n    --color-lime-950: oklch(27.4% 0.072 132.109);\\n\\n    --color-green-50: oklch(98.2% 0.018 155.826);\\n    --color-green-100: oklch(96.2% 0.044 156.743);\\n    --color-green-200: oklch(92.5% 0.084 155.995);\\n    --color-green-300: oklch(87.1% 0.15 154.449);\\n    --color-green-400: oklch(79.2% 0.209 151.711);\\n    --color-green-500: oklch(72.3% 0.219 149.579);\\n    --color-green-600: oklch(62.7% 0.194 149.214);\\n    --color-green-700: oklch(52.7% 0.154 150.069);\\n    --color-green-800: oklch(44.8% 0.119 151.328);\\n    --color-green-900: oklch(39.3% 0.095 152.535);\\n    --color-green-950: oklch(26.6% 0.065 152.934);\\n\\n    --color-emerald-50: oklch(97.9% 0.021 166.113);\\n    --color-emerald-100: oklch(95% 0.052 163.051);\\n    --color-emerald-200: oklch(90.5% 0.093 164.15);\\n    --color-emerald-300: oklch(84.5% 0.143 164.978);\\n    --color-emerald-400: oklch(76.5% 0.177 163.223);\\n    --color-emerald-500: oklch(69.6% 0.17 162.48);\\n    --color-emerald-600: oklch(59.6% 0.145 163.225);\\n    --color-emerald-700: oklch(50.8% 0.118 165.612);\\n    --color-emerald-800: oklch(43.2% 0.095 166.913);\\n    --color-emerald-900: oklch(37.8% 0.077 168.94);\\n    --color-emerald-950: oklch(26.2% 0.051 172.552);\\n\\n    --color-teal-50: oklch(98.4% 0.014 180.72);\\n    --color-teal-100: oklch(95.3% 0.051 180.801);\\n    --color-teal-200: oklch(91% 0.096 180.426);\\n    --color-teal-300: oklch(85.5% 0.138 181.071);\\n    --color-teal-400: oklch(77.7% 0.152 181.912);\\n    --color-teal-500: oklch(70.4% 0.14 182.503);\\n    --color-teal-600: oklch(60% 0.118 184.704);\\n    --color-teal-700: oklch(51.1% 0.096 186.391);\\n    --color-teal-800: oklch(43.7% 0.078 188.216);\\n    --color-teal-900: oklch(38.6% 0.063 188.416);\\n    --color-teal-950: oklch(27.7% 0.046 192.524);\\n\\n    --color-cyan-50: oklch(98.4% 0.019 200.873);\\n    --color-cyan-100: oklch(95.6% 0.045 203.388);\\n    --color-cyan-200: oklch(91.7% 0.08 205.041);\\n    --color-cyan-300: oklch(86.5% 0.127 207.078);\\n    --color-cyan-400: oklch(78.9% 0.154 211.53);\\n    --color-cyan-500: oklch(71.5% 0.143 215.221);\\n    --color-cyan-600: oklch(60.9% 0.126 221.723);\\n    --color-cyan-700: oklch(52% 0.105 223.128);\\n    --color-cyan-800: oklch(45% 0.085 224.283);\\n    --color-cyan-900: oklch(39.8% 0.07 227.392);\\n    --color-cyan-950: oklch(30.2% 0.056 229.695);\\n\\n    --color-sky-50: oklch(97.7% 0.013 236.62);\\n    --color-sky-100: oklch(95.1% 0.026 236.824);\\n    --color-sky-200: oklch(90.1% 0.058 230.902);\\n    --color-sky-300: oklch(82.8% 0.111 230.318);\\n    --color-sky-400: oklch(74.6% 0.16 232.661);\\n    --color-sky-500: oklch(68.5% 0.169 237.323);\\n    --color-sky-600: oklch(58.8% 0.158 241.966);\\n    --color-sky-700: oklch(50% 0.134 242.749);\\n    --color-sky-800: oklch(44.3% 0.11 240.79);\\n    --color-sky-900: oklch(39.1% 0.09 240.876);\\n    --color-sky-950: oklch(29.3% 0.066 243.157);\\n\\n    --color-blue-50: oklch(97% 0.014 254.604);\\n    --color-blue-100: oklch(93.2% 0.032 255.585);\\n    --color-blue-200: oklch(88.2% 0.059 254.128);\\n    --color-blue-300: oklch(80.9% 0.105 251.813);\\n    --color-blue-400: oklch(70.7% 0.165 254.624);\\n    --color-blue-500: oklch(62.3% 0.214 259.815);\\n    --color-blue-600: oklch(54.6% 0.245 262.881);\\n    --color-blue-700: oklch(48.8% 0.243 264.376);\\n    --color-blue-800: oklch(42.4% 0.199 265.638);\\n    --color-blue-900: oklch(37.9% 0.146 265.522);\\n    --color-blue-950: oklch(28.2% 0.091 267.935);\\n\\n    --color-indigo-50: oklch(96.2% 0.018 272.314);\\n    --color-indigo-100: oklch(93% 0.034 272.788);\\n    --color-indigo-200: oklch(87% 0.065 274.039);\\n    --color-indigo-300: oklch(78.5% 0.115 274.713);\\n    --color-indigo-400: oklch(67.3% 0.182 276.935);\\n    --color-indigo-500: oklch(58.5% 0.233 277.117);\\n    --color-indigo-600: oklch(51.1% 0.262 276.966);\\n    --color-indigo-700: oklch(45.7% 0.24 277.023);\\n    --color-indigo-800: oklch(39.8% 0.195 277.366);\\n    --color-indigo-900: oklch(35.9% 0.144 278.697);\\n    --color-indigo-950: oklch(25.7% 0.09 281.288);\\n\\n    --color-violet-50: oklch(96.9% 0.016 293.756);\\n    --color-violet-100: oklch(94.3% 0.029 294.588);\\n    --color-violet-200: oklch(89.4% 0.057 293.283);\\n    --color-violet-300: oklch(81.1% 0.111 293.571);\\n    --color-violet-400: oklch(70.2% 0.183 293.541);\\n    --color-violet-500: oklch(60.6% 0.25 292.717);\\n    --color-violet-600: oklch(54.1% 0.281 293.009);\\n    --color-violet-700: oklch(49.1% 0.27 292.581);\\n    --color-violet-800: oklch(43.2% 0.232 292.759);\\n    --color-violet-900: oklch(38% 0.189 293.745);\\n    --color-violet-950: oklch(28.3% 0.141 291.089);\\n\\n    --color-purple-50: oklch(97.7% 0.014 308.299);\\n    --color-purple-100: oklch(94.6% 0.033 307.174);\\n    --color-purple-200: oklch(90.2% 0.063 306.703);\\n    --color-purple-300: oklch(82.7% 0.119 306.383);\\n    --color-purple-400: oklch(71.4% 0.203 305.504);\\n    --color-purple-500: oklch(62.7% 0.265 303.9);\\n    --color-purple-600: oklch(55.8% 0.288 302.321);\\n    --color-purple-700: oklch(49.6% 0.265 301.924);\\n    --color-purple-800: oklch(43.8% 0.218 303.724);\\n    --color-purple-900: oklch(38.1% 0.176 304.987);\\n    --color-purple-950: oklch(29.1% 0.149 302.717);\\n\\n    --color-fuchsia-50: oklch(97.7% 0.017 320.058);\\n    --color-fuchsia-100: oklch(95.2% 0.037 318.852);\\n    --color-fuchsia-200: oklch(90.3% 0.076 319.62);\\n    --color-fuchsia-300: oklch(83.3% 0.145 321.434);\\n    --color-fuchsia-400: oklch(74% 0.238 322.16);\\n    --color-fuchsia-500: oklch(66.7% 0.295 322.15);\\n    --color-fuchsia-600: oklch(59.1% 0.293 322.896);\\n    --color-fuchsia-700: oklch(51.8% 0.253 323.949);\\n    --color-fuchsia-800: oklch(45.2% 0.211 324.591);\\n    --color-fuchsia-900: oklch(40.1% 0.17 325.612);\\n    --color-fuchsia-950: oklch(29.3% 0.136 325.661);\\n\\n    --color-pink-50: oklch(97.1% 0.014 343.198);\\n    --color-pink-100: oklch(94.8% 0.028 342.258);\\n    --color-pink-200: oklch(89.9% 0.061 343.231);\\n    --color-pink-300: oklch(82.3% 0.12 346.018);\\n    --color-pink-400: oklch(71.8% 0.202 349.761);\\n    --color-pink-500: oklch(65.6% 0.241 354.308);\\n    --color-pink-600: oklch(59.2% 0.249 0.584);\\n    --color-pink-700: oklch(52.5% 0.223 3.958);\\n    --color-pink-800: oklch(45.9% 0.187 3.815);\\n    --color-pink-900: oklch(40.8% 0.153 2.432);\\n    --color-pink-950: oklch(28.4% 0.109 3.907);\\n\\n    --color-rose-50: oklch(96.9% 0.015 12.422);\\n    --color-rose-100: oklch(94.1% 0.03 12.58);\\n    --color-rose-200: oklch(89.2% 0.058 10.001);\\n    --color-rose-300: oklch(81% 0.117 11.638);\\n    --color-rose-400: oklch(71.2% 0.194 13.428);\\n    --color-rose-500: oklch(64.5% 0.246 16.439);\\n    --color-rose-600: oklch(58.6% 0.253 17.585);\\n    --color-rose-700: oklch(51.4% 0.222 16.935);\\n    --color-rose-800: oklch(45.5% 0.188 13.697);\\n    --color-rose-900: oklch(41% 0.159 10.272);\\n    --color-rose-950: oklch(27.1% 0.105 12.094);\\n\\n    --color-slate-50: oklch(98.4% 0.003 247.858);\\n    --color-slate-100: oklch(96.8% 0.007 247.896);\\n    --color-slate-200: oklch(92.9% 0.013 255.508);\\n    --color-slate-300: oklch(86.9% 0.022 252.894);\\n    --color-slate-400: oklch(70.4% 0.04 256.788);\\n    --color-slate-500: oklch(55.4% 0.046 257.417);\\n    --color-slate-600: oklch(44.6% 0.043 257.281);\\n    --color-slate-700: oklch(37.2% 0.044 257.287);\\n    --color-slate-800: oklch(27.9% 0.041 260.031);\\n    --color-slate-900: oklch(20.8% 0.042 265.755);\\n    --color-slate-950: oklch(12.9% 0.042 264.695);\\n\\n    --color-gray-50: oklch(98.5% 0.002 247.839);\\n    --color-gray-100: oklch(96.7% 0.003 264.542);\\n    --color-gray-200: oklch(92.8% 0.006 264.531);\\n    --color-gray-300: oklch(87.2% 0.01 258.338);\\n    --color-gray-400: oklch(70.7% 0.022 261.325);\\n    --color-gray-500: oklch(55.1% 0.027 264.364);\\n    --color-gray-600: oklch(44.6% 0.03 256.802);\\n    --color-gray-700: oklch(37.3% 0.034 259.733);\\n    --color-gray-800: oklch(27.8% 0.033 256.848);\\n    --color-gray-900: oklch(21% 0.034 264.665);\\n    --color-gray-950: oklch(13% 0.028 261.692);\\n\\n    --color-zinc-50: oklch(98.5% 0 0);\\n    --color-zinc-100: oklch(96.7% 0.001 286.375);\\n    --color-zinc-200: oklch(92% 0.004 286.32);\\n    --color-zinc-300: oklch(87.1% 0.006 286.286);\\n    --color-zinc-400: oklch(70.5% 0.015 286.067);\\n    --color-zinc-500: oklch(55.2% 0.016 285.938);\\n    --color-zinc-600: oklch(44.2% 0.017 285.786);\\n    --color-zinc-700: oklch(37% 0.013 285.805);\\n    --color-zinc-800: oklch(27.4% 0.006 286.033);\\n    --color-zinc-900: oklch(21% 0.006 285.885);\\n    --color-zinc-950: oklch(14.1% 0.005 285.823);\\n\\n    --color-neutral-50: oklch(98.5% 0 0);\\n    --color-neutral-100: oklch(97% 0 0);\\n    --color-neutral-200: oklch(92.2% 0 0);\\n    --color-neutral-300: oklch(87% 0 0);\\n    --color-neutral-400: oklch(70.8% 0 0);\\n    --color-neutral-500: oklch(55.6% 0 0);\\n    --color-neutral-600: oklch(43.9% 0 0);\\n    --color-neutral-700: oklch(37.1% 0 0);\\n    --color-neutral-800: oklch(26.9% 0 0);\\n    --color-neutral-900: oklch(20.5% 0 0);\\n    --color-neutral-950: oklch(14.5% 0 0);\\n\\n    --color-stone-50: oklch(98.5% 0.001 106.423);\\n    --color-stone-100: oklch(97% 0.001 106.424);\\n    --color-stone-200: oklch(92.3% 0.003 48.717);\\n    --color-stone-300: oklch(86.9% 0.005 56.366);\\n    --color-stone-400: oklch(70.9% 0.01 56.259);\\n    --color-stone-500: oklch(55.3% 0.013 58.071);\\n    --color-stone-600: oklch(44.4% 0.011 73.639);\\n    --color-stone-700: oklch(37.4% 0.01 67.558);\\n    --color-stone-800: oklch(26.8% 0.007 34.298);\\n    --color-stone-900: oklch(21.6% 0.006 56.043);\\n    --color-stone-950: oklch(14.7% 0.004 49.25);\\n\\n    --color-mauve-50: oklch(98.5% 0 0);\\n    --color-mauve-100: oklch(96% 0.003 325.6);\\n    --color-mauve-200: oklch(92.2% 0.005 325.62);\\n    --color-mauve-300: oklch(86.5% 0.012 325.68);\\n    --color-mauve-400: oklch(71.1% 0.019 323.02);\\n    --color-mauve-500: oklch(54.2% 0.034 322.5);\\n    --color-mauve-600: oklch(43.5% 0.029 321.78);\\n    --color-mauve-700: oklch(36.4% 0.029 323.89);\\n    --color-mauve-800: oklch(26.3% 0.024 320.12);\\n    --color-mauve-900: oklch(21.2% 0.019 322.12);\\n    --color-mauve-950: oklch(14.5% 0.008 326);\\n\\n    --color-olive-50: oklch(98.8% 0.003 106.5);\\n    --color-olive-100: oklch(96.6% 0.005 106.5);\\n    --color-olive-200: oklch(93% 0.007 106.5);\\n    --color-olive-300: oklch(88% 0.011 106.6);\\n    --color-olive-400: oklch(73.7% 0.021 106.9);\\n    --color-olive-500: oklch(58% 0.031 107.3);\\n    --color-olive-600: oklch(46.6% 0.025 107.3);\\n    --color-olive-700: oklch(39.4% 0.023 107.4);\\n    --color-olive-800: oklch(28.6% 0.016 107.4);\\n    --color-olive-900: oklch(22.8% 0.013 107.4);\\n    --color-olive-950: oklch(15.3% 0.006 107.1);\\n\\n    --color-mist-50: oklch(98.7% 0.002 197.1);\\n    --color-mist-100: oklch(96.3% 0.002 197.1);\\n    --color-mist-200: oklch(92.5% 0.005 214.3);\\n    --color-mist-300: oklch(87.2% 0.007 219.6);\\n    --color-mist-400: oklch(72.3% 0.014 214.4);\\n    --color-mist-500: oklch(56% 0.021 213.5);\\n    --color-mist-600: oklch(45% 0.017 213.2);\\n    --color-mist-700: oklch(37.8% 0.015 216);\\n    --color-mist-800: oklch(27.5% 0.011 216.9);\\n    --color-mist-900: oklch(21.8% 0.008 223.9);\\n    --color-mist-950: oklch(14.8% 0.004 228.8);\\n\\n    --color-taupe-50: oklch(98.6% 0.002 67.8);\\n    --color-taupe-100: oklch(96% 0.002 17.2);\\n    --color-taupe-200: oklch(92.2% 0.005 34.3);\\n    --color-taupe-300: oklch(86.8% 0.007 39.5);\\n    --color-taupe-400: oklch(71.4% 0.014 41.2);\\n    --color-taupe-500: oklch(54.7% 0.021 43.1);\\n    --color-taupe-600: oklch(43.8% 0.017 39.3);\\n    --color-taupe-700: oklch(36.7% 0.016 35.7);\\n    --color-taupe-800: oklch(26.8% 0.011 36.5);\\n    --color-taupe-900: oklch(21.4% 0.009 43.1);\\n    --color-taupe-950: oklch(14.7% 0.004 49.3);\\n\\n    --color-black: #000;\\n    --color-white: #fff;\\n\\n    --spacing: 0.25rem;\\n\\n    --breakpoint-sm: 40rem;\\n    --breakpoint-md: 48rem;\\n    --breakpoint-lg: 64rem;\\n    --breakpoint-xl: 80rem;\\n    --breakpoint-2xl: 96rem;\\n\\n    --container-3xs: 16rem;\\n    --container-2xs: 18rem;\\n    --container-xs: 20rem;\\n    --container-sm: 24rem;\\n    --container-md: 28rem;\\n    --container-lg: 32rem;\\n    --container-xl: 36rem;\\n    --container-2xl: 42rem;\\n    --container-3xl: 48rem;\\n    --container-4xl: 56rem;\\n    --container-5xl: 64rem;\\n    --container-6xl: 72rem;\\n    --container-7xl: 80rem;\\n\\n    --text-xs: 0.75rem;\\n    --text-xs--line-height: calc(1 / 0.75);\\n    --text-sm: 0.875rem;\\n    --text-sm--line-height: calc(1.25 / 0.875);\\n    --text-base: 1rem;\\n    --text-base--line-height: calc(1.5 / 1);\\n    --text-lg: 1.125rem;\\n    --text-lg--line-height: calc(1.75 / 1.125);\\n    --text-xl: 1.25rem;\\n    --text-xl--line-height: calc(1.75 / 1.25);\\n    --text-2xl: 1.5rem;\\n    --text-2xl--line-height: calc(2 / 1.5);\\n    --text-3xl: 1.875rem;\\n    --text-3xl--line-height: calc(2.25 / 1.875);\\n    --text-4xl: 2.25rem;\\n    --text-4xl--line-height: calc(2.5 / 2.25);\\n    --text-5xl: 3rem;\\n    --text-5xl--line-height: 1;\\n    --text-6xl: 3.75rem;\\n    --text-6xl--line-height: 1;\\n    --text-7xl: 4.5rem;\\n    --text-7xl--line-height: 1;\\n    --text-8xl: 6rem;\\n    --text-8xl--line-height: 1;\\n    --text-9xl: 8rem;\\n    --text-9xl--line-height: 1;\\n\\n    --font-weight-thin: 100;\\n    --font-weight-extralight: 200;\\n    --font-weight-light: 300;\\n    --font-weight-normal: 400;\\n    --font-weight-medium: 500;\\n    --font-weight-semibold: 600;\\n    --font-weight-bold: 700;\\n    --font-weight-extrabold: 800;\\n    --font-weight-black: 900;\\n\\n    --tracking-tighter: -0.05em;\\n    --tracking-tight: -0.025em;\\n    --tracking-normal: 0em;\\n    --tracking-wide: 0.025em;\\n    --tracking-wider: 0.05em;\\n    --tracking-widest: 0.1em;\\n\\n    --leading-tight: 1.25;\\n    --leading-snug: 1.375;\\n    --leading-normal: 1.5;\\n    --leading-relaxed: 1.625;\\n    --leading-loose: 2;\\n\\n    --radius-xs: 0.125rem;\\n    --radius-sm: 0.25rem;\\n    --radius-md: 0.375rem;\\n    --radius-lg: 0.5rem;\\n    --radius-xl: 0.75rem;\\n    --radius-2xl: 1rem;\\n    --radius-3xl: 1.5rem;\\n    --radius-4xl: 2rem;\\n\\n    --shadow-2xs: 0 1px rgb(0 0 0 / 0.05);\\n    --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);\\n    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);\\n    --shadow-md:\\n      0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);\\n    --shadow-lg:\\n      0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);\\n    --shadow-xl:\\n      0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);\\n    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);\\n\\n    --inset-shadow-2xs: inset 0 1px rgb(0 0 0 / 0.05);\\n    --inset-shadow-xs: inset 0 1px 1px rgb(0 0 0 / 0.05);\\n    --inset-shadow-sm: inset 0 2px 4px rgb(0 0 0 / 0.05);\\n\\n    --drop-shadow-xs: 0 1px 1px rgb(0 0 0 / 0.05);\\n    --drop-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.15);\\n    --drop-shadow-md: 0 3px 3px rgb(0 0 0 / 0.12);\\n    --drop-shadow-lg: 0 4px 4px rgb(0 0 0 / 0.15);\\n    --drop-shadow-xl: 0 9px 7px rgb(0 0 0 / 0.1);\\n    --drop-shadow-2xl: 0 25px 25px rgb(0 0 0 / 0.15);\\n\\n    --text-shadow-2xs: 0px 1px 0px rgb(0 0 0 / 0.15);\\n    --text-shadow-xs: 0px 1px 1px rgb(0 0 0 / 0.2);\\n    --text-shadow-sm:\\n      0px 1px 0px rgb(0 0 0 / 0.075), 0px 1px 1px rgb(0 0 0 / 0.075),\\n      0px 2px 2px rgb(0 0 0 / 0.075);\\n    --text-shadow-md:\\n      0px 1px 1px rgb(0 0 0 / 0.1), 0px 1px 2px rgb(0 0 0 / 0.1),\\n      0px 2px 4px rgb(0 0 0 / 0.1);\\n    --text-shadow-lg:\\n      0px 1px 2px rgb(0 0 0 / 0.1), 0px 3px 2px rgb(0 0 0 / 0.1),\\n      0px 4px 8px rgb(0 0 0 / 0.1);\\n\\n    --ease-in: cubic-bezier(0.4, 0, 1, 1);\\n    --ease-out: cubic-bezier(0, 0, 0.2, 1);\\n    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);\\n\\n    --animate-spin: spin 1s linear infinite;\\n    --animate-ping: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;\\n    --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;\\n    --animate-bounce: bounce 1s infinite;\\n\\n    @keyframes spin {\\n      to {\\n        transform: rotate(360deg);\\n      }\\n    }\\n\\n    @keyframes ping {\\n      75%,\\n      100% {\\n        transform: scale(2);\\n        opacity: 0;\\n      }\\n    }\\n\\n    @keyframes pulse {\\n      50% {\\n        opacity: 0.5;\\n      }\\n    }\\n\\n    @keyframes bounce {\\n      0%,\\n      100% {\\n        transform: translateY(-25%);\\n        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);\\n      }\\n\\n      50% {\\n        transform: none;\\n        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);\\n      }\\n    }\\n\\n    --blur-xs: 4px;\\n    --blur-sm: 8px;\\n    --blur-md: 12px;\\n    --blur-lg: 16px;\\n    --blur-xl: 24px;\\n    --blur-2xl: 40px;\\n    --blur-3xl: 64px;\\n\\n    --perspective-dramatic: 100px;\\n    --perspective-near: 300px;\\n    --perspective-normal: 500px;\\n    --perspective-midrange: 800px;\\n    --perspective-distant: 1200px;\\n\\n    --aspect-video: 16 / 9;\\n\\n    --default-transition-duration: 150ms;\\n    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\\n    --default-font-family: --theme(--font-sans, initial);\\n    --default-font-feature-settings: --theme(\\n      --font-sans--font-feature-settings,\\n      initial\\n    );\\n    --default-font-variation-settings: --theme(\\n      --font-sans--font-variation-settings,\\n      initial\\n    );\\n    --default-mono-font-family: --theme(--font-mono, initial);\\n    --default-mono-font-feature-settings: --theme(\\n      --font-mono--font-feature-settings,\\n      initial\\n    );\\n    --default-mono-font-variation-settings: --theme(\\n      --font-mono--font-variation-settings,\\n      initial\\n    );\\n  }\\n\\n  /* Deprecated */\\n  @theme default inline reference {\\n    --blur: 8px;\\n    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);\\n    --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);\\n    --drop-shadow: 0 1px 2px rgb(0 0 0 / 0.1), 0 1px 1px rgb(0 0 0 / 0.06);\\n    --radius: 0.25rem;\\n    --max-width-prose: 65ch;\\n  }\\n}\\n\\n@layer base {\\n  /*\\n  1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)\\n  2. Remove default margins and padding\\n  3. Reset all borders.\\n*/\\n\\n  *,\\n  ::after,\\n  ::before,\\n  ::backdrop,\\n  ::file-selector-button {\\n    box-sizing: border-box; /* 1 */\\n    margin: 0; /* 2 */\\n    padding: 0; /* 2 */\\n    border: 0 solid; /* 3 */\\n  }\\n\\n  /*\\n  1. Use a consistent sensible line-height in all browsers.\\n  2. Prevent adjustments of font size after orientation changes in iOS.\\n  3. Use a more readable tab size.\\n  4. Use the user's configured `sans` font-family by default.\\n  5. Use the user's configured `sans` font-feature-settings by default.\\n  6. Use the user's configured `sans` font-variation-settings by default.\\n  7. Disable tap highlights on iOS.\\n*/\\n\\n  html,\\n  :host {\\n    line-height: 1.5; /* 1 */\\n    -webkit-text-size-adjust: 100%; /* 2 */\\n    tab-size: 4; /* 3 */\\n    font-family: --theme(\\n      --default-font-family,\\n      ui-sans-serif,\\n      system-ui,\\n      sans-serif,\\n      \\\"Apple Color Emoji\\\",\\n      \\\"Segoe UI Emoji\\\",\\n      \\\"Segoe UI Symbol\\\",\\n      \\\"Noto Color Emoji\\\"\\n    ); /* 4 */\\n    font-feature-settings: --theme(\\n      --default-font-feature-settings,\\n      normal\\n    ); /* 5 */\\n    font-variation-settings: --theme(\\n      --default-font-variation-settings,\\n      normal\\n    ); /* 6 */\\n    -webkit-tap-highlight-color: transparent; /* 7 */\\n  }\\n\\n  /*\\n  1. Add the correct height in Firefox.\\n  2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)\\n  3. Reset the default border style to a 1px solid border.\\n*/\\n\\n  hr {\\n    height: 0; /* 1 */\\n    color: inherit; /* 2 */\\n    border-top-width: 1px; /* 3 */\\n  }\\n\\n  /*\\n  Add the correct text decoration in Chrome, Edge, and Safari.\\n*/\\n\\n  abbr:where([title]) {\\n    -webkit-text-decoration: underline dotted;\\n    text-decoration: underline dotted;\\n  }\\n\\n  /*\\n  Remove the default font size and weight for headings.\\n*/\\n\\n  h1,\\n  h2,\\n  h3,\\n  h4,\\n  h5,\\n  h6 {\\n    font-size: inherit;\\n    font-weight: inherit;\\n  }\\n\\n  /*\\n  Reset links to optimize for opt-in styling instead of opt-out.\\n*/\\n\\n  a {\\n    color: inherit;\\n    -webkit-text-decoration: inherit;\\n    text-decoration: inherit;\\n  }\\n\\n  /*\\n  Add the correct font weight in Edge and Safari.\\n*/\\n\\n  b,\\n  strong {\\n    font-weight: bolder;\\n  }\\n\\n  /*\\n  1. Use the user's configured `mono` font-family by default.\\n  2. Use the user's configured `mono` font-feature-settings by default.\\n  3. Use the user's configured `mono` font-variation-settings by default.\\n  4. Correct the odd `em` font sizing in all browsers.\\n*/\\n\\n  code,\\n  kbd,\\n  samp,\\n  pre {\\n    font-family: --theme(\\n      --default-mono-font-family,\\n      ui-monospace,\\n      SFMono-Regular,\\n      Menlo,\\n      Monaco,\\n      Consolas,\\n      \\\"Liberation Mono\\\",\\n      \\\"Courier New\\\",\\n      monospace\\n    ); /* 1 */\\n    font-feature-settings: --theme(\\n      --default-mono-font-feature-settings,\\n      normal\\n    ); /* 2 */\\n    font-variation-settings: --theme(\\n      --default-mono-font-variation-settings,\\n      normal\\n    ); /* 3 */\\n    font-size: 1em; /* 4 */\\n  }\\n\\n  /*\\n  Add the correct font size in all browsers.\\n*/\\n\\n  small {\\n    font-size: 80%;\\n  }\\n\\n  /*\\n  Prevent `sub` and `sup` elements from affecting the line height in all browsers.\\n*/\\n\\n  sub,\\n  sup {\\n    font-size: 75%;\\n    line-height: 0;\\n    position: relative;\\n    vertical-align: baseline;\\n  }\\n\\n  sub {\\n    bottom: -0.25em;\\n  }\\n\\n  sup {\\n    top: -0.5em;\\n  }\\n\\n  /*\\n  1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)\\n  2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)\\n  3. Remove gaps between table borders by default.\\n*/\\n\\n  table {\\n    text-indent: 0; /* 1 */\\n    border-color: inherit; /* 2 */\\n    border-collapse: collapse; /* 3 */\\n  }\\n\\n  /*\\n  Use the modern Firefox focus style for all focusable elements.\\n*/\\n\\n  :-moz-focusring {\\n    outline: auto;\\n  }\\n\\n  /*\\n  Add the correct vertical alignment in Chrome and Firefox.\\n*/\\n\\n  progress {\\n    vertical-align: baseline;\\n  }\\n\\n  /*\\n  Add the correct display in Chrome and Safari.\\n*/\\n\\n  summary {\\n    display: list-item;\\n  }\\n\\n  /*\\n  Make lists unstyled by default.\\n*/\\n\\n  ol,\\n  ul,\\n  menu {\\n    list-style: none;\\n  }\\n\\n  /*\\n  1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)\\n  2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)\\n      This can trigger a poorly considered lint error in some tools but is included by design.\\n*/\\n\\n  img,\\n  svg,\\n  video,\\n  canvas,\\n  audio,\\n  iframe,\\n  embed,\\n  object {\\n    display: block; /* 1 */\\n    vertical-align: middle; /* 2 */\\n  }\\n\\n  /*\\n  Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)\\n*/\\n\\n  img,\\n  video {\\n    max-width: 100%;\\n    height: auto;\\n  }\\n\\n  /*\\n  1. Inherit font styles in all browsers.\\n  2. Remove border radius in all browsers.\\n  3. Remove background color in all browsers.\\n  4. Ensure consistent opacity for disabled states in all browsers.\\n*/\\n\\n  button,\\n  input,\\n  select,\\n  optgroup,\\n  textarea,\\n  ::file-selector-button {\\n    font: inherit; /* 1 */\\n    font-feature-settings: inherit; /* 1 */\\n    font-variation-settings: inherit; /* 1 */\\n    letter-spacing: inherit; /* 1 */\\n    color: inherit; /* 1 */\\n    border-radius: 0; /* 2 */\\n    background-color: transparent; /* 3 */\\n    opacity: 1; /* 4 */\\n  }\\n\\n  /*\\n  Restore default font weight.\\n*/\\n\\n  :where(select:is([multiple], [size])) optgroup {\\n    font-weight: bolder;\\n  }\\n\\n  /*\\n  Restore indentation.\\n*/\\n\\n  :where(select:is([multiple], [size])) optgroup option {\\n    padding-inline-start: 20px;\\n  }\\n\\n  /*\\n  Restore space after button.\\n*/\\n\\n  ::file-selector-button {\\n    margin-inline-end: 4px;\\n  }\\n\\n  /*\\n  Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)\\n*/\\n\\n  ::placeholder {\\n    opacity: 1;\\n  }\\n\\n  /*\\n  Set the default placeholder color to a semi-transparent version of the current text color in browsers that do not\\n  crash when using `color-mix(…)` with `currentcolor`. (https://github.com/tailwindlabs/tailwindcss/issues/17194)\\n*/\\n\\n  @supports (not (-webkit-appearance: -apple-pay-button)) /* Not Safari */ or\\n    (contain-intrinsic-size: 1px) /* Safari 17+ */ {\\n    ::placeholder {\\n      color: color-mix(in oklab, currentcolor 50%, transparent);\\n    }\\n  }\\n\\n  /*\\n  Prevent resizing textareas horizontally by default.\\n*/\\n\\n  textarea {\\n    resize: vertical;\\n  }\\n\\n  /*\\n  Remove the inner padding in Chrome and Safari on macOS.\\n*/\\n\\n  ::-webkit-search-decoration {\\n    -webkit-appearance: none;\\n  }\\n\\n  /*\\n  1. Ensure date/time inputs have the same height when empty in iOS Safari.\\n  2. Ensure text alignment can be changed on date/time inputs in iOS Safari.\\n*/\\n\\n  ::-webkit-date-and-time-value {\\n    min-height: 1lh; /* 1 */\\n    text-align: inherit; /* 2 */\\n  }\\n\\n  /*\\n  Prevent height from changing on date/time inputs in macOS Safari when the input is set to `display: block`.\\n*/\\n\\n  ::-webkit-datetime-edit {\\n    display: inline-flex;\\n  }\\n\\n  /*\\n  Remove excess padding from pseudo-elements in date/time inputs to ensure consistent height across browsers.\\n*/\\n\\n  ::-webkit-datetime-edit-fields-wrapper {\\n    padding: 0;\\n  }\\n\\n  ::-webkit-datetime-edit,\\n  ::-webkit-datetime-edit-year-field,\\n  ::-webkit-datetime-edit-month-field,\\n  ::-webkit-datetime-edit-day-field,\\n  ::-webkit-datetime-edit-hour-field,\\n  ::-webkit-datetime-edit-minute-field,\\n  ::-webkit-datetime-edit-second-field,\\n  ::-webkit-datetime-edit-millisecond-field,\\n  ::-webkit-datetime-edit-meridiem-field {\\n    padding-block: 0;\\n  }\\n\\n  /*\\n  Center dropdown marker shown on inputs with paired `<datalist>`s in Chrome. (https://github.com/tailwindlabs/tailwindcss/issues/18499)\\n*/\\n\\n  ::-webkit-calendar-picker-indicator {\\n    line-height: 1;\\n  }\\n\\n  /*\\n  Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)\\n*/\\n\\n  :-moz-ui-invalid {\\n    box-shadow: none;\\n  }\\n\\n  /*\\n  Correct the inability to style the border radius in iOS Safari.\\n*/\\n\\n  button,\\n  input:where([type=\\\"button\\\"], [type=\\\"reset\\\"], [type=\\\"submit\\\"]),\\n  ::file-selector-button {\\n    appearance: button;\\n  }\\n\\n  /*\\n  Correct the cursor style of increment and decrement buttons in Safari.\\n*/\\n\\n  ::-webkit-inner-spin-button,\\n  ::-webkit-outer-spin-button {\\n    height: auto;\\n  }\\n\\n  /*\\n  Make elements with the HTML hidden attribute stay hidden by default.\\n*/\\n\\n  [hidden]:where(:not([hidden=\\\"until-found\\\"])) {\\n    display: none !important;\\n  }\\n}\\n\\n@layer utilities {\\n  @tailwind utilities;\\n}\\n\",\"@import \\\"tailwindcss\\\";\\n@plugin \\\"daisyui\\\";\\n\\n/* @theme {\\n  --color-razzle-dazzle-rose-50 : #fdf2fa;\\n  --color-razzle-dazzle-rose-100: #fde6f8;\\n  --color-razzle-dazzle-rose-200: #fccef2;\\n  --color-razzle-dazzle-rose-300: #fba6e7;\\n  --color-razzle-dazzle-rose-400: #f76fd4;\\n  --color-razzle-dazzle-rose-500: #f044bf;\\n  --color-razzle-dazzle-rose-600: #df23a1;\\n  --color-razzle-dazzle-rose-700: #c21482;\\n  --color-razzle-dazzle-rose-800: #a0146b;\\n  --color-razzle-dazzle-rose-900: #86155b;\\n  --color-razzle-dazzle-rose-950: #520535;\\n */\\n  /* colores de azul sieten link --color-sl-blue-50: #f2f6fc; */\\n\\n  /* --color-sl-blue-100: #e1ecf8;\\n  --color-sl-blue-200: #caddf3;\\n  --color-sl-blue-300: #a5c8eb;\\n  --color-sl-blue-400: #7aace0;\\n  --color-sl-blue-500: #5b8ed6;\\n  --color-sl-blue-600: #4775c9;\\n  --color-sl-blue-700: #3d61b8;\\n  --color-sl-blue-800: #375096;\\n  --color-sl-blue-900: #304678;\\n  --color-sl-blue-950: #212c4a; */\\n\\n  /* colores primario de siete lin Tailwin */\\n/* \\n  --color-sl-pink-50 : #fef1f7;\\n  --color-sl-pink-100: #fee5f0;\\n  --color-sl-pink-200: #ffcae4;\\n  --color-sl-pink-300: #ff9fcb;\\n  --color-sl-pink-400: #ff63a7;\\n  --color-sl-pink-500: #ff3a87;\\n  --color-sl-pink-600: #f0125e;\\n  --color-sl-pink-700: #d10545;\\n  --color-sl-pink-800: #ad0739;\\n  --color-sl-pink-900: #8f0c34;\\n  --color-sl-pink-950: #580019;\\n\\n */\\n  /* color nerutral sl  */\\n\\n\\n/* \\n} */\\n\\n\\n/* body {\\n  background-color: var(--color-razzle-dazzle-rose-50);\\n  color           : var(--color-razzle-dazzle-rose-900);\\n}\\n\\n\\n\\ninput[type=\\\"number\\\"]::-webkit-inner-spin-button,\\ninput[type=\\\"number\\\"]::-webkit-outer-spin-button {\\n  -webkit-appearance: none;\\n  margin            : 0;\\n}\\n */\\n/* Eliminando las flechitas en Firefox */\\n/* input[type=\\\"number\\\"] {\\n  -moz-appearance: textfield;\\n} */\\n\\n/* #mi-plugin-root { */\\n  /* background-color: red; */\\n  /* width  : 100%;\\n  max-width: 1400px;\\n  padding: 0;\\n  margin : 0;\\n\\n  @apply bg-pink-400; */\\n  /* background-color: black */\\n\\n\\n  \\n\\n/* } */\\n\\n/* #sl-payment-form-wrapper { */\\n  /* background-color: red; */\\n\\n  /* .sl-drop-zone {\\n    @apply flex flex-col;\\n    @apply justify-center items-center;\\n    @apply p-4 rounded-2xl border border-dashed;\\n    @apply border-slate-500;\\n    @apply drop-shadow-xs;\\n    @apply min-h-[120px]; */\\n    /* @apply blur */\\n\\n\\n\\n    /* button {\\n      @apply w-fit;\\n      @apply text-sm;\\n    }\\n\\n    p {\\n      @apply  !text-sm;\\n    }\\n\\n    iframe {\\n      width : 100%; */\\n      /* Ajusta al ancho total del contenedor */\\n      /* height: 800px; */\\n      /* Cambia la altura como necesites */\\n    /* }\\n  }\\n */\\n  /* .monto-acc-header {\\n    p {\\n      @apply text-white;\\n      @apply text-sm font-medium;\\n    }\\n\\n    h4 {\\n      @apply text-white;\\n      @apply text-2xl font-bold;\\n    }\\n\\n    h5 {\\n      @apply text-white;\\n      @apply text-base font-semibold;\\n    }\\n\\n    svg {\\n      width : 16px;\\n      height: 16px;\\n      @apply fill-white;\\n    }\\n  }\\n\\n  form {\\n    button {\\n      @apply w-full p-4 text-center font-medium text-white bg-razzle-dazzle-rose-500 rounded-lg;\\n      @apply hover:bg-razzle-dazzle-rose-600 hover:cursor-pointer;\\n    }\\n  } */\\n\\n  /* min-h-[120px]\\n    p-4\\n    flex\\n    justify-center\\n    items-center\\n    rounded-xl\\n    border\\n    border-dashed\\n    border-slate-500\\n    drop-shadow-xs */\\n  /* .mini {\\n    svg {\\n      width : 16px;\\n      height: 16px;\\n    }\\n  }\\n\\n  svg {\\n    height: 60px;\\n    width : auto;\\n  }\\n\\n  .icon-lg {\\n    svg {\\n      width : 20px;\\n      height: 20px;\\n    }\\n  }\\n\\n  @apply flex w-full justify-center min-h-screen;\\n\\n  .sl-payment-form-conatiner {\\n    @apply w-full p-4 max-w-[500px];\\n    @apply bg-slate-100;\\n    @apply rounded-2xl;\\n\\n    label span {\\n      @apply text-sm font-medium;\\n    }\\n\\n    input[type=\\\"text\\\"],\\n    input[type=\\\"number\\\"] {\\n      @apply bg-slate-300 rounded-xl;\\n      @apply text-base p-2 font-medium;\\n    }\\n\\n    select {\\n      @apply bg-slate-300 rounded-xl;\\n      @apply text-base p-2 font-medium;\\n    }\\n\\n    .input-box {\\n      @apply flex flex-col gap-2;\\n    }\\n  }\\n\\n  .bank-card {\\n    svg {\\n      width : 12px;\\n      height: 12px;\\n    }\\n */\\n    /* @apply !bg-amber-600; */\\n  /* } */\\n\\n  /* .tab-bar {\\n    @apply bg-slate-300;\\n    @apply p-4 rounded-xl;\\n\\n    ul {\\n      @apply flex gap-2 flex-wrap justify-start;\\n    }\\n\\n    li {\\n      height: 90px;\\n      @apply bg-slate-400;\\n      flex-grow                              : 1;\\n      max-width                              : 130px;\\n      @apply rounded p-2 cursor-pointer hover:cursor-pointer;\\n      @apply transition-colors;\\n      @apply duration-300;\\n      @apply ease-in-out;\\n      @apply hover:bg-slate-500;\\n\\n\\n\\n      svg {\\n        @apply w-8 h-8;\\n      } */\\n\\n      /* min-height: 100px; */\\n      /* p {\\n        @apply text-center;\\n        @apply text-xs font-medium;\\n      }\\n    }\\n\\n    h3 {\\n      @apply font-semibold;\\n    }\\n\\n    .paypal {\\n      svg {\\n        height: 60px;\\n        width : 100%;\\n      }\\n    }\\n  }\\n\\n  .data-box { */\\n\\n    /* background: #000; */\\n    /* svg {\\n      width : 16px;\\n      height: 16px;\\n    }\\n  }\\n\\n\\n} */\\n\\n.react-datepicker-popper {\\n  position: absolute;\\n   left: 25px !important;\\n}\\n\\n.react-datepicker__month {\\n  position: relative;\\n  overflow: hidden;\\n}\\n.react-datepicker__month::before {\\n  content: '';\\n  position: absolute;\\n  inset: 0;\\n  background-image: url('./icons/Isotipo 7Link.svg');\\n  background-size: contain;\\n  background-repeat: no-repeat;\\n  background-position: center 1px;\\n  background-color: rgba(241, 241, 241, 0.5);\\n  background-blend-mode: lighten;\\n  z-index: 0;\\n  transform: translateY(5px); /* baja 5px sin cambiar tamaño */\\n}\\n\\n.react-datepicker__month * {\\n  position: relative;\\n  z-index: 1;\\n}\\n.react-datepicker__navigation {\\n  width: 32px;\\n  height: 32px;\\n  border: none;\\n  z-index: 2;\\n  cursor: pointer;\\n}\\n\\n.react-datepicker__navigation--previous::before,\\n.react-datepicker__navigation--next::before {\\n  content: '';\\n  position: absolute;\\n  top: 50%;\\n  left: 50%;\\n  border: solid white;\\n  border-width: 0 3px 3px 0;\\n  padding: 4px;\\n}\\n\\n.react-datepicker__navigation--previous::before {\\n  transform: translate(-50%, -50%) rotate(135deg); /* ← */\\n}\\n\\n.react-datepicker__navigation--next::before {\\n  transform: translate(-50%, -50%) rotate(-45deg); /* → */\\n}\\n\\n\\n/* HTML: <div class=\\\"loader\\\"></div> */\\n/* .loader {\\n  width       : 60px;\\n  aspect-ratio: 2;\\n  --_g        : no-repeat radial-gradient(circle closest-side, #64748b 90%, #0000);\\n  background  :\\n    var(--_g) 0% 50%,\\n    var(--_g) 50% 50%,\\n    var(--_g) 100% 50%;\\n  background-size: calc(80%/3) 50%;\\n  animation      : l3 1s infinite linear;\\n}\\n\\n@keyframes l3 {\\n  20% {\\n    background-position: 0% 0%, 50% 50%, 100% 50%\\n  }\\n\\n  40% {\\n    background-position: 0% 100%, 50% 0%, 100% 50%\\n  }\\n\\n  60% {\\n    background-position: 0% 50%, 50% 100%, 100% 0%\\n  }\\n\\n  80% {\\n    background-position: 0% 50%, 50% 50%, 100% 100%\\n  }\\n} */\\n\"],\"sourceRoot\":\"\"}]);\n1341 | // Exports\n1342 | /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n1343 | ");
-
-/***/ },
-
 /***/ "./src/output.css"
 /*!************************!*\
   !*** ./src/output.css ***!
@@ -1508,6 +2677,49 @@ if (false) // removed by dead control flow
   };
 }
 
+
+/***/ },
+
+/***/ "./src/icons/media/Quantum_Junior.mp4"
+/*!********************************************!*\
+  !*** ./src/icons/media/Quantum_Junior.mp4 ***!
+  \********************************************/
+() {
+
+throw new Error("Module parse failed: Unexpected character '\u0000' (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n(Source code omitted for this binary file)");
+
+/***/ },
+
+/***/ "./src/icons/Banner_Club.png"
+/*!***********************************!*\
+  !*** ./src/icons/Banner_Club.png ***!
+  \***********************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/Banner_Club.78a2f3e6.png";
+
+/***/ },
+
+/***/ "./src/icons/lottie/Success.lottie"
+/*!*****************************************!*\
+  !*** ./src/icons/lottie/Success.lottie ***!
+  \*****************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "lottie/Success.lottie";
+
+/***/ },
+
+/***/ "./src/icons/lottie/Warning.lottie"
+/*!*****************************************!*\
+  !*** ./src/icons/lottie/Warning.lottie ***!
+  \*****************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "lottie/Warning.lottie";
 
 /***/ },
 
@@ -10376,6 +11588,29 @@ function toDate(argument, context) {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (globalThis.importScripts) scriptUrl = globalThis.location + "";
+/******/ 		var document = globalThis.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
@@ -10390,11 +11625,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ "./src/App.jsx");
 /* harmony import */ var _output_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./output.css */ "./src/output.css");
-/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main.css */ "./src/main.css");
-/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_main_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
-
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
@@ -10404,7 +11636,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const rootElement = document.getElementById("mi-plugin-root");
   if (rootElement) {
     const root = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(rootElement);
-    root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_App__WEBPACK_IMPORTED_MODULE_2__["default"], {}));
+    root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_App__WEBPACK_IMPORTED_MODULE_2__["default"], {}));
   }
 });
 })();

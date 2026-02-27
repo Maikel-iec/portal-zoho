@@ -12,6 +12,13 @@ module.exports = {
     rules: [
       ...defaultConfig.module.rules,
       {
+        test: /\.(mp4|mov|webm)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'media/[name][ext]',
+        },
+      },
+      {
         test: /\.lottie$/,
         type: 'asset/resource', // Trata los archivos .lottie como recursos
         generator: {
