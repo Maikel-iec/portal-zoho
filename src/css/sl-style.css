@@ -1,0 +1,741 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap");
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  /* colores de azul sieten link */
+  
+  --color-sl-blue-50: #f2f6fc; 
+  --color-sl-blue-100: #e1ecf8;
+  --color-sl-blue-200: #caddf3;
+  --color-sl-blue-300: #a5c8eb;
+  --color-sl-blue-400: #7aace0;
+  --color-sl-blue-500: #5b8ed6;
+  --color-sl-blue-600: #4775c9;
+  --color-sl-blue-700: #3d61b8;
+  --color-sl-blue-800: #375096;
+  --color-sl-blue-900: #304678;
+  --color-sl-blue-950: #212c4a;
+
+  /* colores primario de siete lin Tailwin */
+
+  --color-sl-pink-50 : #fef1f7;
+  --color-sl-pink-100: #fee5f0;
+  --color-sl-pink-200: #ffcae4;
+  --color-sl-pink-300: #ff9fcb;
+  --color-sl-pink-400: #ff63a7;
+  --color-sl-pink-500: #ff3a87;
+  --color-sl-pink-600: #f0125e;
+  --color-sl-pink-700: #d10545;
+  --color-sl-pink-800: #ad0739;
+  --color-sl-pink-900: #8f0c34;
+  --color-sl-pink-950: #580019;
+
+  /* color nerutral sl  */
+
+  /* colore de estado */
+
+  --color-sl-red-50 : #fff0f0;
+  --color-sl-red-100: #ffe2e4;
+  --color-sl-red-200: #ffcacf;
+  --color-sl-red-300: #ff9fa7;
+  --color-sl-red-400: #ff6979;
+  --color-sl-red-500: #ff3b55;
+  --color-sl-red-600: #ed1139;
+  --color-sl-red-700: #c80830;
+  --color-sl-red-800: #a8092f;
+  --color-sl-red-900: #8f0c2f;
+  --color-sl-red-950: #500114;
+
+  --color-sl-gray-50  : #ffffff;
+  --color-sl-gray-75  : #f9f9f9;
+  --color-sl-gray-100 : #f0f0f0;
+  --color-sl-gray-150 : #e1e1e1;
+  --color-sl-gray-200 : #d2d2d2;
+  --color-sl-gray-250 : #c3c3c3;
+  --color-sl-gray-300 : #b5b5b5;
+  --color-sl-gray-350 : #a7a7a7;
+  --color-sl-gray-400 : #999999;
+  --color-sl-gray-450 : #8b8b8b;
+  --color-sl-gray-500 : #7e7e7e;
+  --color-sl-gray-550 : #707070;
+  --color-sl-gray-600 : #636363;
+  --color-sl-gray-650 : #575757;
+  --color-sl-gray-700 : #4a4a4a;
+  --color-sl-gray-750 : #3e3e3e;
+  --color-sl-gray-800 : #333333;
+  --color-sl-gray-850 : #272727;
+  --color-sl-gray-900 : #1d1d1d;
+  --color-sl-gray-950 : #121212;
+  --color-sl-gray-1000: #000000;
+}
+
+#mi-plugin-root {
+  /* background-color: red; */
+  width    : 100%;
+  max-width: 1200px;
+  padding  : 0;
+  margin   : 0;
+  font-size: 13px;
+
+  font-family: "Open Sans", sans-serif;
+
+  h1 {
+    font-size: 3em;
+  }
+
+  /* Más grande */
+  h2 {
+    font-size: 2.5em;
+  }
+
+  h3 {
+    font-size: 2em;
+  }
+
+  h4 {
+    font-size: 1.2em;
+  }
+
+  h5 {
+    font-size: 1.15em;
+  }
+
+  h6 {
+    font-size: 1em;
+  }
+
+  /* Base */
+
+  h1,
+  h2,
+  h3 {
+    @apply font-semibold;
+  }
+
+  h4,
+  h5,
+  h6 {
+    @apply font-medium;
+  }
+
+  p {
+    font-size  : 1em;
+    line-height: 1.5;
+    @apply font-semibold;
+  }
+
+  .sl-text-sm {
+    font-size  : 0.875em;
+    line-height: 1.5;
+    @apply font-semibold;
+  }
+
+  .sl-text-xs {
+    font-size  : 0.75em;
+    line-height: 1.5;
+    @apply font-semibold;
+  }
+
+  a {
+    @apply font-semibold;
+    /* text-decoration: none; */
+
+    &:hover {
+      @apply font-semibold;
+      /* text-decoration: underline; */
+      color: theme(--color-sl-pink-500);
+    }
+  }
+
+  .svg-h4 {
+    svg {
+      height: 1.2em;
+      width : 1em;
+    }
+  }
+
+  /* @apply bg-pink-400; */
+  /* background-color: black */
+}
+
+#sl-payment-form-wrapper {
+  display: flex;
+
+  .sl-tab-select {
+    background-color: theme(--color-sl-blue-950);
+    border-radius   : 16px;
+
+    h5,
+    h3,
+    h2 {
+      @apply text-gray-50;
+    }
+
+    padding : 0px;
+    overflow: hidden;
+
+    svg {
+      width : auto;
+      height: 45px;
+    }
+
+    .r4-e {
+      svg {
+        width : 40px;
+        height: 40px;
+      }
+    }
+
+    .mini-r4 {
+      svg {
+        height: 40px;
+      }
+    }
+
+    .logo-7-link-oficial {
+      svg {
+        height: 80px;
+      }
+    }
+
+    li {
+      max-width: 240px;
+      @apply text-sl-blue-100;
+      @apply relative;
+      display        : flex;
+      align-items    : center;
+      justify-content: center;
+      flex-direction : column;
+      @apply border rounded-2xl border-sl-blue-900;
+      height   : 100px;
+      width    : 100%;
+      min-width: 100px;
+      padding  : 6px;
+      @apply cursor-pointer;
+      z-index : 100;
+      overflow: hidden;
+
+      &::before {
+        /* background-color: rebeccapurple; */
+        @apply bg-gradient-to-t from-sl-pink-500 to-sl-pink-500/10;
+        opacity   : 0;
+        content   : "";
+        display   : block;
+        width     : 100%;
+        height    : 100%;
+        position  : absolute;
+        top       : 0;
+        left      : 0;
+        /* z-index: 10; */
+        z-index   : -1;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      /* overflow    : hidden; */
+    }
+  }
+
+  button {
+    @apply bg-sl-pink-500 text-sl-gray-50;
+    width    : 100%;
+    font-size: 1.25em;
+    @apply font-medium;
+    padding      : 14px;
+    border-radius: 8px;
+    transition   : all 0.5s;
+    text-align: center;
+
+    &:hover {
+      @apply bg-sl-pink-700;
+      cursor: pointer;
+    }
+  }
+
+  .regresar-btn {
+    width           : fit-content;
+    color           : theme(--color-sl-gray-750);
+    background-color: transparent;
+    border-radius   : 0;
+    margin-top: 5px;
+    transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+    &:hover {
+      color           : theme(--color-sl-gray-900);
+      background-color: rgba(128, 128, 128, 0.123);
+      border-radius   : 5px;
+      text-decoration : underline;
+    }
+  }
+
+  .base {
+  transition: background-color 0.3s ease;
+
+}
+
+.base:hover {
+  background-color: #B21259;
+}
+.base:disabled {
+  background-color: #d1d5db; 
+  cursor: not-allowed;
+}
+
+.cerrar{
+background-color: var(--color-sl-gray-500);
+
+}
+.cerrar:hover{
+    background-color: #B21259;
+    color: white;
+}
+
+
+  .react-datepicker__navigation {
+    width: fit-content;
+  }
+
+  form {
+    /* background-color: theme(--color-sl-gray-100); */
+    padding: 16px 32px;
+
+    /* background-color: theme(--color-sl-blue-900); */
+
+    .main-svg {
+      width          : 40px;
+      height         : 40px;
+      display        : flex;
+      justify-content: center;
+      align-items    : center;
+
+      svg {
+        height: 70px;
+      }
+    }
+
+    .form-title {
+      position      : relative;
+      padding-bottom: 8px;
+
+      &::before {
+        content            : "";
+        position           : absolute;
+        bottom             : 0;
+        left               : 0;
+        width              : 100%;
+        height             : 1px;
+        /* background-color: theme(--color-sl-pink-500); */
+
+        @apply bg-gradient-to-r from-sl-pink-500 via-sl-blue-600 to-sl-pink-500;
+
+        display: block;
+      }
+    }
+  }
+
+  .warnig-message {
+    padding: 16px;
+    @apply text-sl-red-900;
+    border-bottom: 1px solid;
+    @apply border-sl-red-900;
+  }
+
+  input {
+    color: theme(--color-sl-gray-900);
+
+  }
+
+
+  .react-datepicker__input-container{
+
+    input{
+border: 1px solid theme(--color-sl-gray-750)
+    }
+  }
+
+  .input-box {
+    input {
+      border: 1px solid theme(--color-sl-gray-700);
+
+    }
+
+    p {
+      color: theme(--color-sl-gray-900);
+
+      &.info {
+        color: theme(--color-sl-gray-500);
+
+      }
+
+      &.error {
+        color: theme(--color-sl-red-700);
+      }
+    }
+
+
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin            : 0;
+  }
+
+  /* Eliminando las flechitas en Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+    @apply font-medium;
+    padding            : 12px 16px;
+    /* background-color: blue; */
+    width              : 100%;
+    border             : 2px solid theme(--color-sl-gray-200);
+    border-radius      : 8px;
+    transition         : all 0.3s ease-in-out;
+    outline-offset     : 2px;
+
+    &:focus {
+      outline       : theme(--color-sl-pink-600);
+      border        : 2px solid theme(--color-sl-pink-600);
+      outline-offset: 8px;
+    }
+  }
+
+  .cedula {
+    width: 80px;
+  }
+
+  .r4-box {
+    svg {
+      width : 12px;
+      height: 12px;
+    }
+  }
+
+  input[type="checkbox"] {
+    @apply checkbox checkbox-neutral;
+  }
+
+  .react-datepicker-wrapper {
+    /* background-color: green; */
+    width: 100%;
+  }
+
+  .sl-drop-zone {
+    min-height      : 150px;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    flex-direction  : column;
+    background-color: theme(--color-sl-gray-150);
+    border-radius   : 8px;
+    padding         : 16px;
+    border          : 2px dashed theme(--color-sl-gray-250);
+
+    button {
+      padding         : 10px;
+      border-radius   : 8px;
+      background-color: theme(--color-sl-gray-300);
+      color           : theme(--color-sl-gray-900);
+      margin-bottom   : 16px;
+      width           : fit-content;
+      transition      : all 0.6s ease-in-out;
+      &:hover {
+        @apply bg-sl-pink-500;
+        cursor: pointer;
+        color: theme(--color-sl-gray-50);
+
+
+      }
+    }
+  }
+
+
+  .sl-invocie-item {
+    display            : flex;
+    justify-content    : space-between;
+    align-items        : center;
+    padding            : 8px 0;
+    border-bottom      : 1px solid theme(--color-sl-gray-100);
+    /* background-color: red; */
+
+    p {
+      @apply text-sl-gray-700;
+      font-size: 1em;
+      @apply font-semibold;
+
+      &:last-child {
+        @apply text-sl-gray-900;
+        font-size: 0.875em;
+      }
+    }
+  }
+
+  .sl-invoice-box {
+    @apply w-full;
+    padding      : 16px;
+
+    h4,
+    h5,
+    h3,
+    p {
+      @apply text-sl-gray-50;
+      @apply font-semibold;
+
+    }
+
+    p {
+      margin : 0;
+      padding: 0;
+    }
+
+
+    .sl-invoice-icon {
+      svg {
+        width : 16px;
+        height: 16px;
+
+        path {
+          fill: theme(--color-sl-gray-50) !important;
+        }
+      }
+
+
+    }
+
+    .sl-invocie-item {
+      border-bottom  : none;
+      padding        : 0;
+      align-items    : start;
+      flex-direction : column;
+      margin-bottom  : 16px;
+      justify-content: start;
+
+
+      .price {
+        font-size: 1.5em;
+      }
+
+
+      p {
+        @apply text-sl-gray-50;
+        font-size: 1em;
+
+        &:last-child {
+          @apply text-sl-gray-150;
+        }
+      }
+    }
+  }
+}
+
+
+.opt-process {
+  .sl-opt-process-icon {
+    svg {
+      /* background-color: #ff3a87; */
+      fill  : theme(--color-sl-pink-600);
+      width : 120px;
+      height: 120px
+    }
+
+  }
+
+  .sl-opt-process-icon-mini {
+
+    svg {
+      fill  : theme(--color-sl-pink-400);
+      width : 24px;
+      height: 24px;
+    }
+  }
+
+
+}
+
+#sl-transaction-progress {
+  background-color: theme(--color-sl-gray-75);
+  display         : flex;
+  justify-content : center;
+  align-items     : stretch;
+
+  .close-btn {
+    max-width       : fit-content;
+    background-color: transparent;
+    @apply rounded-b-full;
+
+    svg {
+      width : 16px;
+      height: 16px;
+    }
+  }
+
+  .box-btn {
+    @apply btn-ghost;
+    background-color: transparent;
+    @apply text-sl-gray-900;
+  }
+
+  .procces-error-icon {
+    svg {
+      width : 120px;
+      height: auto;
+    }
+  }
+
+  .progress-box {
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    align-items    : center;
+  }
+
+  .sl-logo-process {
+    svg {
+      height: 45px;
+      width : auto;
+    }
+  }
+}
+
+#sl-error-wrapper {
+  svg {
+    height: 60px;
+  }
+
+  .warnig-exeption {
+    padding: 16px;
+
+    svg {
+      height: 120px;
+    }
+  }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width        : 12px;
+  aspect-ratio : 1;
+  border-radius: 50%;
+  background   : theme(--color-sl-pink-500);
+  clip-path    : inset(-220%);
+  animation    : l28 2s infinite linear;
+}
+
+@keyframes l28 {
+  0% {
+    box-shadow:
+      0 0 0 0 #ff3a87,
+      40px 0 #ff3a87,
+      -40px 0 #ff3a87,
+      0 40px #ff3a87,
+      0 -40px #ff3a87;
+  }
+
+  10% {
+    box-shadow:
+      0 0 0 0 #ff3a87,
+      12px 0 #ff3a87,
+      -40px 0 #ff3a87,
+      0 40px #ff3a87,
+      0 -40px #ff3a87;
+  }
+
+  20% {
+    box-shadow:
+      0 0 0 4px #ff3a87,
+      0px 0 #ff3a87,
+      -40px 0 #ff3a87,
+      0 40px #ff3a87,
+      0 -40px #ff3a87;
+  }
+
+  30% {
+    box-shadow:
+      0 0 0 4px #ff3a87,
+      0px 0 #ff3a87,
+      -12px 0 #ff3a87,
+      0 40px #ff3a87,
+      0 -40px #ff3a87;
+  }
+
+  40% {
+    box-shadow:
+      0 0 0 8px #ff3a87,
+      0px 0 #ff3a87,
+      0px 0 #ff3a87,
+      0 40px #ff3a87,
+      0 -40px #ff3a87;
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 8px #ff3a87,
+      0px 0 #ff3a87,
+      0px 0 #ff3a87,
+      0 12px #ff3a87,
+      0 -40px #ff3a87;
+  }
+
+  60% {
+    box-shadow:
+      0 0 0 12px #ff3a87,
+      0px 0 #ff3a87,
+      0px 0 #ff3a87,
+      0 0px #ff3a87,
+      0 -40px #ff3a87;
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 12px #ff3a87,
+      0px 0 #ff3a87,
+      0px 0 #ff3a87,
+      0 0px #ff3a87,
+      0 -12px #ff3a87;
+  }
+
+  80% {
+    box-shadow:
+      0 0 0 16px #ff3a87,
+      0px 0 #ff3a87,
+      0px 0 #ff3a87,
+      0 0px #ff3a87,
+      0 0px #ff3a87;
+  }
+
+  90%,
+  100% {
+    box-shadow:
+      0 0 0 0 #ff3a87,
+      40px 0 #ff3a87,
+      -40px 0 #ff3a87,
+      0 40px #ff3a87,
+      0 -40px #ff3a87;
+  }
+}
+
+/* @media (min-width: 355px) and (min-height: 706px) {
+  .responsive-grid-cols-2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 354px), (max-height: 705px) {
+  .responsive-grid-cols-2 {
+    display: grid !important;
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+} */

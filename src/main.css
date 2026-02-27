@@ -1,0 +1,351 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* @theme {
+  --color-razzle-dazzle-rose-50 : #fdf2fa;
+  --color-razzle-dazzle-rose-100: #fde6f8;
+  --color-razzle-dazzle-rose-200: #fccef2;
+  --color-razzle-dazzle-rose-300: #fba6e7;
+  --color-razzle-dazzle-rose-400: #f76fd4;
+  --color-razzle-dazzle-rose-500: #f044bf;
+  --color-razzle-dazzle-rose-600: #df23a1;
+  --color-razzle-dazzle-rose-700: #c21482;
+  --color-razzle-dazzle-rose-800: #a0146b;
+  --color-razzle-dazzle-rose-900: #86155b;
+  --color-razzle-dazzle-rose-950: #520535;
+ */
+  /* colores de azul sieten link --color-sl-blue-50: #f2f6fc; */
+
+  /* --color-sl-blue-100: #e1ecf8;
+  --color-sl-blue-200: #caddf3;
+  --color-sl-blue-300: #a5c8eb;
+  --color-sl-blue-400: #7aace0;
+  --color-sl-blue-500: #5b8ed6;
+  --color-sl-blue-600: #4775c9;
+  --color-sl-blue-700: #3d61b8;
+  --color-sl-blue-800: #375096;
+  --color-sl-blue-900: #304678;
+  --color-sl-blue-950: #212c4a; */
+
+  /* colores primario de siete lin Tailwin */
+/* 
+  --color-sl-pink-50 : #fef1f7;
+  --color-sl-pink-100: #fee5f0;
+  --color-sl-pink-200: #ffcae4;
+  --color-sl-pink-300: #ff9fcb;
+  --color-sl-pink-400: #ff63a7;
+  --color-sl-pink-500: #ff3a87;
+  --color-sl-pink-600: #f0125e;
+  --color-sl-pink-700: #d10545;
+  --color-sl-pink-800: #ad0739;
+  --color-sl-pink-900: #8f0c34;
+  --color-sl-pink-950: #580019;
+
+ */
+  /* color nerutral sl  */
+
+
+/* 
+} */
+
+
+/* body {
+  background-color: var(--color-razzle-dazzle-rose-50);
+  color           : var(--color-razzle-dazzle-rose-900);
+}
+
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin            : 0;
+}
+ */
+/* Eliminando las flechitas en Firefox */
+/* input[type="number"] {
+  -moz-appearance: textfield;
+} */
+
+/* #mi-plugin-root { */
+  /* background-color: red; */
+  /* width  : 100%;
+  max-width: 1400px;
+  padding: 0;
+  margin : 0;
+
+  @apply bg-pink-400; */
+  /* background-color: black */
+
+
+  
+
+/* } */
+
+/* #sl-payment-form-wrapper { */
+  /* background-color: red; */
+
+  /* .sl-drop-zone {
+    @apply flex flex-col;
+    @apply justify-center items-center;
+    @apply p-4 rounded-2xl border border-dashed;
+    @apply border-slate-500;
+    @apply drop-shadow-xs;
+    @apply min-h-[120px]; */
+    /* @apply blur */
+
+
+
+    /* button {
+      @apply w-fit;
+      @apply text-sm;
+    }
+
+    p {
+      @apply  !text-sm;
+    }
+
+    iframe {
+      width : 100%; */
+      /* Ajusta al ancho total del contenedor */
+      /* height: 800px; */
+      /* Cambia la altura como necesites */
+    /* }
+  }
+ */
+  /* .monto-acc-header {
+    p {
+      @apply text-white;
+      @apply text-sm font-medium;
+    }
+
+    h4 {
+      @apply text-white;
+      @apply text-2xl font-bold;
+    }
+
+    h5 {
+      @apply text-white;
+      @apply text-base font-semibold;
+    }
+
+    svg {
+      width : 16px;
+      height: 16px;
+      @apply fill-white;
+    }
+  }
+
+  form {
+    button {
+      @apply w-full p-4 text-center font-medium text-white bg-razzle-dazzle-rose-500 rounded-lg;
+      @apply hover:bg-razzle-dazzle-rose-600 hover:cursor-pointer;
+    }
+  } */
+
+  /* min-h-[120px]
+    p-4
+    flex
+    justify-center
+    items-center
+    rounded-xl
+    border
+    border-dashed
+    border-slate-500
+    drop-shadow-xs */
+  /* .mini {
+    svg {
+      width : 16px;
+      height: 16px;
+    }
+  }
+
+  svg {
+    height: 60px;
+    width : auto;
+  }
+
+  .icon-lg {
+    svg {
+      width : 20px;
+      height: 20px;
+    }
+  }
+
+  @apply flex w-full justify-center min-h-screen;
+
+  .sl-payment-form-conatiner {
+    @apply w-full p-4 max-w-[500px];
+    @apply bg-slate-100;
+    @apply rounded-2xl;
+
+    label span {
+      @apply text-sm font-medium;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      @apply bg-slate-300 rounded-xl;
+      @apply text-base p-2 font-medium;
+    }
+
+    select {
+      @apply bg-slate-300 rounded-xl;
+      @apply text-base p-2 font-medium;
+    }
+
+    .input-box {
+      @apply flex flex-col gap-2;
+    }
+  }
+
+  .bank-card {
+    svg {
+      width : 12px;
+      height: 12px;
+    }
+ */
+    /* @apply !bg-amber-600; */
+  /* } */
+
+  /* .tab-bar {
+    @apply bg-slate-300;
+    @apply p-4 rounded-xl;
+
+    ul {
+      @apply flex gap-2 flex-wrap justify-start;
+    }
+
+    li {
+      height: 90px;
+      @apply bg-slate-400;
+      flex-grow                              : 1;
+      max-width                              : 130px;
+      @apply rounded p-2 cursor-pointer hover:cursor-pointer;
+      @apply transition-colors;
+      @apply duration-300;
+      @apply ease-in-out;
+      @apply hover:bg-slate-500;
+
+
+
+      svg {
+        @apply w-8 h-8;
+      } */
+
+      /* min-height: 100px; */
+      /* p {
+        @apply text-center;
+        @apply text-xs font-medium;
+      }
+    }
+
+    h3 {
+      @apply font-semibold;
+    }
+
+    .paypal {
+      svg {
+        height: 60px;
+        width : 100%;
+      }
+    }
+  }
+
+  .data-box { */
+
+    /* background: #000; */
+    /* svg {
+      width : 16px;
+      height: 16px;
+    }
+  }
+
+
+} */
+
+.react-datepicker-popper {
+  position: absolute;
+   left: 25px !important;
+}
+
+.react-datepicker__month {
+  position: relative;
+  overflow: hidden;
+}
+.react-datepicker__month::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('./icons/Isotipo 7Link.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center 1px;
+  background-color: rgba(241, 241, 241, 0.5);
+  background-blend-mode: lighten;
+  z-index: 0;
+  transform: translateY(5px); /* baja 5px sin cambiar tamaño */
+}
+
+.react-datepicker__month * {
+  position: relative;
+  z-index: 1;
+}
+.react-datepicker__navigation {
+  width: 32px;
+  height: 32px;
+  border: none;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.react-datepicker__navigation--previous::before,
+.react-datepicker__navigation--next::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  padding: 4px;
+}
+
+.react-datepicker__navigation--previous::before {
+  transform: translate(-50%, -50%) rotate(135deg); /* ← */
+}
+
+.react-datepicker__navigation--next::before {
+  transform: translate(-50%, -50%) rotate(-45deg); /* → */
+}
+
+
+/* HTML: <div class="loader"></div> */
+/* .loader {
+  width       : 60px;
+  aspect-ratio: 2;
+  --_g        : no-repeat radial-gradient(circle closest-side, #64748b 90%, #0000);
+  background  :
+    var(--_g) 0% 50%,
+    var(--_g) 50% 50%,
+    var(--_g) 100% 50%;
+  background-size: calc(80%/3) 50%;
+  animation      : l3 1s infinite linear;
+}
+
+@keyframes l3 {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%
+  }
+
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%
+  }
+
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%
+  }
+
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%
+  }
+} */
